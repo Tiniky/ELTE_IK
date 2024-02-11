@@ -1,0 +1,11 @@
+6.1
+egyedi felsorolás = nem standard módon sorol fel
+pl nem megy el a gyűjtemény végéig vagy nem sorfolytonosan sorol fel
+
+a felsoroló mögött nem egy valódi, hanem egy virtuális gyűjtemény van
+
+feladatok
+
+6.2
+
+feladatok folyt

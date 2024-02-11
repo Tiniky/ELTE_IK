@@ -1,0 +1,105 @@
+1.1
+Procedurális prog: részfeladatokra bontva oldja meg
+Objektumelvű prog: objektumokkal dolgozik
+
+//FELADAT: 0 és m közötti számok, melyik a leggyakoribb
+-proc megoldás: számlálás és maximum kiválasztás
+-oe megoldás: elhelyezzük egy tároló objektumba a számsorozat elemeit és lekérjük a leggyakoribb elemet
+
+--Elemzés/Specifikáció
+-első sor: adatok felsorolása, és típus adás
+-> nincs több 'eleme' helyette ':'
+-előfeltétel: változók értéke a megoldó program indulása előtt
+-utófeltétel: változók értéke a megoldó program leállása után
+-> ha benne van ugyanaz az ef-ben és uf-ben akkor az input változó megőrzi az értékét
+
+Zsák = halmaz, ahol többször is előfordulhat egy elem
+-bele lehet tenni a Zsákba aka bezsákolás
+-megkeresi a leggyakoribb elemet a Zsákban
+
+--Tervezés
+végrehajtható specifikáció = egyszerre történik az elemzés és a tervezés
+
+//Fájlbeolvasás C++ban
+ifstream f("input.txt");
+if(f.fail())
+{
+	cout << "File open error!\n";
+}
+else
+{
+	vector <int> x;
+	int e;
+	while (f >> e){
+		x.push_back(e);
+	}
+	...
+}
+
+--Megvalósítás
+b := üreshalmaz
+i = 1 .. |x|
+	b := b unio felső vonal [x[i]]
+elem := leggyakoribb(b)
+
+int main()
+{
+	ifstream f("input.txt");
+	if(f.fail())
+	{
+		cout << "File open error!\n"; return 1;
+	}
+	int m; f >> m;
+	Bag b(m);
+	b.erase();
+	int e;
+	while( f >> e){
+		b.putIn(e);
+	}
+	cout << "A leggyakoribb szám: " << b.mostFrequent() << endl;
+
+	return 0;
+}
+
+1.2
+típus specifikáció = az adat által felvehető értékek halmaza, és a velük végezhető műveletek
+típus megvalósítás = hogyan ábrázoljuk(reprezentáció) az értékeket és milyen programok helyettesítsék a műveleteket (implementáció)
+
+Zsák típus műveletei
+b := üreshalmaz <- kiüríti a zsákot
+b := b elme felső vonal <- betesz egy elemet a zsákba
+e := leggyakoribb(b) <- megadja a leggyakoribb elemet
+
+--Jó reprezentáció
+-> minden típusérték kifejezhető egy típusvariánst kielégítő reprezentánssal
+-> minden típusvariánst kielégítő reprezentáns egy típusértéket helyettesít
+
+--Jó implementáció
+->minden típusműveletet egy olyan program helyettesít, amelyben a típusértékeket a típusvariánst a kielégítő reprezentánsaik helyettesítik
+
+Objektum = egy önálló egyedként azonosított része a feladat megoldásának, amely a megoldás egy részéért felelős adatokat és ezekkel kapcsolatos műveleteket foglalja magába
+Osztály = objektum szerkezetének és viselkedésének mintája, felsorolja az adattagjait, megadja a meghívható metódusokat
+->objektum az osztálya alapján hozható létre aka példányosítható
+
+1.3
+C++ban a 'class' lehetővé teszi az egységbe zárást
+
+class Bag
+{
+	private:
+		vector <int> _vec;
+		int _max;
+	public:
+		Bag(int m);
+		void erase();
+		void putIn(int e);
+		int mostFrequent() const;
+}
+
+konstruktor = egy objektum példányosítását végzi, létrehozza az objektum adattagjait és lefoglalja ezeket a memóriában
+üres konstruktor = nincs paramétere, nem vár inputot
+-> objektum egy tagjára való hivatkozásnál oda kell írni az objektum nevét a tag elé <- extra paramétere a metódusnak
+-> az objektum rejtett/privát tagjait csak az objektum metódusának definiciójában használható
+
+--Tesztelés
+-> automatikus tesztelés a CATCH_CONFIG_MAIN-el

@@ -1,0 +1,25 @@
+10.1
+Feladat: halmaz létrehozása	<- gyűjtemény
+kétféle reprezentáció:
+- sorozat: változó méretű tömb
+- tömb: ha tudjuk a halmaz maximumát akkor létrehozunk egy vectort és a számoknak megfelelő indexeket true-ra állítjuk és megszámoltatjuk a végén a truekat
+
+//Interface
+- nincs reprezentáció
+- csak a műveletek formája adott, nincs definíciójuk
+
+//Híd tervezési minta = leválasztjuk az osztályról a  reprezentációját, hogy azt rugalmasan futási időben választhassuk ki
+
+//Felelősség átruházás = dependency injection
+-> egy objektum viselkedsését egy másik osztály befolyásolja
+- Objektum befecskendezés: az objektum metódusa egy másik objektum metódusát hívja
+- Származtatás: az objektum metódusa az ősosztály nem felülírt metódusát hívja
+- Osztálysablon: az objektum metódusa a sablonparaméterben megadott osztály metódusát hívja
+
+10.2
+Feladat: keressünk egy számot ami nagyobb a halmaz másik 3 eleménél
+
+//Felsoroló/Iterátor tervezési minta = egy gyűjtemény elemeinek felsorolásást egy attól független objektum végzi, ezt a felsoroló objektumot a gyűjtemény hozza létre
+
+10.3
+feladat folytatása

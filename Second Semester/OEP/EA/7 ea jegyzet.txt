@@ -1,0 +1,68 @@
+7.1
+//Objektum-kapcsolat fajtái
+- függőség
+- asszociáció
+- aggregáció/tartalmazás
+- kompozició
+- származtatás
+
+//Függőség
+- ideiglenesen kerülen kapcsolatba:
+	- meghív egy metódust
+	- szignált küld
+- nem csak objektumok de osztályok között is lehet
+
+//Asszociáció
+- hosszabb időszakon keresztül küldenek egymásnak üzeneteket
+- több tulajdonsága van
+	- név	<- egy mondat állítmánya, a mondat többi nem állitmány/tárgy része az asszociációvégeknek (=szerepnév) ad nevet
+	- hatásirány	<- bináris, fekete háromszög mutatja az irányt
+	- multiplicitás		<- hány másik objektummal létesíthet kapcsolatot
+		- unique = különbözzenek
+		- ordered = sorrendben
+	- aritás	<- egy kapcsolat hány objektumot köthet össze
+	- navigálhatóság	<- melyik objektumnak kell a másikat hatékonyan elérni
+		- nyíl = hatékonyan elérendő objektum
+		- x = nem kell hatékonyan elérni
+		- jelöletlen = nincs eldöntve, lényegtelen
+	- szerepnév	<- el kell dönteni hol lesz tárolva, később lehet rá hivatkozni
+
+
+7.2
+példa asszociációra
+
+
+7.3
+//Aggregáció
+- birtoklási kapcsolat	<- tulajdonos-tulajdon
+- egy tulajdonosnak nem KELL tulajdona legyen
+- egy tulajdon több tulajdonosé lehet
+
+//Kompozíció
+- speciális aggregáció	<- tartalmazó-tartalmazott
+- a tartalmazó nem létezhet a tartalmazott nélkül
+- a tartalmazott egyszerre egy tartalmazóval van kapcsolatban
+
+//Kapcsolat létrehozásának helye
+- asszociáció: a kapcsolat egyik objektuma hozza létre valamelyik metódusával
+- aggregáció: a kapcsolatot a tulajdonos hozza létre
+- kompozíció: a tartalmazó objektum konstruktora hozza létre
+
+
+7.4
+//Származtatás/Öröklődés
+- megeggyező adattagjai és metódusai vannak
+	- általánosítás: közös tulajdonságokat leíró ősosztály
+	- specializálás: származtatással létrejött alosztály
+- az ősosztály csak publikus és védett tagokra hivatkozhat, privátra nem
+- a származtatás módja is lehet pubklikus, védett vagy privát
+
+Single responsibility
+O
+Liskov's substitution = származtatásnál figyelni kell a helyes objektumokra
+I
+D
+
+//Dinamikus altípusos polimorfizmus
+- polimorf = ha az ősosztály metódusát felülírjuk a leszármazott osztályban
+- futási időben derül ki

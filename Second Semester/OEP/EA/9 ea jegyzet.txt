@@ -1,0 +1,9 @@
+9.1
+FELADAT: Test(ősosztály)	->	Testek
+
+sablonfüggvény: úgy adjuk meg az algoritmust egy osztály metódusának, hogy annak szerkezetét nem változtatjuk, csak futási idejű polimorfizmussal	<- override
+
+9.2
+FELADAT: Lények <- életerő, terep, hatások
+
+látogató tervezési minta: a metódus működése attól is függ, hogy a neki adott paraméter-objektum egy objektum-készlet melyik osztályú objektuma és nem akarjuk, hogy megjelenjen a kapcsolat

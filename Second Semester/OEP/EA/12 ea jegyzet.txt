@@ -1,0 +1,5 @@
+12.1
+Feladat: Benzinkút szimuláció állapotgéppel
+
+12.2
+Feladat: Stopperóra

@@ -1,0 +1,6 @@
+2022.01.22	Kecskemét	Széktói	V	Faragó	49	Faragó	15		
+2022.01.23	Siófok	Révész	D	Silye	29	Hinora	54	Silye	80
+2022.03.26	Szolnok	Tiszaligeti	V	Hinora	79				
+2022.01.24	Tatabánya	Grosics	D	Hinora	53				
+2022.01.22	Budafok	Illovszky	GY						
+2022.02.22	Győr	ETO_Park	GY	Silye	53	Berecz	62	Uram	17

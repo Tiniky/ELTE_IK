@@ -1,0 +1,49 @@
+3.1
+//Objektumok modellezése
+=> különböző nézőpontokból egy objektum(nak):
+	- Modellezési szempont
+		- önálló egyed, a megoldandó probléma egy részéért felel
+		- egységbe zár, és elrejti az adatokat, hogy csak metódussal lehessen változtatni rajtuk
+		- van életciklusa
+	- Programnyelvi megközelítés
+		- memória foglalás, ahol az adatait tároljuk
+		- adattagjainak a láthatósági köre szabályozható
+		- konstruktora foglal memóriat	<= példányosítás
+		- dekonstruktora törli
+
+- értékadás
+pl. Point(int _x = 0, int _y = 0): x(_x), y(_y) {}
+
+- operátor átírás
+Pont operator+(const Point &p) const
+	{return Point(x + p.x, y + p.y);}
+
+- kiírás átírás
+std::ostream& operator<<(std:ostream &o, const Point &p)
+	{o << "(" << p.x << "," << p.y << ")";}
+
+- this pointer	<= lehet hivatkozni a lokális változókra
+
+- kivételek
+class valamiNemJo : std::exception {};
+..
+if(hamis)
+{throw new valamiNemJo;}
+
+3.2
+//Objektumok példányosítása
+- STACK(verem memória)
+- HEAP(dinamikus memória)
+
+Cben alloc C++ban new
+
+try
+{}
+catch
+{}	<= megfogja a kivételeket
+
+* a specifikációban != pointer DE = véges számú sorozat
+
+delete = megszűnteti a dinamikus memóriában tett helyfoglalást
+
+- menüvezérlés

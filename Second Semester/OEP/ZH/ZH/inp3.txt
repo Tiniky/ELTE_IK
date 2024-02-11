@@ -1,0 +1,7 @@
+2022.01.07	Szamosi	Soroksár	V	Pátkai	20	Faragó	43	Uram	8
+2022.01.14	ETO_Park	Győr	D	Silye	16	Pátkai	45		
+2022.01.25	Tiszaligeti	Szolnok	D						
+2022.02.03	Promontor	Budafok	D	Hinora	31				
+
+output:
+yes 2022.01.07

@@ -1,0 +1,40 @@
+8.1
+//Aritmetikai kifejezés
+pl. lengyel forma
+infix: 5+(11+26)*(43-4) == postfix: 5 11 26 + 43 3 - * +
+- az átalakításhoz vermet szoktak használni
+- lehet sornak is tekinteni, a lexikális elemei a tokenek	<- tokenizálás
+
+Feladat: infix	-> postfix -> kiértékelés
+- tokenek: operátor, operandus, zárójelek	<- Token osztály
+- sorozat: tokenek gyűjteménye, egy az infixnek és egy a postfixnek
+- verem: egy-egy a postfix alakhoz és a kiértékeléshez
+- sztring: a bemenet
+
+absztrakt osztály = nem példányosít objektumokat
+- konstruktorai nem publikusak
+- legalább egy metódusa nincs implementálva
+
+intrfész = tisztán absztrakt
+- egy metódusa sincs implementálva
+- a származtatott osztály megvalósítj az interfacet
+
+programozási minták = korábbi hasonló feladatok mintájára dolgozni
+
+Single responsibility
+Open-Close
+Liskov's subtstitution
+I
+D
+
+8.2
+//Bináris fa
+elmélet algo ea jegyzet
+
+stratégia tervezési minta	<- közös interfész összehozása
+Single responsibility
+Open-Close
+Liskov's subtstitution
+Interface segregation
+D
+

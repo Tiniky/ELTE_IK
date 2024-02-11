@@ -1,0 +1,98 @@
+2.1
+UML = szabványos grafikus nyelv, diagramokat használ probléma elemzéshez, megoldás tervezéshez, megvalósításhoz és teszteléshez
+-szerkezeti nézet: objektum-, osztály-, komponens-, csomag diagram
+-viselkedési nézet: használati eset-, kommunkiációs-, szekvencia-, tevékenység diagram
+
+//Elemzést támogató diagramok
+-használati esetű diagram: nem objektumelvű nézet, a feladat fő funkciói
+	-használati eset: rendszert kívülről szemlélő is azonosítani tudja
+	-kapcsolat: kiegészítés, sorrend
+		-részletezés
+			-include: egy önmagában nem teljes (= absztrakt) használati esetet egészít ki
+			-extend: egy önmagában teljes (= nem absztrakt) használati esetet opcionálisan egészít ki
+		-származtatás: több eltérő beazonosítható változat van
+		-rákövetkeztetési sorrend:
+			-precedes: egy későbbi tevékenységet nem enged kezdeményezni, amíg a megelőző tevékenység nem lett végrehajtva és/vagy jelezi annak a hiányát
+			-invokes: megmutatja, hogy egy tevékenység végrehajtását melyik tevékenység követi
+	-aktorok: vezérli a működést pl. Main fg, user
+
+-objektum diagram: az adott pontban létező objektumok és azok kapcsolatai
+-kommunikációs diagram: objektumok közötti üzenetváltás
+-osztály diagram: tervezés és megvalósítás fázisban, objektumok és azok kapcsolatainak általános leírása
+-szekvencia diagram: üzenetváltások forgatókönyve, teszteset írás
+
+//FELADAT: sokszögek, toljuk el őket, majd számoljuk ki a súlypontokat
+
+//Felhasználói történet = user story
+-a diagram önmagában nem elég, mert a tevékenységek nevén kívül nem árul el sokat
+-felhasználói csoportonként ("AS a ...") táblázatos leírás
+	-tevékenység neve
+	-előfeltétele = GIVEN
+	-mikor következik be az esemény = WHEN
+	-hatás, eredmény = THEN 
+
+2.2
+//Objektum diagram = a populáció leírása aka az adott pontban létező objektumok és azok kapcsolatai
+-meghatározza:
+	-osztály: ugynaolyan adattagokkal és metódusokkal rendelkező objektumok
+	-név <- nem kötelező
+	-állapot: adattagok értékei
+-NEM tartalmazza a metódusokat
+-ideiglenes vagy hosszabb távű kapcsolatok: hivatkozhatnak egymásra <- a kapcsolatot egy folytonos vonallal jelölhető
+-felelősségi köre:
+Single responsibility <- egy objektum egy felelősségi kör, ne osszuk meg több objektum között
+O
+L
+I
+D
+
+//Kommunikációs diagram = egymással kapcsolatben lévő objektumok üzenetei
+-hasonlít az objektum diagramra, csak általánosabb
+-leírja az objektum felelősségi körét aka metódusait
+
+Üzenet = a küldő objektum meghív egy metódust/szignált küld
+-üzenetküldés lehet
+	-szinkron: a küldő objektum megvárja amíg a fogadó objektum befejezi az üzenetfeldolgozást és csak akkor folytatja saját tevékenységét, miután megkapja az eredményt
+	-aszinkron: párhuzamosan dolgozik tovább a küldő és a fogadó objektum
+-jelölések:
+	-sorrend <- sorszámozás
+	-előfeltétel <- szögletes zárójelek között
+	-ciklikusan ismétlődő <- nem kötelező
+
+2.3
+//Osztály diagram = objektum diagram absztrakciója
+-rendelkezik:
+	-név <- kötelező
+	-adattag: tulajdonság, attribútum, mező
+	-metódus: műveletek, tagfüggvény
+-az adattagok és metódusok láthatósága egyenként beűllítható: public/private/protected #
+-modellezés során fokozatosan alakil ki, hiányozhatnak részek
+-viselkedés alapján különböző kategóriákba sorolhatók <<..>> pl <<interface>>
+-általános leírás paraméterekkel
+-az adattagokhoz kezdőérték rendelhető
+
+<<getter>> <- adattag értékét lekérdező művelet
+<<setter>> <- adattag értékét felülíró művelet
+
+2.4
+//Szekvencia diagram = üzenetváltások időbeli sorrendje, a rendszer vagy annak egy részének működését írja le
+-osztályszerep: egy vagy több osztály egy vagy több objektuma
+-osztályszerep életvonal: osztályszerep létezési idővonala
+-osztályszerp aktivációs életvonala: időszak, amikor az osztályszerep objektumait más objektumok irányítanak
+-üzenet: objekzumok közötti információ átadás
+
+Szinkron üzenet: a küldő objektum átadja a vezérlést a fogadó objektumnak és addig vár amíg a fogadó objektum fel nem oldja a blokkot
+->lehet:
+	-metódus hívás
+	-szinkronizációs üzenet
+	-időhöz kötött várakozás
+Aszinkron üzenet: a küldő objektum nem szakítja meg a saját tevékenységét, egymással párhuzamosan futnak
+->lehet:
+	-szignál/azinkron metódus hívás
+	-randevú üzenet: a küldő objektum egy megjelölt ideig várakozik, hogy a fogadó objektum befogadja az üzenetet
+Speciális üzenet <- általában nincsenek feltűntetve a könnyebb átláthatóság miatt
+-> lehet:
+	-visszatérési üzenet: a fogadó küldi válaszként, ha szinkron üzenet volt, akkor ez oldja a blokkot
+	-példányosító üzenet: létrehoz egy új osztályszerepet
+
+-ki lehet emelni egy szekvencia részt és máshol nagyítva ki lehet fejteni aka több szekvencia diagram is készíthető

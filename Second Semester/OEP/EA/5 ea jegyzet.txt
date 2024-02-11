@@ -1,0 +1,30 @@
+5.1
+szekvenciális = sorban egymás után
+
+//Szekvenciális inputfájl = olyan gyűjtemény, melynek elemeit sorban érjük el
+- egyetlen művelete van 	<- lekérdezi az első elemet, majd leszakítja
+- olvasás jelölése: st,e,x:read
+- st(statusz) lehet: norm vagy abnorm
+- előre beolvasás = ha üres akkor nem lehet olvasni belőle
+
+//Szekvenciális outputfájl = olyan gyűjtemény, amihet sorba fűzzük hozzá az elemeket
+- először üres gyűjtemény létrehozása
+- írás művelet	<- hozzáfűz
+
+szekvenciális inputfájlból szekvenciális outputfájlba: másolás, kiválogatás, szétválogatás, összefuttatás
+
+
+ifstream típusú adatfolyam(fájlból)	<- #include <fstream>
+- karakterenkénti olvasás
+- lexikális egységenkénti olvasás
+
+ofstream típusú adatfolyam(fájlba)	<- #include <fstream>
+
+5.2
+ha nem létezik a file létrehozza, ha létezik felülírja
+
+5.3
+feladatok
+
+5.4
+feladatok folyt

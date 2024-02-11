@@ -1,0 +1,53 @@
+4.1
+//Gyűjtemények
+=> objektum, elemek tárolására alkalmas
+- szigorúan sorrendben tárolja az elemeket
+- tároláshoz és visszakereséshez alkalmas műveletei vannak
+- gyűjtemény feldolgozása = benne lévő elemek feldolgozása
+- virtuális gyűjtemény	<- elég az intervallum két végét eltárolni, nem kell az összes számot eltárolni
+
+//Felsorolás
+=> művelete a gyűjteménynek
+- véges sorozat, a gyűjtemény elemeiből
+- műveletei:
+	- First()	<- elkezdi a felsorolást az első elemtől 
+	- Next()	<- folytatja a felsorolást
+	- End()		<- végére értünk-e a felsorolásnak
+	- Current()	<- visszaadja a felsorolás aktuális elemét
+- állapotai:
+	- indulásra kész
+	- folyamatban van
+	- befejeződött
+- Single Responsibility HA a gyűjtemény nem önmaga felsorolója
+
+//Felsoroló objektum
+- elkülönül a gyűjteménytől
+- rendelkezik felsorolás műveletekkel
+
+4.2
+//Algoritmus minták
+Összegzés: két értékhez hozzá rendel egy harmadikat
+Számlálás: csak a fennálló feltétel esetén történik meg az összeadás ha teljesül 1 ha nem 0
+Maximum kiválasztás: egy felsorolás legnagyobb elemének az értéke
+Kiválasztás: felsorolás adott tulajdonságú első eleme
+Lienáris keresés (nem biztos a találat): elsorolás adott tulajdonságú első eleme
+Optimista lineáris keresés: vizsgáljuk, hogy minden elemre teljesül
+Pesszimista lineáris keresés: megkeressük az első olyan tagot, amire nem teljesül
+Feltételes maximum keresés: felsorolás adott tulajdonságú elemei közt a legnagyobb elem értékét
+
+4.3
+//Visszavezetés
+=> implementáljuk a feladatba a megoldó minta algoritmust
+
+//Tesztelési stratégiák
+- Fekete Doboz: a feladat alapján felírt tesztesetek
+- Fehér Doboz: a kód alapján felírt tesztesetek
+- Szürke Doboz: végrehajtható specifikáció által előrevetített algoritmus működését ellenőrző tesztesetek
+	- felsoroló szerint:
+		- eltérő hosszúságú felsorolás
+		- felsorolás kezdete és vége
+	- funkció szerint:
+		- összegzés: felsorolás hosszának skálázása
+		- keresés, számlálás: van-e keresett tulajdonságú elem
+		- maximum kiválasztás: egyetlen vagy több azonos maximális érték
+		- feltételes max. ker: van-e adott tulajdonságú maximális érték

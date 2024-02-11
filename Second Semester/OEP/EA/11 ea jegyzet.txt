@@ -1,0 +1,37 @@
+11.1
+//Objektum életciklusa
+- létrejön/példányosodik	<-konstruktor
+- működik: kommunikál más objektumokkal
+- megszűnik/megsemmisül		<-dekonstruktor
+- különböző állapot: fizikai vagy logikai
+
+objektum életciklusa ábrázolhato a logikai állapotváltozásokkal
+
+//Állapot
+- lekerekített sarkú téglalap jelöli
+- pszeudó állapotok: kezdő- és végállapot
+
+//Tevékenység
+- sor kerül a végrehajtásra állapot-átmenet során vagy egy állapothoz kapcsolódóan
+- lehet:
+	- belépési tevékenység: átmenet révén az állapot aktív lesz
+	- belső tevékenység: addig tart, amíg az állapot aktív
+	- kilépési tevékenység: akkor hajtódik végre, ha az átmenet révén egy másik állapot aktív lesz
+	- belső átmenet tevékenység: sem a be- sem a kilépési tevékenység nem hajtódik végre
+
+//Állapot-átmenet
+- üzenet = trigger	<- lehetnek paraméterei
+- belső tevékenység befejezése
+- őrfeltétel teljesülése	<- logikai állítás
+
+- állapotgép ábrázolása: diagram vagy táblázat
+
+//Hierarchikus állapotok
+- szekvenciális: vannak átmenetek
+- párhuzamos: egymástól függetlenül működnek
+
+11.2
+Feladat: Garázskapu osztály létrehozása állapotgéppel
+
+- szkenáriók: esetek
+- szinkron és aszinkron esetek
