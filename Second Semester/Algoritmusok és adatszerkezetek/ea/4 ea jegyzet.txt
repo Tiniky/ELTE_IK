@@ -1,0 +1,36 @@
+//Fejelemes listák H1L
+- tartalmaz egy nulladik úgynevezett fejelemet
+- a fejelem key mezője definiálatlan
+- az üres H1L listának is van fejeleme
+
+//Egyirányú listák kezelése
+- memória és futási idő szempontjából egyszerű listák használata javasolt
+- a fejelem helyett van amikor érdemesebb végelemet generálni
+
+//Dinamikus memóriagazdálkodás
+new és delete utasítások használata
+
+//Rendezések H1Lre
+(pngk)
+- a cut levágja az első n elemet
+
+//Ciklikus egyirányú listák
+- az utolsó listaelem nextje nem null, hanem visszamutat az első elemre ha fejelemes lista akkor a fejelemre mutat
+- ha üres a fejelemes lista akkor önmagára mutat
+
+
+//Kétirányú listák = two way/doubly linked lists
+- egyszerű		<-S2L = Simple 2way List
+- ciklikus	<-C2L = Cyclic 2way List
+- next és prev pointerek
+
+//Egyszerű kétirányú lista S2L
+- kevésbé használt mert a beszúrás más ha előre szúród vagy ha középre vagy ha hátra
+
+
+//Ciklikus kétirányú lista C2L
+- lehet fejelemes vagy anélküli, alapértelmezésben maradjon fejelemes	<- könnyebben használható
+- műveletei: precede, follow, unlink
+
+//Rendezések C2Lre
+(png)

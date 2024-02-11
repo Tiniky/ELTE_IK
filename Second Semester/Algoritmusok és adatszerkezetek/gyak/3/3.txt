@@ -1,0 +1,22 @@
+--2. gyak folytatása
+LIFO = Last In First Out
+push <- új elem
+pop <- visszaadja a legutoljára bekerült elemet, törli a veremből
+top <- visszaadja a legutoljára bekerült elemet és NEM törli
+
+read() <- beolvas
+
+//Lengyel forma	= aritmetikai kifejezés postfix alakja
+- infix alak pl. A + B, A + B * C
+- prefix alak pl. +AB, +A*BC	<- az operátor legelől van
+- postfix alak pl. AB+, ABC*+	<- az operátor leghátul van
+- hatványozás jobbról balra, minden mást balról jobbra
+
+operandust kiír, ha operátor bekerül a verembe, ha nyitó zárójel bekerül a verembe, ha csukó zárójel kiírni mindent a nyitó zerójel fölött
+
+//Lengyel forma kiértékelés	<-visszafele végigmegy az algoritmuson
+
+//Quick sort = Gyors rendezés
+- legrosszabb esetben n^2
+- várható érték: nlogn
+- véletlenszerűen kiválasztjuk a pivot elemet, elintézzük hogy minden nála kisebb egyenlő balra és minden nagyobb egyenlő jobbra kerüljön, majd rekúrzívan folytatódik a rendezés

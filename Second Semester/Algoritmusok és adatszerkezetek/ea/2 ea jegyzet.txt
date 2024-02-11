@@ -1,0 +1,14 @@
+//Gyorsrendezés=Quicksort
+=> oszd meg és uralkodj elv
+	- kiválasztunk egy pivot elemet
+	- részre bontás		<- a kisebbeket balra, a nagyobbakat jobbra az egyenlőt mindegyhova 
+	- a részeket rekúrzivan rendezi tovább a fenti lépések alapján
+	- az üres és az egyelemű tömbök a rekurzió alapesetei
+- műveletigénye lineáris
+
+mT(n)
+AT(n) eleme omega(n log n)
+MT(n) eleme omega(n^2)
+
+//Vegyes gyorsrendezés
+- a kisméretű tömbökre beszúró rendezést használunk	<-hatékonyabb

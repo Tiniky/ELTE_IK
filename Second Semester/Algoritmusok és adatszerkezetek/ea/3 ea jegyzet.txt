@@ -1,0 +1,37 @@
+//Verem = stack
+- LIFO = Last In First Out
+- dinamikus tömbbel reprezentáljuk
+- A.length a verem fizikai mérete
+- T a verem elemeinek típusa
+pl. A/1: T[]
+- tegyük fel h a read a kurrens inputról olvas be és a write a kurrens outputra ír ki
+mT(n) eleme omega(1)
+MT(n) eleme omega(n)
+AT(n) eleme omega(1)
+
+//Sor = queue
+- FIFO = Firs In First Out
+- nullától indexelt dinamikus tömb
+- Z.length a verem fizikai mérete
+- T a verem elemeinek típusa
+pl. Z: T[]
+mT(n) eleme omega(1)
+MT(n) eleme omega(n)
+AT(n) eleme omega(1)
+
+//Láncolt listák = linked lists
+- véges sorozatok tárolására alternatív megoldás
+lineáris adatszerkezet = a tömbök és láncolt listák véges sorozatokat tárolnak	<-lineáris struktura
+- lehetnek egyirányú és kitirányú listák
+
+//Egyirányú listák = one way/singly linked lists
+- egyszerű 	<- S1L = Simple 1way List
+- fejelemes	<- H1L = Header node + 1way List
+- két része van az elemeinek
+	- a bal oldali az érték
+	- a jobb oldali egy pointer ami a következő elem értékére mutat
+
+//Egyszerű egyirányú listák S1L
+L1->key 	<- az értékre mutat
+L1->next	<- a következő elemre mutat
+L1->next->key	<- a következő elem értékére mutat

@@ -1,0 +1,21 @@
+Feladat
+
+x=a+(-b^c^2+d*e)/((f+g)*h/-k)-p*z
+lengyel forma: xab-c2^^de*+fg+h*k-//+pz*-=
+
+//Gyorsrendezés/Quick Sort
+-random választ pivot elemet	<- !!ZHn az első elem legyen
+pl.
+A=[24,9,2,19,10,28]
+x=24 [28,9,2,19,10, ] => [9,2,19,10,24,28] => x=9 [10,9,2. ] => [2,9,10,19]
+=>[2,9,10,19,24,28]
+
+//Egyirányú lista
+- pointerekkel lehet bejárni
+- elem elérése: p->key, p->next
+- új listaelem: p=new E1
+- elem felszabadítása: delete p
+- fajtái:
+	- egyszerű egyirányú láncolt lista(SL1): ha L1 null pointer, a lista üres, másképp rámutat az első elemre
+	- fejelemes egyirányú láncolt lista(HL1): van egy L2, ami null pointer	<- mindig van egy eleme, ha üres akkor is
+- műveletei: keresés, beszúrás, törlés

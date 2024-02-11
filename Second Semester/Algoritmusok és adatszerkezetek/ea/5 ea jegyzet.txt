@@ -1,0 +1,8 @@
+//Függvények aszimptomikus viselkedése
+=> f fg akkor aszimptotikusan pozitív (=AP) fg, ha elg nagy n-re f(n) > 0
+- AP fgk nagyságrendje = log n < n < n log n < n^2 < n^2 log n < n^3
+- tulajdonságok: szimmetria, felcserélt szimmetria, tranzitivitás, reflexivitás, irreflexivitás
+
+//NxN értelmezési tartományú fg
+g: NxN -> R
+fg AP, ha elég nagy n és elég nagy m értékre g(n,m)>0

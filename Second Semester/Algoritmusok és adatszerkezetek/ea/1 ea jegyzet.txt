@@ -1,0 +1,26 @@
+//Tömb monoton növekvő rendezése
+A: T[n] == A/0: T[n]    <- 0tól indexelünk a tömbben
+A/1: T[n]   <- 1től indexelünk a tömbben
+A[0..n) <- 0tól n-ig indexelünk az n nincs benne
+
+//Beszúró rendezés = Insertion Sort
+5 2 714683
+25 7 14683
+257 1 4683
+1257 4 683
+12457 6 83
+124567 8 3
+1234567 8
+12345678
+
+-> n-1 db iteráció
+-> minimális idő n
+-> maximális absztrakt idő n + (n-1)*(n-2)/2
+
+-stabil, ha valami a helyén van nem mozgatja
+-optimális, ha előre rendezett a tömb
+
+
+//Összefésülés
+"oszd meg és uralkodj elv"
+=> felosztjuk részekre és a részeket rendezzük sorba, majd a részeket rendezzük tovább

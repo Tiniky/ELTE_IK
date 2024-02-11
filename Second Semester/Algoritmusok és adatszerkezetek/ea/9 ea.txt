@@ -1,0 +1,34 @@
+//Az összehasonlító rendezések alsókorlát elemzése
+- mind az n elemet ellenőrizni kell
+
+//Összehasonlító rendezések és a döntési fa modell
+összehasonlító rendezés = input elemek kulcsai összehasonlításából nyer információt
+=> insertion sort, heap sort, merge sort, quicksort
+- összehasonlító rendezéseket döntési fákkal modellezünk
+	- a belső csúcsaiban vannak a kulcs összehasonlítások
+	- levelei a lehetséges rendezési sorozat
+
+//Alsó korlát a legrosszabb esetre
+=> az összehasonlító rendezés végrehajtásához legrossabb esetben kulcsösszehasonlítás szükséges (n log n)
+
+
+//Rendezés lineáris időben
+- nem kulcsösszehasonlítós
+- optimális eset
+
+//Radix rendezés
+- a kulcsok r alapú számrendszerben felírt d számjegyű előjel nélküli számok	<-dDigitNumber
+- számjegyeit jobbról balra sorszámozzuk
+- a rendezésnek d menete van
+- az első menetben az első (= jobb szélső, a legkevésbé szignifikáns) számjegy szerint rendezünk stabil rendezéssel
+=> dDigitNumber<>
+
+//Szétválogató rendezés = Distributing sort
+- stabil és láncolt listákra optimális
+- lineáris műveletigényű
+- hatékonysága: az első és az utolsó ciklus r-szer iterál míg a középsők n-szer
+
+//Radix rendezés listákra
+- kezdetben üres polcok (bins)
+- polcok rendezése és összefűzése
+- new és delete memória kezeléshez

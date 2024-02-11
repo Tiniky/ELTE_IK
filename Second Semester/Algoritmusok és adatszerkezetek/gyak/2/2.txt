@@ -1,0 +1,27 @@
+//Nevezetes nagyságrendek
+konstans idejű			<- verem vagy sor bármely műveletre
+logaritmikus algoritmus		<- bináris keresés pl. hw1
+lineáris algoritmus		<- maximum kiválasztás
+n*log n algoritmus		<- összefésülő rendezés
+n^2 algoritmus			<- beszúró rendezés
+n^3 algoritmus			<- mátrixszorzás
+2^n algoritmus			<- Hanoi-tornyai (=korongok/kövek átpakolása egyesével, kisebbre nem kerülhet nagyobb)
+n! algoritmus			<- utazóügynök-probléma
+
+//Beszúró rendezés
+- első elem fix
+- sorra veszi az elemeket, hogy az első elem előtt vagy mögött vannak, majd beszúrja
+
+Stabil rendezés = ha több egyforma elem van, a balra lévő elem bal oldalt marad
+pl. 1 5 b2 3 j2 => 1 b2 j2 3 5
+
+//Összefésülő rendezés
+- szétszedi az elemeket fele fele
+- majd azt is fele fele
+- addig megy a fele fele, amíg már csak 1 vagy 2 elemű részek maradnak
+- majd ezeket a részeket összehasonlítja külön külön
+- majd lépésenként összevonja a részeket és összehasonlítja azokat is
+
+//Verem
+- folyamatosan dobálok bele elemeket
+- mindig a legutoljára bekerült elemet vesszük ki

@@ -1,0 +1,30 @@
+//Kupacok és elsőbbségi (prioritási) sorok
+- elsőbbségi sor/PrQueue = zsák/multihalmaz (lásd. oep)
+- bele lehet tenni valamit és ki lehet venni a maximális elemet
+- az aktuális elemeit egy A[1..n] résztömb tartalmazza	<- kupac
+
+MT add(n) eleme theta log n
+mT add(n) eleme theta 1
+MT remMax(n) eleme theta log n
+mT remMax(n) eleme theta 1
+T max(n) eleme theta 1
+
+//Rendezés elsőbbségi sorral
+- hatékony és egyszerű
+- hátránya hogy a rendezendő tömbbel azonos méretű munkamemóriát igényel
+
+//Kupacrendezés = heap sort
+- az elsőbbségi soros rendezés optimalizált változata
+- helyben rendez
+- először kupaccá alakítja a tömböt
+- bináris fát használunk a szemléltetéshez DE amúgy végig kupacokkal dolgozunk
+- a bináris fa magassága log n, levelei egyelemű kupacok
+- ha a magassága 1 => csonka kupac
+- a kupaccá alakított tömböt rendezi végül
+
+
+//Merge sort műveletigénye
+- itt is látványosabb bináris fával
+
+mT(n) ≥n(log n − 2)
+MT(n) ≤ 2n(log n + 1)

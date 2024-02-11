@@ -1,0 +1,35 @@
+//polinom helyttesítés
+- n+1 mérető tömb, ha n-edfokú polinomunk van
+
+A/1:T[n]	<-1től indexelünk a tömbbe
+A:T[n]	<-0tók indexelünk
+A.length	<-tömb hossza
+it(n)		<-ciklusiterációk
+S(n)		<-szorzások
+Ö(n)		<-összeadások
+
+pl. p(x) = 3x^3 + 2x^2 -x + 5
+=> Z = [5, -1, 2, 3]
+	0   1  2  2	<-indexek
+
+Ordo = O(g)	<- olyan f függvényeket tartalmaz amelyre létezik c > 0, és elég nagy eleme n-re c*g(n) > f(n)
+Omega = omegajel(g)	<- olyan f függvényeket tartalmaz amelyre létezik d > 0, és elég nagy eleme n-re d*g(n) < f(n)
+Teta <= körben -jel	<- ha működik az ordo és omega akkor onnan következik a teta
+négyzetes vs lineáris futási idő	<- teta n^2 vs teta n	<- teta n jobb
+
+//Buborékos rendezés
+- megnézi az első kettőt és ha az első nagyobb kicseréli
+- célja hogy a legnagyobb elem hátra kerüljön
+- mindig eggyel kevesebb elemet veszünk
+- a cserék száma megegyezik az inverziókkal
+
+mCs(n)	<- minimális csere szám
+MCs(n)	<- maximális csere szám
+ACs(n)	<- átlagos csere szám
+
+//Maximum kiválasztásos rendezés
+- az első elem lesz automatikusan a maximum
+- végigmegy és összehasonlítja az elemeket a maximummal, ha nagyobb akkor a nagyobb lesz a maximum
+- a végén a maximum helyet cserél az utolsó elemmel
+- következő futásoknák a végézől mindig -1 elemmel cserélődik ki
+- ha saját magával cserélünk valamit, azt is cserének számolja

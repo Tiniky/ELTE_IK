@@ -1,0 +1,16 @@
+(1)
+a) 3 összehasonlítás, 2 mozgatás
+b) 6. iterációban
+c) 20 összehasonlítás
+d) 29,31,47,86,90
+
+(2) Tömb: [5,2,7,1,6,4,8,3]
+2,1,4,3,+5,7,6,8
+1,+2,4,3
+3,+4
+6,+7,8
+
+(3) x = −x^2 + 5 ∗ k/(y − z ∗ 3 + s)^x^2 − b ∗ d − w
+lengyel forma: xx-2^5k*yz3*-stx2^^/+bd*-w-=
+
+(4)

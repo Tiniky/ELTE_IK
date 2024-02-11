@@ -1,0 +1,11 @@
+//Sor
+- FIFO
+- egyirányú lista
+
+
+ZH
+1) egyszerű rendezés (javított buborék, max. kiválasztás, beszúró rendezés)
+2) mergesort, quicksort
+3) lengyelforma
+4) verem/sor
+5 + 6) listás feladatok (S1L, H1L, C2L)

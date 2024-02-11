@@ -1,0 +1,51 @@
+//Fák, bináris fák = BinTree
+- nagy méretű adathalmazok és multihalmazok ábrázolása
+- bináris fák esetén minden adatelemnek(=csúcsnak) két rákövetkező eleme van	<- bal és jobb
+- a csúcs a szülő a két rákövetkező elem gyerekek és egymás testvérei
+- HA egy csúcsnak nincsenek gyerekei levélnek hívjuk
+- HA egy csúcsnak nincs szülője akkor gyökérnek hívjuk
+- a fában egy csúcs alatt a leszármazottai vannak
+- a fában egy csúcs fölött az ősei vannak
+- az elemeket körrel jelöljük, HA nem fontos egy részfának a szerkezete, azt háromszöggel jelöljük
+- üres fa(empty tree) = nincs csúcsa
+- egy nemüres fát a gyökércsúcsa határoz meg
+- a bal/jobb gyerekhez tartozó részfát, bal/jobb részfának nevezzük
+- egy bináris fának részfája önmaga
+- vannak szintjei, a gyökér van a nulladikon
+- fa magassága = a legmélyebben lévő elem szintje
+
+//Listává torzult, szigorúan bináris, teljes és majdnem teljes bináris fák
+- listává torzult fák = a fa minden csúcsnak egy gyereke van
+- szigorúan bináris fák = a fa minden csúcsának két gyereke van
+- teljes bináris fák = szigorúan bináris fa, aminek minden levele egy szintben van
+- majdnem teljesen bináris fák = szigorúan bináris fa, aminek nem minden levele van egy szintben
+
+//Bináris fák mérete és magassága
+- mérete = csúcsainak száma	<|t|
+- magasság = a legmélyebben lévő levelek szintszáma
+
+//Bináris fák bejárásai
+- üres fára mindegyik bejárás üres program
+- nemüres fára használható bejárás:
+	- preorder: először a gyökeret majd sorra a részfákat
+	- postorder: előbb a részfákat és utoljára a gyökeret
+	- inorder: először a nulladik részfát, majd sorra a többi részfát
+	- szintenkénti(=breadth first/level order traversal): a csúcsokat a gyökértől szintenként balról jobbra dolgozza fel
+
+//Bináris fák reprezentációi
+- láncolt ábrázolás
+- üres fa ábrázolás a null pointer
+
+//Bináris fák zárójelezett, szöveges formája
+pl ( balRészFa Gyökér jobbRészFa )
+- üres fát egy üres string reprezentálja
+- zárójelek váltakozva: {}, [], (), <>
+
+
+pl.	       3
+	    2    6
+	    1  	4 7
+		5
+egyszerű zárójeles alak: (((1) 2) 3 ((4 (5)) 6 (7)))
+elegáns zárójeles alak: {[(1) 2] 3 [(4 <5>) 6 (7)]}
+<= inorder bejárás

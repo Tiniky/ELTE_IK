@@ -1,0 +1,7 @@
+//Fejelemes kétirányú ciklikus litásák (C2L)
+prev 	<- az aktuális elemet megelőző elem
+next 	<- a következő elem
+- műveletei:
+precede: listaelem beszúrása egy másik listaelem elé
+follow: beszúrás a listaelem mögé
+unlink: megadott listaelem kifűzése a listából

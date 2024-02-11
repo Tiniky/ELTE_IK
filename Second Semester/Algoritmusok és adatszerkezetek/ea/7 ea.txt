@@ -1,0 +1,27 @@
+//Bináris keresőfa
+keresőfa = bináris fa ha minden belső csúcsa és annak y kulcsára igaz:
+	- a csúcs a bal részfában tetszőleges csúcs x kulcsára x < y
+	- a csúcs a jobb részfában tetszőlefes csúcs z kulcsára z > y
+
+rendezőfa = bináris fa ha minden belső csúcsa é annak y kulcsára igaz:
+	- a csúcs a bal részfában tetszőleges csúcs x kulcsára x <= y
+	- a csúcs a jobb részfában tetszőlefes csúcs z kulcsára z >= y
+- a keresőfában minden elem egyedi, a rendezőfába lehetnek többször előforduló kulcsok
+- a keresőfa tekinthető véges halmaznak vagy szigorúan monoton növekvő sorozat
+=> a sorozat megkapható az inorder bejárással
+
+//Műveletei
+- search(t, k)	<- megkeresi a k kulcs helyét
+- insert(t, k)	<- megkeresi a k helyét ha üres részfát talál akkor beszúrja
+- remMin(t, minp)	<- a bal alsó legkisebb kulcsra mutat és kifűzi a fából
+- del(t, k)	<- megkeresi a k kulcs helyét és törli
+
+//Szintfolytonos bináris fák, kupacok
+- egy teljes bináris fa balra tömörített, ha az alsó szintjén egyetlen levéltől balra sem lehet új levelet beszúrni
+szintfolytonos bináris fa = balra tömörített teljes bináris fa
+maximum kupac = szintfolytonos bináris fa ha minden belső kulcs nagyobb egyenlő a gyerek kulcsával
+minimum kupac = szintfolytonos bináris fa ha minden belső kulcs kisebb egyenlő a gyerek kulcsával
+csonka kupac = szintfolytonos bináris fa ha minden belső kulcs nagyobb egyenlő a gyerek kulcsával, kivéve ha a szülő a gyökércsúcs
+
+//Szintfolytonos bináris fák aritmetikai ábrázolása
+- szintfolytonosan egy tömbben
