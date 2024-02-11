@@ -1,0 +1,27 @@
+@page 
+	{margin: 2cm 1.5cm;}
+
+h1, h2, h3, h4, h5, h6 
+	{page-break-after: avoid;}
+
+
+a:after 
+	{content: " [" attr(href) "] ";}
+
+body 
+	{color: black; background: white;}
+
+a:after  {text-decoration: none;}
+
+
+div#tartalom {background-image:none}
+div#belsotartalom {
+	padding:10px;
+	margin:0px 0px 0px 0px;
+	
+}
+
+div.lablecnavi, div#fejlec, div#menu, div#lablec, div#siteinfo, div.intpelda input{
+display:none;
+	}
+

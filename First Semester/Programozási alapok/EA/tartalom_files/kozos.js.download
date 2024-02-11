@@ -1,0 +1,9 @@
+function ujablak() 
+{
+html = window.open("","","resizable=1,scrollbars=1,width=600,height=400,screenx=50,screenY=50"); 
+} 
+function updatewin(input_form) 
+{ html.document.open("text/html"); 
+html.document.write(input_form); 
+html.document.close() 
+} 

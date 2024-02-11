@@ -1,0 +1,11 @@
+div#menu,div#navi,div#almenu	{font-size:90%;}
+div#tartalombal, div#lablec  	{font-size:100%;}
+.dobozfej, .dobozfej_feladat, .dobozfej_figyelem, .dobozfej_tipp {font-size: 80%;}
+.doboz .tart 			{font-size: 80%;}
+div.kod, div.kod .tart  {  font-size: 100%;}
+table.kodpeldaf  > td {font-size:100%;}
+table.parameterek td  {font-size:100%;}
+div.intpelda textarea {font-size: 100%;}
+code, span.parameter  {font-size: 110%;}
+div.vezerloelem {font-size: 90%;}
+div.vezerlocim {font-size: 80%;}

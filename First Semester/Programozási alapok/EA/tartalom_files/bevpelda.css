@@ -1,0 +1,53 @@
+/* A bevezetõ példában szereplõ táblázatok */
+
+#pelda1 
+{
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-transform: capitalize;
+	background-color: #99CCFF;
+	border: 5px double #000066;
+	width: 200px;
+	border-collapse:collapse;
+}
+
+#pelda1 th
+{
+	border: 1px solid #0000CC;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#pelda1 td
+{
+	margin: 0px;
+	padding:3px;
+	border-top: 1px none #0000CC;
+	border-right: 1px solid #0000CC;
+	border-bottom: 1px dotted #0000CC;
+	border-left: 1px none #0000CC;
+	background-color: #CCFFFF;
+}
+
+
+
+
+#pelda2 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	text-transform: capitalize;
+	color: #006600;
+	border-collapse:collapse;
+	background-image: url('design/tarthatter.png');
+	width: 180px;
+	border: 5px outset #CCFFCC;
+}
+
+#pelda2 td
+{
+	margin: 3px;
+	padding:6px;
+	border: 1px groove #009900;
+
+}
