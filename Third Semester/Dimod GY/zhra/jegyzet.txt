@@ -1,0 +1,39 @@
+polinom listás alak 0tól n-ig
+
+összeadás -> összeadjuk a listás alakokat
+
+Tvalami szorzás -> osszeszorozzuk azokat a hatványokat amiknek összeget valami és összeadjuk az egész ilyet
+
+Z valami felett -> mod valami
+
+deg(0) = minusz végtelen
+
+deg(f*g) = deg(f) + deg(g)
+deg(f+g) = max(deg(f), deg(g))
+
+osztás -> amíg nem lehet egyenlővé tenni a komponenseket 0val
+h(x) = az osztás fenti eredménye
+r(x) = az osztás lenti maradéka
+
+!!Hornernél összeadás
+
+egy sor felírható Q(x) = valami * x a sor indexnek megfelelő hatványon
+
+legalább xszeres gyök = x db 0
+
+Horner táblázatból szorzat -> lentről fel számok * (x-c)^hatványok csökkenő sorrendben
+
+deriválás összegnél -> külön deriváljuk mindkettőt majd összead
+deriválás szorzatnál -> f'g + fg'
+
+valahányszoros gyök deriválással -> konkrét a derivált ahol failel
+
+Legrangenál
+c,d -> lx = (x-c1)(x-c2)/(c0-c1)(c0-c2)
+f(x) = d0*l0 + .. + dn*ln
+
+Huffman Shannon a legnagyobb gyakoriság 0
+
+d(k) távolság a kódok között
+hiba jelző = d(k)-1
+hiba javítás = d(k)-1/2
