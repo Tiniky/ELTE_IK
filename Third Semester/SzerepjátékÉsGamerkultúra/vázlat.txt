@@ -1,0 +1,30 @@
+LiS
+X tini öngyilkosság
+X iskolai zaklatás
+X fegyvertartási jogok
+X megfigyelő kamerák
+X drogok
+X mentális egészség
+X fizikai fogyatékosság
+gyilkosság
+
+LiS: BtS
+X apa halála
+barát elvesztése (költözés)
+függőségek
+mostohaszülő
+iskolai felfüggesztés
+megcsalás
+zsarolás
+DnD!
+
+LiS: TC
+árvaság <- anya meghal, apa elhagyja a családot
+árvaház
+empátia: piros = anger, kék = sadness, lila = fear, arany = joy
+queer representiation
+mindent befolyásoló VállalkozóHatalom
+gyász
+utálni a saját gyereked
+Alzheimer
+LARP!!
