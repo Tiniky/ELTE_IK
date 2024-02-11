@@ -1,0 +1,100 @@
+    int N;
+    cin >> N;
+    string beki[N];
+    string felhasznalo[N];
+    int ora[N];
+    int perc[N];
+
+    for(int i=0; i<N; i++)
+    {
+        cin >> beki[i]; // BE vagy KI
+        cin >> felhasznalo[i]; //id
+        cin >> ora[i];
+        cin >> perc[i];
+    }
+
+    string aktiv[N]; // bejelentkezettek listaja
+    int hossz = 0; //a fenti lista hossza
+    int kezdora[N];
+    int kezdperc[N];
+    int vegora[N];
+    int vegperc[N];
+    int aktivdb; // intervallumok dbja also a fenti listak hossza
+    string kilepett[N];
+    int kilepetthossz;
+    bool aktiv = false;
+    
+    if(beki[0]=="BE")
+    {
+        kezdora[0]=ora[0];
+        kezdperc[0]=perc[0];
+    }
+    else // ha KI az elso bemenet
+    {
+        kezdora[0]=0;
+        kezdperc[0]=0;
+    }
+
+    for(int i=0; i<N; i++)
+    {
+        bool bent = false; // ha false akkor nincs benne
+        for(int j=0; j<hossz; j++)
+        {
+            if(beki[i]=="BE" && felhasznalo[i]==aktiv[j])
+            {
+                bent = true;
+            }
+
+            else if(beki[i]=="KI" && felhasznalo[i]==aktiv[j])
+            {
+                bent = true;
+                aktiv[j]="";
+            }
+
+            else if(beki[i]=="KI" && felhasznalo[i]!=aktiv[j])
+            {
+                bent = true; // bar nincs benne igy nem kell kiszedni se
+                kezdora[0]=0;
+                kezdperc[0]=0;
+            }
+
+        }
+
+        if(bent==false) // bekerul a listaba ha nincs benne
+        {
+            aktiv[hossz]=felhasznalo[i];
+            hossz++;
+        }
+
+        bool ures = true;
+        for (int j=0; j<hossz; j++) // empty check
+        {
+            if(aktiv[j]!="")
+            {
+                ures = false;
+            }
+        }
+
+        if(ures == true)
+        {
+            vegora[aktivdb]=ora[i];
+            vegperc[aktivdb]=perc[i];
+            aktivdb++;
+            if(i+1<N) // egybol megadodik a kovetkezo intervallum eleje
+            {
+                kezdora[aktivdb]=ora[i+1];
+                kezdperc[aktivdb]=perc[i+1];
+            }
+
+        }
+    }
+
+    cout << aktivdb;
+
+    for(int i=0; i<aktivdb; i++)
+    {
+        cout << " " << kezdora[i] << " ";
+        cout << kezdperc[i] << " ";
+        cout << vegora[i] << " ";
+        cout << vegperc[i];
+    }
