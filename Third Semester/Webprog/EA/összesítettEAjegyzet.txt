@@ -1,0 +1,143 @@
+kifejezes = daze
+"yare yare kifejezes" = yare yare kifejezes
+`yare yare ${kifejezes}` = yare yare daze
+
+tömb műveletek
+pop - végéről
+push - végére
+shift - elejéről
+unshift - elejére
+
+tömbfüggvények
+forEach
+some	<- eldöntés
+every	<- optimista eldöntés
+map
+filter
+reduce
+find
+findIndex
+
+objektumoknál
+obj.key == obj['key']
+
+classoknál
+constructor()
+
+querySelector(valami) vagy querySelector(#valami) vagy querySelector(.valami)
+createElement
+elem.addEventListener('click', ()=>{})
+
+classList tulajd
+add
+remove
+toggle
+contains
+
+események: click, mousemove, mousedown, mouseup, input, keydown, keyup, keypress, submit, scroll
+általános: type, target
+egéreseménynél: screenX, screenY, buttons
+billentyűzeteseménynél: key, code, altKey, ctrlKey
+
+event.preventDefault()	<- megakadályozás
+
+delegálás:
+function delegate(parent, type, selector, handler) {
+
+  function delegatedFunction(event) {
+    const handlerElement = this;
+    const sourceElement = event.target;
+
+    const closestElement = 
+      sourceElement.closest(selector);
+
+    if (handlerElement.contains(closestElement)) {
+      const targetElement = closestElement;
+      handler.call(targetElement, event);
+    }
+  }
+
+  parent.addEventListener(type, delegatedFunction);
+}
+
+MouseEvent
+elem.dispatchEvent(event)	<- esemény kiváltás
+
+Imperatív 	VS 	Deklaratív megközelítés
+- van belső állapot	- nincs belső állapot
+- direkt manipuláció	- HTML generálók
+
+fizikai csoportosítás téma szerint
+
+egységbezárás: globális változó és metódusok VAGY objektum VAGY osztály VAGY összetett fg
+
+setTimeout - clearTimeout
+setInterval - clearInterval
+
+localStorage
+sessionStorage
+
+regexp = reguláris kifejezés
+
+canvas
+koordináta rendszere: (0,0) a bal felső sarokban
+ctx.translate(x,x)	<- eltolja annyival aka lehet 0,0 a közepén
+
+animáció
+sprite
+
+window
+
+szinkrin művelet = meg kell várni a másik művelet végét
+aszinkrin művelet = elindítható a másik vége előtt
+
+ajax - háttérben komunikál a szerverrel
+
+kivételkezelés	=> try - catch
+
+URL felépítése: séma(http) + domain név(www.asdasd.hu) + port(:27) + elérési út(/asd/asd1/asd.html) + paraméterek(?key1=asd10&key2=asd27) + anchor(#asd)
+
+http metódusok: get. post, delete, patch, head, put, trace, options, connect
+
+php = hypertext preprocesszor
+változók neve $
+kell ;
+új operátorok:
+	.	összead stringeket
+	<=>	összehasonlítás, kisebb: -1, megegyezik: 0, nagyobb: 1
+	??	az első nem null
+	?:	ugynaz mint $a ? $b : $b
+
+asszociatív tömb:
+$rekord = [
+	egy => 1
+	ketto => 2
+]
+$rekord[egy] //1
+
+adatszerkezet = rekordok tömbje
+
+php fileban: <?php ... ?>
+kiírás: echo, print
+
+urlbe is lehet adatot bevinni ? után név-érték párok & el elválasztva
+
+űrlap beküldése:
+<form>, metódusa: POST vagy GET (ezt lehet urlből is)
+
+állapottartás
+
+AJAX/fetch
+
+isset <- szkriptbeli változó
+
+
+Fájlműveletek
+file_get_contents($filename)	<- beolvas
+file_put_contents($filename, $data)	<- beír
+
+Sorosítás
+serlialize(szöveg), unserialize(érték), json_en/decode
+
+
+Storage

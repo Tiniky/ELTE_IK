@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA3</title>
+</head>
+<body>
+    <style>
+        .done:before {
+          content: "✓ ";
+        }
+        </style>
+        New todo:
+        <input>
+        <button>Add</button>
+        <ul>
+          <li>first</li>
+          <li>second</li>
+          <li>third</li>
+        </ul>
+        <script>
+        document.querySelector("button").addEventListener("click", newTodoClick);
+        function newTodoClick(e) {
+          // input
+          const newTodo = document.querySelector('input').value;
+          // output
+          document.querySelector('ul').innerHTML += `<li>${newTodo}</li>`
+        }
+        
+        document.querySelector("ul").addEventListener("click", onListClick);
+        function onListClick(e) {
+          if (e.target.matches("li")) {
+            // input
+            const li = e.target;
+            // output
+            li.classList.toggle("done");
+          }
+        }
+        </script>
+</body>
+</html>
