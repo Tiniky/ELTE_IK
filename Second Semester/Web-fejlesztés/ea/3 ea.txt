@@ -1,0 +1,40 @@
+//Használhatósági irányelvek
+- elégítsük ki a felhasználói elvárásokat
+- hasznos tartalom
+- ne terheljük túl a rövid távú memóriát
+- elemek jó helyre kerüljenek
+- beszédes címsor
+- jól olvasható szöveg
+- megfelelő betűtípus	<- talpatlan ha lehet
+- pozitív első beynomás
+- magyarázó ábrák
+- csoportosítsuk az összefüggő elemeket
+- akadálymentesítés
+- prototípus	<- drótvázterv
+
+//Webhely céljának közlése
+- cég neve és logója megfelelő méretben
+- szlogen
+- miért értékes a weblap, miben különbözik
+- emeld ki a feladatokat
+- hivatalos kezdőlap	<- megkülönböztethető legyen a többitől
+- visszajelzési lehetőség	<- NE kérje belső információt
+- tömör megfogalmazás
+- mozaikszavak megmagyarázása
+- jól elkülönült linkek
+- fő navigációs terület
+- keresés
+- ne legyen felugró ablak
+- nem kell üdvözlés
+
+//UX tervezés
+Implementációs fázis
+- folyamatos értékelés
+- szoros együttműködés a fejlesztővel
+- felhasználói tesztek
+
+Bevezetési fázis
+- felhasználói visszajelzések
+- helyszíni kutatás
+- célok ellenőrzése tesztekkel
+

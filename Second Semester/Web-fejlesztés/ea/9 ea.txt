@@ -1,0 +1,25 @@
+//Gyengénlátó felhasználók
+- nagyító program
+- felolvasó program
+- nem ugyanaz mint a vakoknál!!
+
+//Oldal ovlashatósága
+- világosságérzékelés
+- kontrasztkülönbség
+- animációk és kontextusváltás
+
+//Megoldás
+- képernyőnagyítók
+
+
+//Színtévesztő, színvak felhasználók
+- ne csak a szín hordozza az információt
+
+//Süket felhasználók
+- korlátozott szókincs
+- felirat
+
+//Mozgáskorlátozott felhasználók
+- szommozgással irányítható kurzoz
+- speciális bemenet
+- epilepszia

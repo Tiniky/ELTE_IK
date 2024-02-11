@@ -1,0 +1,8 @@
+//Formázásmodell
+
+						      top
+	  left					tartalom doboz						right
+						     bottom
+
+
+mindent lehet costumizeolni lol

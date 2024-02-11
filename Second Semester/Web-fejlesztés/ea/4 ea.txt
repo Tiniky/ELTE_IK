@@ -1,0 +1,40 @@
+//Stíluslapok
+Alapfogalmak
+- HTML DOM	<- hozzáférést enged, manipulálható javascriptel
+- Fastruktúra
+	- Gyökér elem 	<- minden más elem belőle ágazik ki
+	- Szülő-Gyermek kapcsolat	<- közvetlen kapcsolat
+	- Ős-Leszármazott	<- nem közvetlen kapcsolat
+	- Testvérek	<- egyenlőek, ugyanattól a szülőtől
+	- Első gyerek
+- viewport	<- oldal láthatósága, csak akkora legyen amekkora az eszköz
+
+CSS = Cascading Style Sheets/Stílusszabványok
+Előnyei
+- sok formázási lehetőség
+- akadálymentesslg szempontjából is előnyös
+- könnyen karban tartható
+
+Típusok
+- szerző által készített stíluslapok
+- felhasználói stíluslapok	<- pl gyengén látóknak
+- böngészőben definiált stíluslapok
+
+Szintaxis
+=> szabályok létrehozása
+- szelektor	<- kijelöli az elemeket
+- deklaráció blokk	<- érték párok kettősponttal elvásztva, ha több akkor ; az érték párok között
+- megjegyzések	<- /* */ közé, lehet több sor
+- csatolási lehetőség
+	- link
+	- import
+	- beágyazás
+	- inline	<- elemenként állítható
+- deklarációk csoportosítása	<- könnyebben átlátható legyen
+
+referancia pixel = nem a fizikai pixel, hanem csak egy referencia rá
+
+- retina megjelenítő	<- nem lesz pixeles
+
+fallback = kétszer adunk értéket ha bejön valami új, a butább böngésző az elsőt fogja alkalmazni, az okosabb az utóbbit
+initial = alapértelmezett értékek

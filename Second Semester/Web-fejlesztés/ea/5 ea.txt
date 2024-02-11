@@ -1,0 +1,26 @@
+//Öröklődés = inherit
+- a tulajdonságok egy része öröklődik a szülő elemektől		<-nem a relatív értéket adja át	
+=> érdemes a BODY-ba rakni
+pl. szegély nem öröklődik
+
+Kijelölök/Szelektorok
+- összekapcsolt szelektor = leszármazás
+
+Osztályok = class
+- .osztálynév pl. .fontos
+
+Egyedi azonisito
+pl. #azonosito
+
+Link
+a:link		<-link, ami még nem volt látogatva
+a:visited	<-látogatott link
+a:active	<-aktív link
+a:hover		<-fölés visszük az egeret
+
+* szelektor = mindent kijelöl
+
+ha valamit később is deklarálunk az felülírja az előzőt
+
+//Médiatípusok
+-nyomtatásban is optimális

@@ -1,0 +1,24 @@
+//Akadálymentesség
+-könnyebb legyen a hozzáférés
+pl látáskönnyítés
+
+//WCAG = Web Content Accessibility Guidelines
+=> Wev Akadálymentesítési Útmutató
+
+Alapelvek
+- észlelhetőség
+- működtethetőség
+- érthetőség
+- robusztusság
+
+3szint
+- A	<- kötelező minimum
+- AA	<- megcélzandó szint
+- AAA	<- legszigorúbb feltételek
+
+//Vak felhasználók
+- felolvasóprogram
+- szövegalternatívák
+- blokkok elkerülése
+- hangszabályozás
+- videók akadálymentesítése	<- teljes forgatókönyv

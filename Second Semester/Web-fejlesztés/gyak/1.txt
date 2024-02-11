@@ -1,0 +1,78 @@
+Intranet
+-privát
+-külvilág fele zárt
+-internet protokoll
+-az internettől tűzfal választ el
+
+Extranet
+-kettő vagy több intranet összekapcsolása
+
+Internet
+-publikus
+
+Tim Berners-Lee => WWW, HTML
+
+World Wide Web = világHÁLÓ
+
+Web építőkövei
+-URL = azonosító
+-HTTP protokoll = leírja hogyan történjen a kommunikáció
+-webszerver = válaszol a HTTP kérésére
+-HTML = oldal publikálás
+-webböngésző = megjeleníti az oldalt
+
+böngészőprogramok: Google Chrome, Mozilla Firefox, Safari, Opera, Microsoft Edge, Internet Explorer
+
+weboldal megjelenít képeket, videókat
+
+Akadálymentes weboldal fontossága: képernyőolvasó program is lássa
+
+//URL = Uniform Resource Locator: hivatkozik a hálózati erőforrásokra
+Protokoll + Tartománynév + Elérési út/Portszám
+
+Tartománynév = domain
+TLD: legfelső szintű tartomány pl. .hu, .org, .com
+SLD: második szintű tartomány pl. elte, bme
+Hostname: állomásnéve
+
+Útvonal
+- opcionális
+- ha nincs hibaüzenet vagy mappa elérési út
+
+Lekérdezési karakterlánc
+- ? kulcs érték párok
+
+Erőforrásazonosító
+- opcionális
+- az oldal egy részére hivatkozik
+
+//URN = Uniform Resource Name
+- nem változik
+- egyedi
+- továbbra is szükséges az URL
+
+//URI = Uniform Resource Identifier
+=> URL + URN = URI
+
+- a speciális karektereket át kell kódolni
+
+//Statikus weboldal vs Dinamikus weboldal
+HTTP request -> HTTP response
+
+Kliens-szerver modell
+Protokoll = szabályrendszer
+
+8 HTTP protokoll
+HEAD - visszaadja a headert
+GET - kezdeményezi a megadott erőforrás letöltését
+POST - feldolgozandó adatot küld a szerverre
+PUT - feltölti a megadott erőforrást
+DELETE - törli a megadott erőforrást
+TRACE - visszaküldi a kapott kérést
+OPTIONS - visszaadja a szerver által támogatott HTTP metódusok listáját
+CONNECT - átalakítja a kérést transzparens tunellé
+
+404es oldalak személyre szabhatók
+=> státuszkódok
+
+HTML = Hyper Text Markup Language

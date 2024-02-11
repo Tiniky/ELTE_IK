@@ -1,0 +1,17 @@
+//Felhasználóo élmény, Web ergonómia
+ergonómikus = tudatosan fogyelembe veszi a felhasználó szükségleteit
+használhatóság = mennyire használható	<- teszt
+Graphical User Interface (GUI) = grafikus felhasználóit felület
+User Experience (UX) = felhasználói élmény
+
+//UX aspektusai
+- Valuable/Értékes
+- Useful/Hasznos
+- Accessible/Hozzáférhető
+- Usable/Használható
+- Deirable/Vonzó
+- Findable/Megtalálható
+- Creditable/Hiteles
+
+affordancia = utal a tárgy felhasználására
+

@@ -1,0 +1,12 @@
+VSC-ben
+! vagy html:5	<- template
+
+<html lang="hu">	<- nyelv
+
+karakter kódolás maradjon UTF-8
+
+kötelező title tag
+
+kijelölni a szöveget -> selection -> add cursors to line ends -> Home = előreugrik -> End = végéreugrik
+
+kijelölni minden egyformát => kijelölni amit kell + ctrl + F2

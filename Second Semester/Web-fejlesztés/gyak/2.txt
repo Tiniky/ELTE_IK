@@ -1,0 +1,89 @@
+//Stíluslap csatolás
+- lapon belüli beágyazás <!-- --> <-html komment
+- hivatkozás külső stíluslapra
+- importálás
+- beágyazott in-line megadás
+
+//Médiafüggő stíluslap
+- nyomtatható
+- más eszközön máshogy néz ki
+
+HTML5 ~= HTML + CSS + JS
+
+Struktúra
+<html> </html>
+=> minden nyitás <> közé, a zárás </ > közé
+
+gyakori tagek: header, nav, article, aside, footer, menu, figure, time..
+
+globális attribútumok és html tagek használhatók
+
+- link kapcsolatok
+- úrlapmező
+- vászon
+
+//Webes alkalmazások ELŐNYEI
+- elérhető mindenhol
+- különböző operációs rendszerekkel is elérhető
+- könnyű frissíteni
+
+//Webes alkalmazások HÁTRÁNYAI
+- aktív internet kapcsolat kell
+- biztonsági kérdések
+- licensz problémák
+- nem biztos, hogy működik minden webböngészőben
+
+
+
+//DRÓTVÁZTERV készítés
+=> kis pontosságú webdesign ábrázolás, egyszerű, szín nélküli
+
+Mockup = a drótváz és a prototípus között helyezkedik el pontosságban
+
+Prototípus = interaktív szimulációja a végleges weboldalnak
+- lehet:
+    - low fidelity: drótváz prototípussá
+    - high fidelity: mockup prototípussá
+
+//Drótvázterv
+Előnyei:
+- vizuális reprezentáció
+- korai stádiumban lehet felhasználói teszteket végezni
+- az igényeknek megfelelő oldalterv készülhet
+
+Hátrányai:
+- a megrendelő nem mindig érti a koncepciót
+- a dizájnernek pontosítani kell
+- a tényleges tartalom nem biztos, hogy belefér
+
+//Digitális drótvázterv ELŐNYE
+- törlés, áthelyezés, átméretezés
+- sablonok, minták kéznél vannak
+
+//Digitális drótvázterv HÁTRÁNYA
+- lasabb, nehezbben átlátható
+- nagy a kísétés a túlzott kidolgozásra
+
+//Mi NINCS a drótvázon
+- színárnyalatok
+- betűtípusok
+- végleges képek
+- pontos arányok és elhelyezések
+
+//Hogyan?
+1) Inspiráció gyűjtés
+2) Saját tervezési folyamat
+3) Eszköz választás: Mockflow
+4) Dobozos elrendezés
+5) Információs hierarchia
+6) Finomhangolás a szürke árnyalataival
+=> alacsony kidolgozottság
+
+//Tipikus oldalfelépítés
+Oldalrészek:
+- fejléc/header: minden oldal tetején, név, logó
+- fő tartalom/main: legnagyobb terület
+- oldalsáv/slidebar: alternatív navigáció
+- lábléc/footer: minden oldal alján
+
+Elrendezések: 1, 2 vagy 3 oszlopos megjelenítés

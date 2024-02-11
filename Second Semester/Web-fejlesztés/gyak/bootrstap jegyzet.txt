@@ -1,0 +1,130 @@
+//Viewport
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+- user-scalable		<- engedi a felhasználónak h nagyítson
+vw = viewport width
+vh = viewport heigth
+
+//Alkalmazkodó tervezés
+- folyékony rácsrendszer		<- %ban rögzített adat
+- <link> tag
+- @media szabály
+pl
+@media screen and (min-width: 400px) and (max-width: 700px){
+	div#fontos{	
+		float: right;
+	}
+}
+
+//Mobilefirst
+- a hüvelykujj > egér => fontos a gombok mérete
+
+//Bootstrap
+- segít a css és js hivatkozásoknál
+- oldalrendezés: fix (class ="container") vagy folyékony(class="container-fluid")
+
+//Rács használata
+- 12 oszlop
+- oszlop összevonás: a col-x	<-x a sorok száma
+pl 3 egyforma oszlop
+<div class="container">
+	<div class="row">
+		<div class="col-4"></div>
+		<div class="col-4"></div>
+		<div class="col-4"></div>
+	</div>
+</div>
+- ha a felosztás meghaladja a 12t új sorba kerül
+- eszközök csoportosítása: sm, md, lg, xl, xxl
+- lehet eszköz függően összevonni
+pl. <div class="col-sm-12"></div>
+- lehet általánosítani és egyes eszközöknél változtatni
+pl. <div class="col-12 col-lg-6"></div>
+
+//fix ÉS folyékony
+egy adott töréspontig folyékony fölötte fix
+pl. container-lg
+
+//Szövegformázás
+text-lowercase: kisbetű
+text-uppercase: nagybetű
+text-capitalize: nagy kezdőbetű
+fw-bold: félkövér	= <b>
+fst-normal: normál
+fst-italic: dőlt	= <i> 
+
+//Színek és háttérszínek
+class="text-.."	
+class="bg-.."
+<- primary, secondary, success, danger, warning, info, light, dark + transparent
+
+//Szegélyek és Margók
+- top, right, bottom, left
+- barról jobbra írás
+<p dir="ltr">
+=> left= start és right= end
+
+- border: mind a 4 oldal szegély
+- border-x	<-top, bottom, start, end
+- szegély szín ugyanaz mint a háttérnál
+pl. class="border border-primary"
+
+- rounded: mind a 4 sarkat lekerekíti
+- rounded-x	<-top, bottom, start, end
+- rounded-circle: kör/elipszis alak
+- rounded-pill: erősebb kerekítés mind a 4 sarkon
+
+- vastagság beállítható 1-5ig
+pl class="border border-3"
+
+m = külső margó
+p = belső margó
+t = felső
+b = alsó
+s = start
+e = end
+x = vízszintes
+y = függőleges
+- méret: 0,1,2,3,4,5, auto
+pl. class="mt-2 p-3"	<-a felső margó 2es, a belsőnél mind a négy oldalon 3as
+
+//Méret megadás
+- szélesség = w-x
+- magassűg = h-x
+<= 25%, 50%, 75%, 100%, auto
+
+//Megjelenítési mód
+d-block = blokkszintű megjelenítés
+d-inline = sorbeli megjelenítés
+d-none = elem megjelenésének megtiltása
+pl. d-sm-none	<-nem jelenik meg kis képernyőn
+
+//Folyékony képek
+class="img-fluid"
+
+//Szövegigazítás
+text-start = balra igazítás
+text-center = középre igazítás
+text-end = jobbra igazítás
+
+//Kép igazítás
+class="d-block vmi-auto"	<- vmi = ms(jobb), me(ball), mx(közép)
+
+//Lebegtetés
+float-start = ballra
+float-end = jobbra
+float-none = nincs
+clearfix = nem fog kilógni a kép
+
+//Táblázatok
+table osztály
+table-striped <- csíkos
+table-border <- szegély
+table-dark <- sötét
+table-responsive
+
+//Bootsrap komponensek
+- figyelmeztető üzenetek
+- gombok
+- navigációs elemek
+- legördülő menük
+- lapozható média objektumok
