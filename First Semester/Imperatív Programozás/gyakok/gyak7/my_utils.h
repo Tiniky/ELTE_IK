@@ -1,0 +1,2 @@
+
+int *nagyobb(int*, int*);

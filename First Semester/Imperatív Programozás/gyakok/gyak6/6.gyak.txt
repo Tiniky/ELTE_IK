@@ -1,0 +1,176 @@
+
+//9.program (what-0.c)//
+
+#include<stdio.h>
+
+void fun(int *p) 	//itt lehetne *a is
+{ 
+    // p<- lokalis, es nem egyenlo a kulso p-vel
+    int q = 10; 
+    p = &q; 
+}	 
+	
+int main() 
+{ 
+    int r = 20; 
+    int *p = &r; 
+    fun(p); 		//a = p; mintha fgv-t teljesen bemásolnék és beletennék egy olyan sort h a = p
+    printf("%d", *p); 
+    return 0; 
+} 
+
+20-at ír ki
+amikor egy fgv-ben megadok egy paramétert az lemásolódik lokálissá
+a külső változó érintetlen, csak akkor használtuk amikor odaadtuk paraméterként
+
+//10.program (what-1.c)//
+
+#include<stdio.h> 
+
+int main() 
+{ 
+    char a[] = { 'A', 'B', 'C', 'D' }; 
+    char* p = &a[0]; 			//ekvivalens azzal, h ha csak a-t írom oda, char* p = a;
+    *p++;				//itt az 1. indexre mutat
+    printf("%c %c %c\n", a[0], a[1], a[2]);    
+    printf("%c \n", *++p);		//kiíratjuk a 3.elemet
+    printf("%c %c %c\n", a[0], a[1], a[2]);
+    printf("%c \n", --*p);    		//először kiveszem a C értéket, és nem a pointert hanem az értéket csökkentem, azaz a C-ből B lett, nem mindegy, hogy hova teszem a *-ot
+    printf("%c %c %c\n", a[0], a[1], a[2]);
+
+    return 0;
+} 
+
+
+//11.program (what-2.c)//
+
+#include <stdio.h> 
+
+int main() 
+{ 
+    int a = 36; 
+    int* ptr; 
+    ptr = &a; 
+    printf("%p %p", *&ptr, &*ptr); 	//először veszem a pointerünket és annak a memóriacímét, ezt dereferálom aka veszem a pointerünket, redudnás uaz mintha ptr-t írnánk, másodiknál veszema pointer értékét azaz az a vált értékét, ezt 					megkérdezem h hol van a memóriában, uaz mint a ptr megint
+    return 0; 
+} 
+
+//12.program//
+
+int main() {
+
+}
+
+main eddig 0 paraméteres fgv volt de lehet
+
+#include <stdio.h>
+
+int main(int argc, char** argv) {		//char** olyan mint egy tömb amibe stringeket tárolok
+	for (int i=0; i <argc; ++i); {
+		printf("argv[%d]: %s\n", i, argv[i]);
+	}
+}
+
+futtatásnál:
+argv[0]: ./a.out
+
+argv a futtatásnál megadott kapcsolókat tárolja, argv a hossza, argc mindig legalább egy, maga a parancs amivel futattunk mindig benne lesz
+
+//13.program//
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {		
+	int sum=0;
+	for (int i=1; i <argc; ++i); {
+		sum += atoi(argv[i]);		// atoi kér egy stringet bemenként és visszatér i-vel
+	}
+	printf("A szamok osszege: %d\n", sum);
+}
+
+nem száll el a program ha nem egy számot kap paraméterként
+
+rekurzió: leállási feltételre kell nagyon figyelni
+
+//14.program (recursion.c)//
+
+#include <stdio.h>
+
+int factorial(int n) {
+	if (n == 0) {				//ha kivesszük az if-et, segmentation faultot kapunk, kifutunk a memóriából
+		return 1;
+	} else {
+		return n * factorial(n-1);
+	}
+}
+
+int main() {
+	printf("factorial(%d) == %d\n", 5, factorial(5));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
