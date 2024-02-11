@@ -1,0 +1,26 @@
+int main(int argc, char *argv[])
+{
+    if(argc <= 1)
+    {
+        //do something
+    }
+    else
+    {
+        for(int i=1; i<argc; i++)
+        {
+            char *file = argv[i];
+            FILE *fptr = fopen(file, "r");
+
+            if(fptr == NULL)
+            {
+                fprintf(stderr, "Nem sikerult megnyitni a file-t");
+                continue;
+            }
+
+            //do something
+            fclose(fptr);
+        }
+    }
+
+    return 0;
+}
