@@ -1,0 +1,20 @@
+--fagyott?
+tétel: eldöntés
+BE: N (term szám), T (egész szám)N
+KI: L (logikai)
+EF: -
+UF: L := létezik i=1től Nig Ti <=0
+
+--monoton csökken
+tétel: eldöntés
+BE: N (term szám), x (rac szám)
+KI: L (logikai)
+EF: -
+UF: L:= minden i=1..N xi > xi+1
+
+--hány, nagyobb az átlagnál
+tétel: megszámlálás ÉS sorozatszámítás
+BE: N (term szám), x (rac szám)N
+KI: db (term szám)
+EF: 
+UF: db := summa i=1től Nig 1 ahhányszor xi > (summa i=1től Nig xi) /N
