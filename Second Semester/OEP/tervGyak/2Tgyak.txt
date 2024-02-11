@@ -1,0 +1,4 @@
+seq	<- tömb elemeit tartalmuk szerint rendezzük
+log search = logaritmikus keresés
+
+kör benne plusz = plusz művelet

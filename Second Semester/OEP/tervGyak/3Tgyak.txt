@@ -1,0 +1,10 @@
+//Asszociatív tömb
+kulcs-adat párok 	<- rendezett sorozatok
+
+A = (seq:Element*, key:Z, l:L, ind:N)
+Ef..
+Uf..	=> logSearch
+
+//Prioritásos sor
+- rendezett vs rendezetlen
+- tesztelés, minden függvényre teszteset

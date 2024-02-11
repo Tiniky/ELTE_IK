@@ -1,0 +1,15 @@
+ Típusdefiníció 4 részes táblázat
+-> BalFelső: típus neve
+-> BalAlsó: adatok, amikkel reprezentálni lehet a típust
+-> JobbFelső: műveletek
+-> JobbAlsó: implementáció
+
+Osztálydiagram 3 soros táblázat
+-> Fent: típus neve
+-> Közép: értékek	<- lehet privát vagy publikus
+-> Lent: függvények	<- többnyire publikus
+
+Specifikáció
+A = állapottér
+Ef = előfeltétel
+Uf = utófeltétel
