@@ -1,0 +1,26 @@
+//Portál-fantasy
+- klasszikus példa: Narnia, Óz
+- kortárs példa: Harry Potter, Az Úr sötét anyagai (Az arany iránytű,..)
+- virtuális portálfantasy: Ready Player One, Tron
+- isekai: Cautious Hero, KonoSuba
+
+Alix Harrow: Egy boszorkány útmutatója a meneküléshez
+	- a könyvtárosok boszorkányok
+	- a könyvek élnek
+	- vannak szigorúan titkos könyvek
+	- eszképizmus
+
+// A portál fantasy matematikája
+V <- elérhető a mi világunkból
+VV <- egy olyan világ, ahonnan elérhető a V világ
+
+VV -> V 	<- Tranzitív
+= ha átléptünk egy világba és onnan van portál máshova, át tudunk menni oda is
+
+V -> V		<- Reflexív
+= ha a V világban vagyunk akkor a V világ elérhető számunkra
+
+(V)@ <-> (@)V	<- Szimmetrikus
+= ha az aktuális világból elérhető a V világ akkor a V világból elérhető az aktuális világ
+
+=> a világok egymással ekvivalencia relációban állnak

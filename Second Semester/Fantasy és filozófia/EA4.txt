@@ -1,0 +1,48 @@
+//Formalista meseképlet
+- Georges Polti: 36 drámai szituáció
+- Vlagyimir Propp: A mese morfológiája
+- Joseph Campbell: Az ezerarcú hős
+- Christopher Vogler: The Writer's Journey
+
+//A hős útja
+- Campbell: alaphelyzet	-> alászállás -> visszatérés
+	- kalandra hívás
+	- a kaland visszautasítása
+	- természetfeletti segítség
+	- első küszöb átlépése
+	- próbatételek
+	- megdicsőülés
+	- végső adomány
+	- visszatérés megtagadása
+	- menekülés
+	- külső segítség
+	- visszatérés
+	- szabadon élni	<- végső adomány hatása
+
+- Volgler:
+	- kalandra hívás
+	- visszautasítás
+	- találkozás a mentorral
+	- első küszöb/ elkötelezettség
+	- próbák, szövetségesek, ellenfelek
+	- történet középpontja
+	- végső megpróbáltatás	<- megtapasztalja a halált és az újjászületést
+	- jutalom
+	- visszaút
+	- feltámadás
+	- visszatérés
+
+- A monomítosz
+	- hívás
+	- visszautasítás
+	- mentor
+	- első küszöb	<- nincs visszaút
+	- próbák
+	- alászállás
+	- megpróbáltatások
+	- feltámadás/jutalom/visszatérés
+
+- általánosított hollywoodi változat
+	I felvonás: alapkonceptus -> sorsdöntő incidens -> első küszöb/plot point
+	II felvonás: konfrontáció -> fokozódó nehézségek -> nő a tét -> plot point: krízis
+	III felvonás: megoldás
