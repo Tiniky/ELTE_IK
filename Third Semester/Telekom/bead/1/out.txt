@@ -1,0 +1,7 @@
+1. igény foglalás: A<->C st:1 - sikeres
+2. igény foglalás: B<->C st:2 - sikeres
+3. igény felszabadítás: A<->C st:5
+4. igény foglalás: D<->C st:6 - sikeres
+5. igény foglalás: A<->C st:7 - sikertelen
+6. igény felszabadítás: B<->C st:10
+7. igény felszabadítás: D<->C st:10

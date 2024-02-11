@@ -1,0 +1,13 @@
+HA VALAMILYEN INFORMÁCIÓ NINCS MEGADVA, AKKOR AZ RÁD VAN BÍZVA!
+
+Pontozás:
+1) alfeladatra max. 4 pont
+2) alfeladatra max. 1 pont
+3) alfeladatra max. 1 pont
+4) alfeladatra max. 4 pont
+(Azaz összesen 10 pontot lehet szerezni. Az eredmény 5 pont alatt elégtelen (1).)
+
+1) Készíts egy szerver-kliens alkalmazást, amely TCP protokollt használ. A szerver egy "Math" szerver, amellyel az f(x)=3x+4 illetve a g(x)=(2^x)-1 függvények helyettesítési értékeit lehet kiszámoltatni. A kliens ('f',int) vagy ('g',int) alakkal tud számítást kérni, ahol az int az a szám amely helyre a behelyettesítést kéri. A szerver csak 0 és 30 közötti x-ekre legyen hajlandó számítást végezni. A válasz üzenetek ("OK",int) (int a kiszámított érték), amennyiben 0 és 30 közti helyre szólt a kérés és ("HIBA",0), amennyiben nem, az üzenetek formátuma mindkét irányba 'struct' vagy 'json' (az egyiket kell kiválasztani).
+2) Az elküldendő számok tetszőleges json fájlból töltődnek be. A kliens indításakor kell beolvasni.
+3) A szerver legyen képes kiszolgálni egyszerre több klienst is. Ezt a select függvény segítségével oldjad meg!
+4) Készíts egy MathProxy alkalmazást, a kliens innentől a proxy-val kommunikáljon, mintha csak az lenne a szerver. A proxy továbbítsa a kliens üzeneteit a Math szervernek, de a forgalmat figyelve tanulja meg, hogy a kliens mely kéréséhez milyen válasz tartozik. Amennyiben egy kérést ('f',int) vagy ('g',int) párost látott már, akkor ne küldje tovább a szervernek, hanem válaszolja meg ő maga. A megjegyzett válaszokat 5 "saját" válasz után felejtse el. A proxy a szerverrel UDP protokollon keresztül kommunikáljon, a klienssel pedig ugyanazon a protokollon, amin az eredetileg a szerverrel tette.

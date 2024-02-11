@@ -1,0 +1,12 @@
+import socket, random, struct
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(('localhost', 1000))
+start = random.randint(21, 31)
+length = random.randint(1, 5)
+length = min(31 - start + 1, length)
+print(start, length)
+packer = struct.Struct('I I')
+client.sendall(packer.pack(start, length))
+data = client.recv(packer.size)
+data = packer.unpack(data)
+print("ELFOGAD" if data[0] == 1 else "ELUTASIT")

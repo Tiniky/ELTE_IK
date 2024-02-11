@@ -1,0 +1,13 @@
+HA VALAMILYEN INFORMÁCIÓ NINCS MEGADVA, AKKOR AZ RÁD VAN BÍZVA!
+
+Pontozás:
+1) alfeladatra max. 4 pont
+2) alfeladatra max. 1 pont
+3) alfeladatra max. 1 pont
+4) alfeladatra max. 4 pont
+(Azaz összesen 10 pontot lehet szerezni. Az eredmény 5 pont alatt elégtelen (1).)
+
+1) Készíts egy szerver-kliens alkalmazást, amely TCP protokollt használ. A szerver egy Projekt Manager (PM) szerver. A kliens egy Fejlesztő, aki szabadságot kérhet december második felére: megadja a kezdeti napot, amely véletlen szám 21 és 31 között, és a napok számát, amely véletlen szám 1 és 5 között. A PM 'struct' vagy 'json' (az egyiket kell kiválasztani) formátumban várja a kéréseket. A PM karban tart egy dictionary-t, ahol meg van adva, hogy december egy adott napján mennyi fejlesztő dolgozik éppen (azaz a dictionary kulcsai: 21,...,31 a decemberi napok, az értékei pedig a fejlesztők száma, ennek értékeit tetszőlegesen meg lehet adni). Egy adott napon legalább 5 fejlesztőnek dolgoznia kell. Ha ez nem teljesülne egy kérelemnél, akkor elutasítja a PM a szabadság kérést ("ELUTASIT"), egyébként elfogadja ("ELFOGAD").
+2) A dictionary parancssori argumentumból töltődik be. Pl. legyenek (2-től) a páros argumentumok a decemberi napok, (3-tól) a páratlan argumentumok az adott napi fejlesztők száma: python server.py 21 6 22 5 23 8 ... 31 6
+3) A PM legyen képes kiszolgálni egyszerre több Fejlesztőt is. Ezt a select függvény segítségével oldjad meg!
+4) Készíts egy második szervert is: a Human Resource Manager (HR) szervert. Ha egy Fejlesztő kérésnél a megadott napoknál elegendő fejlesztő dolgozik, akkor a PM megkérdezi a HR-t, hogy a Fejlesztőnek van-e még elegendő szabadsága: "ELEGENDO" üzenettel. A HR véletlenszerűen dönti el (random.randint(0,1), 0: "NEM", 1: "IGEN"). A PM ennek megfelelően válaszol a Fejlesztőnek. A HR UDP protokollon keresztül kommunikál.

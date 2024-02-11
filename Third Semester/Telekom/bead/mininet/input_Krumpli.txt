@@ -1,0 +1,21 @@
+r6 ip addr add 16.0.0.254/8 dev r6-eth0
+r6 ip addr add 192.168.98.1/24 dev r6-eth1
+r6 ip addr add 26.0.0.254/8 dev r6-eth2
+r7 ip addr add 16.0.0.253/8 dev r7-eth0
+r7 ip addr add 192.168.109.1/24 dev r7-eth1
+r7 ip addr add 36.0.0.254/8 dev r7-eth2
+r8 ip addr add 192.168.98.2/24 dev r8-eth0
+r8 ip addr add 192.168.109.2/24 dev r8-eth1
+r8 ip addr add 46.0.0.254/8 dev r8-eth2
+h1 ip route add default via 16.0.0.254 dev h1-eth0
+h2 ip route add default via 16.0.0.254 dev h2-eth0
+h3 ip route add default via 16.0.0.253 dev h3-eth0
+h4 ip route add default via 46.0.0.254 dev h4-eth0
+h5 ip route add default via 26.0.0.254 dev h5-eth0
+h6 ip route add default via 36.0.0.254 dev h6-eth0
+r8 ip route add 16.0.0.0/8 via 192.168.98.1 dev r8-eth0
+r6 iptables -A PREROUTING -t nat -i r6-eth2 -p tcp -m tcp --dport 122 -j DNAT --to-destination 16.0.0.1:22
+r6 iptables -A PREROUTING -t nat -i r6-eth2 -p tcp -m tcp --dport 222 -j DNAT --to-destination 16.0.0.2:22
+r6 iptables -A PREROUTING -t nat -i r6-eth2 -p tcp -m tcp --dport 322 -j DNAT --to-destination 16.0.0.3:22
+r6 iptables -A FORWARD -t filter -p tcp -s 16.0.0.0/8 -d 26.0.0.254/8 -j DROP
+r6 iptables-save
