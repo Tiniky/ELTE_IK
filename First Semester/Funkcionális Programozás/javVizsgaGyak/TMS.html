@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://tms.inf.elte.hu/student/task-manager/tasks/2170 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><link rel="icon" href="https://tms.inf.elte.hu/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><link rel="apple-touch-icon" href="https://tms.inf.elte.hu/logo192.png"><link rel="manifest" href="https://tms.inf.elte.hu/manifest.json"><title>TMS</title><link href="./TMS_files/6.cb99ed49.chunk.css" rel="stylesheet"><link href="./TMS_files/main.91c73917.chunk.css" rel="stylesheet"><style type="text/css">:root [id^="aswift_"], :root [id^="ad_zone_"], :root [id*="GoogleAds"], :root [href*="kuponmania.hu"], :root [class*="overlayBg"], :root IFRAME[id^="ETARGET-"], :root IFRAME[id*="ETARGET-hu-"], :root DIV[id^="googlead"], :root DIV[href*="ad.adverticum.net"], :root A[href*="internetespenzkereses.net"], :root A[href*="dealcent.com"], :root A[href*="daserver.ultraweb.hu"], :root A[href*="ad.netmedia.hu"], :root div[style*="box-shadow: rgb(136, 136, 136) 0px 0px 12px; color: "], :root adblock-modal-component, :root adblock-detect, :root [class][data-sitename][data-header-version] > div[id^="detection-block"], :root topadblock, :root span[id^="ezoic-pub-ad-placeholder-"], :root img[alt^="Fuckbook"], :root iframe[src*="mellowads.com"], :root div[style^="padding: 5px 15px !important"] > [style^="width: 100% !important; cursor: pointer !important;"], :root div[id^="zergnet-widget"], :root div[id^="traffective-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="rc-widget-"], :root div[id^="q1-adset-"], :root div[id^="proadszone-"], :root div[id^="lazyad-"], :root div[id^="gtm-ad-"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dmRosAdWrapper"], :root div[id^="div-gpt-"], :root div[id^="div-adtech-ad-"], :root div[id^="dfp-slot-"], :root div[id^="dfp-ad-"], :root div[id^="code_ads_"], :root div[id^="block-views-topheader-ad-block-"], :root div[id^="banner-ad-"], :root div[id^="advt-"], :root div[id^="advads_"], :root div[id^="adspot-"], :root div[data-campaign-name^="ads"], :root div[id^="ads300_600-widget"], :root div[id^="ads300_250-widget"], :root div[id^="ads300_100-widget"], :root div[id^="ads120_600-widget"], :root div[id^="adrotate_widgets-"], :root div[id^="adngin-"], :root div[id^="adfox_"], :root div[id^="ad_script_"], :root div[id^="ad_rect_"], :root div[id^="ad_position_"], :root div[id^="ad-server-"], :root div[id^="ad-inserter-"], :root div[id^="ad-cid-"], :root div[id^="acm-ad-tag-"], :root div[id^="YFBMSN"], :root div[id^="ADV-SLOT-"], :root div[data-test-id="AdDisplayWrapper"], :root div[data-spotim-slot], :root div[data-role="sidebarAd"], :root div[data-native_ad], :root div[data-mediatype="advertising"], :root div[data-id-advertdfpconf], :root div[data-content="Advertisement"], :root div[data-adunit], :root div[data-adunit-path], :root div[data-adservice-param-tagid="contentad"], :root div[data-adname], :root div[data-ad-wrapper], :root div[data-ad-underplayer], :root div[data-ad-placeholder], :root div[class^="zn-sponsored-outbrain-"], :root div[class^="sp-adslot-"], :root div[class^="proadszone-"], :root div[class^="pane-google-admanager-"], :root div[class^="native-ad-"], :root div[class^="lifeOnwerAd"], :root div[class^="largeRectangleAd_"], :root div[class^="kiwiad-popup"], :root div[class^="kiwiad-desktop"], :root div[class^="index_adBeforeContent_"], :root div[class^="index_adAfterContent_"], :root div[class^="index__adWrapper"], :root div[class^="block-openx-"], :root div[class^="backfill-taboola-home-slot-"], :root div[class^="articleAdUnitMPU_"], :root div[class^="advertisement-desktop"], :root div[class^="adsbutt_wrapper_"], :root div[class^="ads-partner-"], :root div[class^="adbanner_"], :root div[class^="ad_position_"], :root div[class^="SponsoredAds"], :root div[class^="ResponsiveAd-"], :root div[class^="PreAd_"], :root div[class^="Display_displayAd"], :root div[class^="Directory__footerAds"], :root div[class^="BannerAd_"], :root div[class^="AdhesionAd_"], :root div[class^="Ad__bigBox"], :root div[class^="Ad__adContainer"], :root div[class^="AdSlot__container"], :root div[id^="divAdvAD_"], :root div[class^="ad_border_"], :root div[class^="AdItem-"], :root div[class^="AdEmbeded__AddWrapper"], :root span[data-component-type="s-ads-metrics"], :root div[class^="AdBannerWrapper-"], :root div[class*="-storyBodyAd-"], :root div[data-subscript="Advertising"], :root div[class$="dealnews"] > .dealnews, :root div > [class][onclick*=".updateAnalyticsEvents"], :root display-ads, :root display-ad-component, :root bottomadblock, :root aside[id^="tn_ads_widget-"], :root aside[id^="adrotate_widgets-"], :root amp-embed[type="taboola"], :root amp-ad-custom, :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root a[target="_blank"][href^="http://api.taboola.com/"], :root div[class^="BlockAdvert-"], :root a[src^="https://www.utherverse.com/net/"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="https://zononi.com/"], :root a[href^="https://www.what-sexdating.com/"], :root a[href^="https://www.vewwrmp.com/"], :root a[href^="https://www.spyoff.com/"], :root a[href^="https://www.sheetmusicplus.com/?aff_id="], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="https://www.share-online.biz/affiliate/"], :root a[href^="https://www.securegfm.com/"], :root a[href^="https://www.rabbits.webcam/?id="], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://www.porngamesxxx.com/"][href*="?campaign="], :root a[href^="https://www.passeura.com/"], :root div[id^="amzn-assoc-ad"], :root a[href^="https://www.oboom.com/ref/"], :root div[itemtype="http://schema.org/WPAdBlock"], :root a[href^="https://www.nudeidols.com/cams/"], :root a[href^="https://www.mypornstarcams.com/landing/click/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://www.kingsoffetish.com/tour?partner_id="], :root div[data-adzone], :root a[href^="https://www.iyalc.com/"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://www.gambling-affiliation.com/cpc/"], :root a[href^="https://www.dollps.com/?track="], :root a[href^="https://www.clicktraceclick.com/"], :root a[href^="https://www.camsoda.com/enter.php?id="], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://www.bebi.com"], :root div[class^="pane-adsense-managed-"], :root a[href^="https://www.bang.com/?aff="], :root a[href^="https://www.awin1.com/cread.php?awinaffid="], :root a[href^="https://weedzy.co.uk/"][href*="&utm_"], :root a[href^="https://vod09197d7.club/"], :root a[href^="https://vo2.qrlsx.com/"], :root a[href^="https://vlnk.me/"], :root a[href^="https://unreshiramor.com/"], :root a[href^="https://uncensored.game/"], :root a[href^="https://ttf.trmobc.com/"], :root a[href^="https://trusted-click-host.com/"], :root a[href^="https://trf.bannerator.com/"], :root a[href^="https://traffic.bannerator.com/"], :root a[href^="https://trackjs.com/?utm_source"], :root a[href^="https://tracking.truthfinder.com/?a="], :root a[href^="https://tracking.gitads.io/"], :root a[href^="https://go.xxxjmp.com/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.interactivegf.com/"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://track.healthtrader.com/"], :root a[href^="https://track.clickmoi.xyz/"], :root a[href^="https://control.trafficfabrik.com/"], :root a[href^="https://track.52zxzh.com/"], :root a[href^="https://axdsz.pro/"], :root a[href^="https://tour.mrskin.com/"], :root a[href^="http://www.greenmangaming.com/?tap_a="], :root a[href^="https://tm-offers.gamingadult.com/"], :root a[href^="https://t.hrtyj.com/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://squren.com/rotator/?atomid="], :root a[href^="http://cdn3.adexprts.com/"], :root a[href^="https://spygasm.com/track?"], :root div[id^="ad-div-"], :root a[href^="https://secure.eveonline.com/ft/?aid="], :root a[href^="https://secure.bstlnk.com/"], :root div[class^="kiwi-ad-wrapper"], :root a[href^="https://rev.adsession.com/"], :root [href*=".trackmstr.com"], :root a[href^="https://refpasrasw.world/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root a[href^="https://refpaexhil.top/"], :root a[href^="https://reachtrgt.com/"], :root AD-SLOT, :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="http://www.my-dirty-hobby.com/?sub="], :root a[href^="https://porndeals.com/?track="], :root a[href^="//go.onclasrv.com/"], :root a[href^="https://pcm.bannerator.com/"], :root a[href^="https://offerforge.net/"], :root a[href^="https://ndt5.net/"], :root div[id^="ad_head_celtra_"], :root a[href^="https://wittered-mainging.com/"], :root a[href^="https://t.grtyi.com/"], :root a[href^="https://myusenet.xyz/"], :root a[href^="https://my-movie.club/"], :root [href^="https://detachedbates.com/"], :root a[href^="https://mk-cdn.net/"], :root a[href^="https://mk-ads.com/"], :root a[href^="https://meet-sex-here.com/?u="], :root a[href^="https://medleyads.com/"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root iframe[src^="https://tpc.googlesyndication.com/"], :root a[href*=".approvallamp.club/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://landing1.brazzersnetwork.com"], :root a[href^="http://adrunnr.com/"], :root a[href^="https://landing.brazzersplus.com/"], :root a[href^="https://land.rk.com/landing/"], :root a[href^="http://ad.au.doubleclick.net/"], :root a[href^="https://k2s.cc/pr/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://join.virtuallust3d.com/"], :root a[href^="http://www.uniblue.com/cm/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://track.effiliation.com/servlet/effi.redir?"], :root a[href^="https://iqoption.com/lp/mobile-partner/"][href*="?aff="], :root [href^="http://join.shemalepornstar.com/"], :root a[href^="https://incisivetrk.cvtr.io/click?"], :root a[href^="https://iactrivago.ampxdirect.com/"], :root [href*="https://www.jmbullion.com/gold/"], :root a[href^="https://iac.ampxdirect.com/"], :root a[href^="https://horny-pussies.com/tds"], :root a[href^="https://graizoah.com/"], :root a[href^="http://feedads.g.doubleclick.net/"], :root a[href^="https://redsittalvetoft.pro/"], :root a[href^="https://googleads.g.doubleclick.net/pcs/click"], :root A[href*="etargetnet.com"], :root a[href^="http://cdn.adstract.com/"], :root a[href^="https://gogoman.me/"], :root a[href^="https://go.xtbaffiliates.com/"], :root a[href^="https://torrentsafeguard.com/?aid="], :root a[href^="https://offers.refchamp.com/"], :root a[href^="https://go.trkclick2.com/"], :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://go.stripchat.com/"][href*="&campaignId="], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://go.julrdr.com/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://go.hpyjmp.com/"], :root a[href^="https://go.goasrv.com/"], :root a[href^="https://adnetwrk.com/"], :root a[href^="https://go.gldrdr.com/"], :root a[href^="https://fleshlight.sjv.io/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.currency.com/"], :root a[href^="https://track.afftck.com/"], :root a[href^="http://guideways.info/"], :root a[href^="https://go.cmrdr.com/"], :root a[href^="http://www.easydownloadnow.com/"], :root a[href^="https://go.alxbgo.com/"], :root a[href*=".inclk.com/"], :root a[href^="https://go.ad2up.com/"], :root a[href^="https://giftsale.co.uk/?utm_"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://fonts.fontplace9.com/"], :root a[href^="http://clkmon.com/adServe/"], :root a[href^="https://flirtaescopa.com/"], :root A[href*="adverticum.net"], :root a[href^="https://fertilitycommand.com/"], :root a[href^="https://fakelay.com/"], :root a[href^="https://earandmarketing.com/"], :root [lazy-ad="leftthin_banner"], :root a[href^="https://dynamicadx.com/"], :root a[href^="https://djtcollectorclub.org/"][href*="?affiliate_id="], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="//srv.buysellads.com/"], :root a[href^="https://dianches-inchor.com/"], :root a[href^="https://creacdn.top-convert.com/"], :root iframe[src^="https://pagead2.googlesyndication.com/"], :root a[href^="https://retiremely.com/"], :root a[href^="https://cpmspace.com/"], :root a[href^="https://cpartner.bdswiss.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root .commercial-unit-mobile-top > .v7hl4d, :root a[href^="https://click.plista.com/pets"], :root a[href^="https://chaturbate.xyz/"], :root a[href^="http://look.djfiln.com/"], :root a[href^="https://chaturbate.jjgirls.com/"][href*="?tour="], :root a[href^="https://chaturbate.com/in/?track="], :root a[href^="https://chaturbate.com/in/?tour="], :root a[href^="https://chaturbate.com/affiliates/"], :root [href*="wap4dollar.com/"], :root a[href^="https://mcdlks.com/"], :root a[href^="https://bs.serving-sys.com"], :root a[href^="https://blackorange.go2cloud.org/"], :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://affiliates.bet-at-home.com/processing/"], :root a[href^="https://ads.ad4game.com/"], :root a[href^="https://betway.com/"][href*="&a="], :root a[href^="http://www.linkbucks.com/referral/"], :root a[href^="https://azpresearch.club/"], :root a[href^="https://awptjmp.com/"], :root a[href^="http://www.fleshlight.com/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://awentw.com/"], :root a[href^="https://albionsoftwares.com/"], :root a[href^="//postlnk.com/"], :root a[href^="https://affiliate.rusvpn.com/click.php?"], :root [data-role="tile-ads-module"], :root a[href^="https://affiliate.geekbuying.com/gkbaffiliate.php?"], :root a[href^="https://adultfriendfinder.com/go/page/landing"], :root a[href*="pussl3.com"], :root a[href^="https://adswick.com/"], :root ADS-RIGHT, :root a[href^="https://tracking.trackcasino.co/"], :root a[href^="https://adserver.adreactor.com/"], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://ads.leovegas.com/redirect.aspx?"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://ads.cdn.live/"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root a[href^="https://refpaano.host/"], :root a[href^="https://meet-to-fuck.com/tds"], :root a[href^="https://adhealers.com/"], :root a[href^="http://servicegetbook.net/"], :root a[href^="https://bngpt.com/"], :root a[href^="http://clickandjoinyourgirl.com/"], :root a[href^="https://ad13.adfarm1.adition.com/"], :root a[href^="https://misspkl.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root a[href^="https://static.fleshlight.com/images/banners/"], :root app-advertisement, :root a[href^="https://ad.doubleclick.net/"], :root a[href^="http://zevera.com/afi.html"], :root a[href^="http://go.oclaserver.com/"], :root a[href^="https://ad.atdmt.com/"], :root a[href^="https://cams.imagetwist.com/in/?track="], :root .trc_rbox .syndicatedItem, :root a[href^="https://aaucwbe.com/"], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="http://hyperlinksecure.com/go/"], :root a[href^="https://track.themadtrcker.com/"], :root a[href^="https://bullads.net/get/"], :root a[href^="http://down1oads.com/"], :root a[href^="http://yads.zedo.com/"], :root a[href^="http://xtgem.com/click?"], :root a[href^="https://ads.trafficpoizon.com/"], :root div[class^="local-feed-banner-ads"], :root a[href^="http://wxdownloadmanager.com/dl/"], :root a[href^="http://www.zergnet.com/i/"], :root a[href*=".clksite.com/"], :root a[href^="http://www.webtrackerplus.com/"], :root a[href^="http://www.usearchmedia.com/signup?"], :root a[href^="http://www.torntv-downloader.com/"], :root a[href^="http://www.tirerack.com/affiliates/"], :root a[href^="http://www.text-link-ads.com/"], :root a[href^="https://gghf.mobi/"], :root a[href^="http://www.terraclicks.com/"], :root a[href^="https://ads-for-free.com/click.php?"], :root a[href^="http://www.socialsex.com/"], :root a[href^="https://join.virtualtaboo.com/track/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root [href^="https://awbbjmp.com/"], :root a[href^="http://www.sfippa.com/"], :root a[href^="http://www.xmediaserve.com/"], :root a[href^="http://www.sex.com/videos/?utm_"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://www.sex.com/?utm_"], :root a[href^="http://secure.signup-page.com/"], :root a[href^="http://www.quick-torrent.com/download.html?aff"], :root a[href^="http://www.plus500.com/?id="], :root [href*=".zlinkm.com/"], :root a[href^="http://www.pinkvisualgames.com/?revid="], :root a[href^="https://trklvs.com/"], :root a[href^="http://www.paddypower.com/?AFF_ID="], :root a[href^="https://go.247traffic.com/"], :root a[href^="http://www.freefilesdownloader.com/"], :root a[href^="http://www.mysuperpharm.com/"], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://www.myfreepaysite.com/sfw_int.php?aid"], :root a[href^="http://www.myfreepaysite.com/sfw.php?aid"], :root a[href^="http://www.mrskin.com/tour"], :root a[href^="http://bcntrack.com/"], :root a[href^="http://www.securegfm.com/"], :root a[href^="http://www.liversely.net/"], :root a[href^="https://partners.fxoro.com/click.php?"], :root [href*="//trackmstr.com"], :root [href*="prayuserparka.com/"], :root a[href^="http://www.idownloadplay.com/"], :root a[href^="http://www.hitcpm.com/"], :root a[href^="http://fusionads.net"], :root a[href^="http://www.hibids10.com/"], :root div[class^="awpcp-random-ads"], :root [href*="//securesafemembers.com"], :root a[href^="http://www.graboid.com/affiliates/"], :root a[href^="http://www.gamebookers.com/cgi-bin/intro.cgi?"], :root div[id^="div_openx_ad_"], :root a[href^="http://www.friendlyquacks.com/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href*=".tfaln.com/"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="https://content.oneindia.com/www/delivery/"], :root a[href^="http://www.fpcTraffic2.com/blind/in.cgi?"], :root a[href^="http://www.flashx.tv/downloadthis"], :root .trc_rbox_div a[target="_blank"][href^="http://tab"], :root [href^="https://www.restoro.com/"], :root a[href^="https://americafirstpolls.com/"], :root a[href^="http://clickserv.sitescout.com/"], :root a[href^="http://www.firstload.de/affiliate/"], :root a[href^="http://www.friendlyadvertisements.com/"], :root a[href^="http://www.firstload.com/affiliate/"], :root a[href^="http://go.seomojo.com/tracking202/"], :root a[href^="http://www.downloadweb.org/"], :root a[href^="http://www.down1oads.com/"], :root a[href^="http://www.dealcent.com/register.php?affid="], :root a[href^="http://www.clkads.com/adServe/"], :root a[href^="https://aff-ads.stickywilds.com/"], :root a[href^="http://www.bitlord.me/share/"], :root .grid > .container > #aside-promotion, :root a[href^="http://www.babylon.com/welcome/index?affID"], :root a[onmousedown^="this.href='/wp-content/embed-ad-content/"], :root a[href^="http://popup.taboola.com/"], :root a[href^="//adbit.co/?a=Advertise&"], :root a[href^="https://fast-redirecting.com/"], :root a[href^="https://bluedelivery.pro/"], :root [href^="http://join.michelle-austin.com/"], :root a[href^="http://www.sexgangsters.com/?pid="], :root a[href^="http://www.amazon.co.uk/exec/obidos/external-search?"], :root a[href^="http://c.jumia.io/"], :root a[href^="http://www.affiliates1128.com/processing/"], :root a[href^="http://go.ad2up.com/"], :root a[href^="https://badoinkvr.com/"], :root [id*="google_ads"], :root a[href*="/adServe/banners?"], :root a[href^="http://www.adxpansion.com"], :root a[href^="http://www.ragazzeinvendita.com/?rcid="], :root .plistaList > .itemLinkPET, :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"], :root a[href^="http://www.adbrite.com/mb/commerce/purchase_form.php?"], :root a[href^="http://www.TwinPlan.com/AF_"], :root a[href^="http://www.FriendlyDuck.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="http://www.1clickdownloader.com/"], :root a[href^="http://www.123-reg.co.uk/affiliate2.cgi"], :root div[itemtype="http://www.schema.org/WPAdBlock"], :root a[href^="http://wopertific.info/"], :root a[href^="http://bodelen.com/"], :root a[href^="http://wgpartner.com/"], :root a[href^="http://web.adblade.com/"], :root a[href^="https://go.onclasrv.com/"], :root a[href^="http://wct.link/"], :root a[href^="http://us.marketgid.com"], :root a[href^="http://ul.to/ref/"], :root a[href^="http://ucam.xxx/?utm_"], :root a[href^="http://traffic.tc-clicks.com/"], :root a[href^="http://www.liutilities.com/"], :root a[href^="http://www.dl-provider.com/search/"], :root a[href^="http://tc.tradetracker.net/"] > img, :root a[href^="http://tracking.deltamediallc.com/"], :root div[aria-label="Ads"], :root a[href^="http://axdsz.pro/"], :root a[href^="https://go.ebrokerserve.com/"], :root a[href^="http://galleries.securewebsiteaccess.com/"], :root a[href^="http://stateresolver.link/"], :root a[href^="http://sharesuper.info/"], :root a[href^="http://see.kmisln.com/"], :root [class*="GoogleAds"], :root a[href^="//db52cc91beabf7e8.com/"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root a[href^="http://secure.vivid.com/track/"], :root a[href^="http://www.downloadthesefiles.com/"], :root a[href^="http://secure.cbdpure.com/aff/"], :root a[href*="?adlivk="][href*="&refer="], :root a[href^="//look.djfiln.com/"], :root a[href^="http://searchtabnew.com/"], :root aside[id^="advads_ad_widget-"], :root a[href^="http://lp.ezdownloadpro.info/"], :root a[href^="http://uploaded.net/ref/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="http://s9kkremkr0.com/"], :root a[href^="http://azmobilestore.co/"], :root a[href^="http://s5prou7ulr.com/"], :root a[href^="http://rs-stripe.wsj.com/stripe/redirect"], :root a[href^="https://easygamepromo.com/ef/custom_affiliate/"], :root a[href^="http://record.betsafe.com/"], :root a[href*="a2g-secure.com"], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root a[href^="http://buysellads.com/"], :root a[href^="http://reallygoodlink.freehookupaffair.com/"], :root a[href^="https://bnsjb1ab1e.com/"], :root a[href^="//oardilin.com/"], :root a[href^="http://pwrads.net/"], :root a[href^="http://promos.bwin.com/"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://play4k.co/"], :root a[href*="//ezofferz.com/"], :root a[href^="https://dltags.com/"], :root a[href^="http://onclickads.net/"], :root a[href^="http://www.twinplan.com/AF_"], :root a[href^="http://n.admagnet.net/"], :root a[href^="//awejmp.com/"], :root a[href^="http://mob1ledev1ces.com/"], :root a[href^="http://mmo123.co/"], :root a[href^="http://media.paddypower.com/redirect.aspx?"], :root a[href^="https://fileboom.me/pr/"], :root a[href^="http://marketgid.com"], :root a[href^="http://liversely.net/"], :root div[id^="drudge-column-ads-"], :root a[href*="//bongacams10.com/track?"], :root a[href^="http://tour.mrskin.com/"], :root [src^="/Redirect.a2b?"], :root a[href^="http://linksnappy.com/?ref="], :root a[data-redirect^="http://click.plista.com/pets"], :root .section-subheader > .section-hotel-prices-header, :root a[href^="http://landingpagegenius.com/"], :root a[href^="http://keep2share.cc/pr/"], :root a[href^="https://gamescarousel.com/"], :root a[href^="http://istri.it/?"], :root a[href^="http://www.fbooksluts.com/"], :root a[href^="http://www.cdjapan.co.jp/aff/click.cgi/"], :root a[href*="//ridingintractable.com/"], :root a[href^="http://c.actiondesk.com/"], :root a[href^="http://intent.bingads.com/"], :root a[href^="https://intrev.co/"], :root a[href^="http://https://www.get-express-vpn.com/offer/"], :root a[href^="//voyeurhit.com/cs/"], :root [href*=".go2page.net"], :root a[href^="http://hd-plugins.com/download/"], :root a[href^="https://trappist-1d.com/"], :root a[href^="http://go.247traffic.com/"], :root a[href^="https://bestcond1tions.com/"], :root a[href^="http://greensmoke.com/"], :root a[href^="https://look.utndln.com/"], :root a[href^="//5e1fcb75b6d662d.com/"], :root a[href^="http://googleads.g.doubleclick.net/pcs/click"], :root .nrelate .nr_partner, :root a[href^="http://go.xtbaffiliates.com/"], :root a[href*=".purple6401.com/"], :root a[href^="https://oackoubs.com/"], :root a[href^="http://install.securewebsiteaccess.com/"], :root a[href^="http://www.revenuehits.com/"], :root a[href^="http://go.mobisla.com/"], :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"], :root a[href^="http://g1.v.fwmrm.net/ad/"], :root a[href^="http://imads.integral-marketing.com/"], :root a[href^="http://freesoftwarelive.com/"], :root a[href^="http://adtrackone.eu/"], :root span[title="Ads by Google"], :root a[href^="http://finaljuyu.com/"], :root a[href^="https://www.im88trk.com/"], :root a[href^="http://ffxitrack.com/"], :root a[href^="http://t.wowtrk.com/"], :root a[href^="//syndication.dynsrvtbg.com/splash.php?"], :root a[href^="http://extra.bet365.com/"][href*="?affiliate="], :root a[href^="http://ethfw0370q.com/"], :root [href^="http://go.cm-trk2.com/"], :root a[href^="https://tracking.comfortclick.eu/"], :root [id^="bunyad_ads_"], :root a[href^="http://elitefuckbook.com/"], :root a[href^="http://eclkmpsa.com/"], :root a[href^="http://earandmarketing.com/"], :root a[href*=".mfroute.com/"], :root #content > #center > .dose > .dosesingle, :root a[href^="http://campaign.bharatmatrimony.com/track/"], :root a[href*="3wr110.xyz/"], :root a[href^="http://d2.zedo.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://www.downloadplayer1.com/"], :root a[href^="http://clicks.binarypromos.com/"], :root a[href^="https://dediseedbox.com/clients/aff.php?"], :root [href^="/ucmini.php"], :root [href^="https://innyweakela.co"], :root a[href^="http://www.wantstraffic.com/"], :root a[href^="http://track.afcpatrk.com/"], :root a[href^="http://databass.info/"], :root div[data-test-id="AdBannerWrapper"], :root div[class^="AdCard_"], :root a[href^="http://www.urmediazone.com/signup"], :root a[href^="http://click.plista.com/pets"], :root a[href^="http://chaturbate.com/affiliates/"], :root [href^="https://secure.bmtmicro.com/servlets/"], :root a[href^="http://amzn.to/"] > img[src^="data"], :root a[href^="http://bs.serving-sys.com/"], :root a[href^="http://cpaway.afftrack.com/"], :root a[href^="http://cdn.adsrvmedia.net/"], :root [lazy-ad="top_banner"], :root a[href^="http://360ads.go2cloud.org/"], :root a[href^="http://dftrck.com/"], :root a[href^="http://casino-x.com/?partner"], :root a[href^="https://meet-sexhere.com/"], :root a[href^="http://record.sportsbetaffiliates.com.au/"], :root a[href^="http://campeeks.com/"][href*="&utm_"], :root a[href^="http://download-performance.com/"], :root a[href^="http://www.on2url.com/app/adtrack.asp"], :root #\5f _nq__hh[style="display:block!important"], :root [href^="https://affect3dnetwork.com/track/"], :root div[class^="index_displayAd_"], :root a[href^="http://adultgames.xxx/"], :root a[href^="https://s.zlink2.com/"], :root a[href^="http://semi-cod.com/clicks/"], :root a[href*="//bongacams4.com/track?"], :root a[href^="http://campaign.bharatmatrimony.com/cbstrack/"], :root a[href^="http://www.seekbang.com/cs/"], :root a[href^="http://syndication.exoclick.com/"], :root a[href^="http://k2s.cc/pr/"], :root [src*="https://cdn.cloudimagesb.com/"], :root a[href^="http://bluehost.com/track/"], :root div[id^="vuukle-ad-"], :root a[href^="http://betahit.click/"], :root a[href^="https://torguard.net/aff.php"] > img, :root a[href^="http://bestorican.com/"], :root a[href^="http://bcp.crwdcntrl.net/"], :root a[href^="https://windscribe.com/promo/"], :root a[href^="http://farm.plista.com/pets"], :root a[href^="https://leg.xyz/?track="], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="https://transfer.xe.com/signup/track/redirect?"], :root a[href^="http://anonymous-net.com/"], :root aside[itemtype="https://schema.org/WPAdBlock"], :root a[href^="https://watchmygirlfriend.tv/"], :root a[href^="https://ovb.im/"], :root a[href^="http://hotcandyland.com/partner/"], :root a[href^="http://affiliates.thrixxx.com/"], :root #atvcap + #tvcap > .mnr-c > .commercial-unit-mobile-top, :root a[href*="/adrotate-out.php?"], :root a[href^="http://affiliates.lifeselector.com/"], :root a[href^="http://aff.ironsocket.com/"], :root ad-desktop-sidebar, :root [data-ad-width], :root [id*="MGWrap"], :root a[href^="http://9amq5z4y1y.com/"], :root a[href^="http://adtrack123.pl/"], :root a[href^="http://adsrv.keycaptcha.com"], :root a[href^="http://deloplen.com/afu.php?zoneid="], :root div[class^="adpubs-"], :root a[href*="deliver.trafficfabrik.com"], :root div[class^="StickyHeroAdWrapper-"], :root a[href^="http://cwcams.com/landing/click/"], :root a[href^="http://ads.betfair.com/redirect.aspx?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="http://adserver.adtech.de/"], :root a[href^="http://adserver.adreactor.com/"], :root a[href^="http://ads.sprintrade.com/"], :root [href^="https://click2cvs.com/"], :root a[href^="http://ads.expekt.com/affiliates/"], :root a[href^="http://tezfiles.com/pr/"], :root div[class^="Ad__container"], :root a[href^="http://adprovider.adlure.net/"], :root a[href^="http://reallygoodlink.extremefreegames.com/"], :root a[href^="http://adlev.neodatagroup.com/"], :root [href*="//mclick.net"], :root a[href^="http://adclick.g.doubleclick.net/"], :root a[href^="http://www.sex.com/pics/?utm_"], :root a[href^="http://vo2.qrlsx.com/"], :root [href^="https://stvkr.com/"], :root a[href^="http://engine.newsmaxfeednetwork.com/"], :root a[href^="http://ad.yieldmanager.com/"], :root [href^="http://homemoviestube.com/"], :root a[href^="http://ad.doubleclick.net/"], :root a[href^="http://srvpub.com/"], :root [data-dynamic-ads], :root a[href^="http://a.adquantix.com/"], :root a[href^="http://NowDownloadAll.com"], :root a[href^="http://1phads.com/"], :root a[href^="https://ismlks.com/"], :root a[href^="//zenhppyad.com/"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="//z6naousb.com/"], :root a[href^="//www.pd-news.com/"], :root div[id^="ads250_250-widget"], :root [href^="https://go.astutelinks.com/"], :root [href*=".doubleclick-net.com"], :root a[href^="//www.mgid.com/"], :root a[href^="http://lp.ncdownloader.com/"], :root a[href^="//pubads.g.doubleclick.net/"], :root A[href*="ad.eval.hu"], :root a[href^="http://3wr110.net/"], :root #topstuff > #tads, :root a[href*=".bang.com/"][href*="&aff="], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://join3.bannedsextapes.com/track/"], :root [href^="http://join.shemalesfromhell.com/"], :root .pubexchange_module .pe-external, :root a[href^="https://www.travelzoo.com/oascampaignclick/"], :root a[href^="https://see.kmisln.com/"], :root [src^="//adtorio.com/"], :root a[href^="http://refer.webhostingbuzz.com/"], :root a[href^="//nlkdom.com/"], :root a[href^="https://www.xvinlink.com/?a_fid="], :root a[href^="//medleyads.com/spot/"], :root [href^="https://mylead.global/stl/"] > img, :root a[href^="https://ilovemyfreedoms.com/"][href*="?affiliate_id="], :root [href*=".afftracks.online/"], :root div[class^="Component-dfp-"], :root a[href^="//healthaffiliate.center/"], :root [onclick*="content.ad/"], :root a[href^="https://clixtrac.com/"], :root a[href^="//88d7b6aa44fb8eb.com/"], :root a[href^="http://go.fpmarkets.com/"], :root a[href^="//00ae8b5a9c1d597.com/"], :root [href^="http://join.ts-dominopresley.com/"], :root a[href^=".vddfe.club/"], :root [href^="/ucdownloader.php"], :root a[href^="https://awejmp.com/"], :root [href*="//go2page.net"], :root a[href^=" http://www.sex.com/"][href*="&utm_"], :root [href^="https://mysbitl.com"], :root a[href*="onclkds."], :root a[href^="https://adclick.g.doubleclick.net/"], :root a[href*=".intab.fun/"], :root a[href*="get-express-vpn.xyz"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href*="=adscript"], :root a[href*="=Adtracker"], :root a[href^="https://members.linkifier.com/public/affiliateLanding?refCode="], :root a[href^="https://jmp.awempire.com/"], :root [href^="https://wct.link/"], :root a[href^="https://track.totalav.com/"], :root a[href^="http://ad-apac.doubleclick.net/"], :root [id^="adocean"], :root a[href*="/servlet/click/zone?"], :root a[href^="http://track.trkvluum.com/"], :root a[href^="https://www.chngtrack.com/"], :root a[href*="=exoclick"], :root a[href^="https://track.trkinator.com/"], :root div[id^="ad-position-"], :root a[data-redirect^="this.href='http://paid.outbrain.com/network/redir?"], :root a[href^="http://liversely.com/"], :root a[href^="http://www.firstclass-download.com/"], :root a[href*="//bongacams7.com/track?"], :root a[href^="http://k2s.cc/code/"], :root div[id^="tms-ad-dfp-"], :root a[href^="https://trust.zone/go/r.php?RID="], :root a[href^="http://c43a3cd8f99413891.com/"], :root a[href*="//syndication.optimizesrv.com/splash.php?"], :root a[href*="//bongacams2.com/track?"], :root a[href^="//4f6b2af479d337cf.com/"], :root [href*="//doubleclick-net.com"], :root div[id^="advads-"], :root a[href^="http://www.myfreecams.com/?co_id="][href*="&track="], :root a[href^="https://track.afcpatrk.com/"], :root a[href*=".ad-center.com/"], :root a[href*=".udncoeln.com/"], :root a[href*=".surfmdia.com/"], :root a[href*=".smartadserver.com"], :root a[href*=".revimedia.com/"], :root a[href^="https://farm.plista.com/pets"], :root a[href^="http://trk.mdrtrck.com/"], :root a[href^="https://adsrv4k.com/"], :root a[href*=".red90121.com/"], :root a[href^="http://z1.zedo.com/"], :root a[href*=".irtyc.com/"], :root a[href^="https://uncensored3d.com/"], :root a[href^="http://adf.ly/?id="], :root a[href^="https://usenetxs.website/"], :root a[href^="http://pokershibes.com/index.php?ref="], :root a[href^="http://websitedhoome.com/"], :root a[href^="https://clickadilla.com/"], :root a[href^="http://www.adskeeper.co.uk/"], :root .ob_container .item-container-obpd, :root a[href*=".directtl.xyz/"], :root a[href^="http://api.content.ad/"], :root a[href*=".clkcln.com/"], :root [data-ad-manager-id], :root div[class^="adUnit_"], :root a[href^="https://deliver.tf2www.com/"], :root a[href^="http://spygasm.com/track?"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root [src*="//www.dianomi.com/smartads.epl"], :root a[href*=".adk2x.com/"], :root a[href^="http://www.mobileandinternetadvertising.com/"], :root [href^="https://join.playboyplus.com/track/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root [href^="https://www.reimageplus.com/"], :root div[id^="cns_ads_"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root a[href^="http://enter.anabolic.com/track/"], :root a[data-nvp*="'trafficUrl':'https://paid.outbrain.com/network/redir?"], :root a[href^="http://allaptair.club/"], :root [href*=".engine.adglare.net/"], :root a[href^="http://a63t9o1azf.com/"], :root a[href*=".axdsz.pro/"], :root a[href^="http://www.badoink.com/go.php?"], :root a[class="RBAd"], :root a[href^="http://banners.victor.com/processing/"], :root [href^="http://raboninco.com/"], :root a[href^="https://t.mobtya.com/"], :root a[href*="adzerk.net"], :root a[href^="http://fsoft4down.com/"], :root a[href*="ad2upapp.com/"], :root a[href*=".fwd28.com/"], :root [lazy-ad="leftbottom_banner"], :root dile-cookies-consent, :root [id^="div-gpt-ad"], :root a[href^="https://playuhd.host/"], :root [href^="https://go.affiliatexe.com/"], :root a[href^="http://mgid.com/"], :root a[href*=".adsrv.eacdn.com/"] > img, :root [href^="https://ptwmjmp.com/"], :root adblocker, :root a[href^="http://espn.zlbu.net/"], :root a[href^="http://admrotate.iplayer.org/"], :root [href^="http://join.rodneymoore.com/"], :root [id*="MarketGid"], :root [href*="//etracking.pro"], :root a[href^="http://www.fonts.com/BannerScript/"], :root a[href^="http://c.ketads.com/"], :root a[href^="http://6kup12tgxx.com/"], :root a[href^="https://secure.starsaffiliateclub.com/C.ashx?"], :root .trc_rbox_div .syndicatedItemUB, :root a[href$="/5-"][target="_blank"][rel="nofollow"], :root [href^="https://zone.gotrackier.com/"], :root a[href^="http://ad-emea.doubleclick.net/"], :root [href^="https://freecourseweb.com/"] > .sitefriend, :root [href^="https://www.hostg.xyz/aff_c"] > img, :root [href*="//trackout.business"], :root [href^="https://veepn.g2afse.com/"], :root a[href^="https://syndication.exoclick.com/splash.php?"], :root [href*="maskip.co/"], :root [href^="https://traffserve.com/"], :root a[data-oburl^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://refpa.top/"], :root a[href*="//bongacams.com/track?"], :root a[href^="https://servedbyadbutler.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://mob1ledev1ces.com/"], :root a[data-redirect^="http://paid.outbrain.com/network/redir?"], :root a[href^="https://promo-bc.com/"], :root a[href^="https://explore.findanswersnow.net/"], :root [id^="adframe_wrap_"], :root div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"], :root a[href^="https://go.trackitalltheway.com/"], :root [data-template-type="nativead"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="http://affiliate.coral.co.uk/processing/"], :root a[href^="https://www.oboom.com/ad/"], :root [href*=".adcampo.com/"], :root div[class*="_AdInArticle_"], :root [href^="https://t.ajrkm.link/"], :root a[href^="http://www.roboform.com/php/land.php"], :root div[id^="yandex_ad"], :root a[href^="https://www.pornhat.com/"][rel="nofollow"], :root a[href^="https://www.hotgirls4fuck.com/"], :root a[href^="http://y1jxiqds7v.com/"], :root a[href*=".frtyl.com/"], :root [href^="https://online-protection-now.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="http://online.ladbrokes.com/promoRedirect?"], :root a[href^="//mob1ledev1ces.com/"], :root [href^="https://go.4rabettraff.com/"], :root a[href^="https://delivery.porn.com/"], :root a[href^="https://www.firstload.com/affiliate/"], :root .trc_related_container div[data-item-syndicated="true"], :root a[href^="https://freeadult.games/"], :root a[href^="http://www.coiwqe.site/"], :root iframe[id^="google_ads_frame"], :root a[href^="http://www.bet365.com/"][href*="affiliate="], :root a[href^="http://www.bluehost.com/track/"] > img, :root a[data-url^="http://paid.outbrain.com/network/redir?"], :root a[href^="https://www.popads.net/users/"], :root a[href^="http://www.advcashpro.com/aff/"], :root a[href^="http://adultfriendfinder.com/p/register.cgi?pid="], :root div[class^="hp-ad-rect-"], :root a[href^="http://dwn.pushtraffic.net/"], :root a[href$="/vghd.shtml"], :root div[id^="crt-"][style], :root a[href^="http://igromir.info/"], :root a[href^="https://syndication.dynsrvtbg.com/splash.php?"], :root [href^="http://join.trannies-fuck.com/"], :root a[href^="http://secure.hostgator.com/~affiliat/"], :root [onclick^="window.open('http://adultfriendfinder.com/search/"], :root [onclick^="window.open('window.open('//delivery.trafficfabrik.com/"], :root [href^="/admdownload.php"], :root iframe[src^="http://ad.yieldmanager.com/"], :root a[href^="http://pubads.g.doubleclick.net/"], :root a[href^="https://porntubemate.com/"], :root a[href^="http://www.gfrevenge.com/landing/"], :root a[href^="http://45eijvhgj2.com/"], :root a[href^="http://hpn.houzz.com/"], :root a[href^="https://scurewall.co/"], :root div[class*="_browserAdOuterContainer_"], :root [name^="google_ads_iframe"], :root a[href^="http://bc.vc/?r="], :root a[href^="http://www.afgr2.com/"], :root [href^="https://shrugartisticelder.com"], :root [href^="http://globsads.com/"], :root a[href^="https://deliver.ptgncdn.com/"], :root a[href^="http://latestdownloads.net/download.php?"], :root [href^="https://www.targetingpartner.com/"], :root a[href^="http://see-work.info/"], :root a[href*=".orange2258.com/"], :root #taw > .med + div > #tvcap > .mnr-c:not(.qs-ic) > .commercial-unit-mobile-top, :root .plista_widget_belowArticleRelaunch_item[data-type="pet"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://affiliates.score-affiliates.com/"], :root a[href^="https://wantopticalfreelance.com/"], :root [href^="/ucdownload.php"], :root a[href*=".allsports4you.club"], :root div[id^="div_ad_stack_"], :root a[href*=".ichlnk.com/"], :root a[href^="http://click.payserve.com/"], :root a[href^="http://serve.williamhill.com/promoRedirect?"], :root [class*="__adspot-title-container"], :root a[href*="n47adshostnet.com/"], :root a[href*=".cfm?fp="][href*="&prvtof="], :root a[href^="https://sexsimulator.game/tab/?SID="], :root .rc-cta[data-target], :root [id^="ad-wrap-"], :root div[id^="ad-gpt-"], :root a[href^="http://pan.adraccoon.com?"], :root hl-adsense, :root div[data-contentexchange-widget], :root [href^="http://www.star-clicks.com/"], :root [href^="http://join.hardcoreshemalevideo.com/"], :root a[href^="http://ads2.williamhill.com/redirect.aspx?"], :root a[href*=".xromp.com/landing/click/"], :root a[href^="https://click.hoolig.app/"], :root a[href^="http://www.download-provider.org/"], :root a[href^="https://10dfkuvbdkfv.club/"], :root AD-TRIPLE-BOX, :root [class^="Ad-adContainer"], :root a[href^="https://a.bestcontentfood.top/"], :root #ads > .dose > .dosesingle, :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > div > .vci, :root a[href*="delivery.trafficfabrik.com"], :root div[class$="_b-ad-main"], :root a[href*=".trck5.com/"], :root .trc_rbox_div .syndicatedItem, :root a[href^="http://www.streamate.com/exports/"], :root a[href^="https://www.arthrozene.com/"][href*="?tid="], :root .card-captioned.crd > .crd--cnt > .s2nPlayer, :root a[href^="https://awecrptjmp.com/"], :root a[href^="http://server.cpmstar.com/click.aspx?poolid="], :root [data-ez-name], :root a[href^="http://adserving.unibet.com/"], :root a[href*=".qertewrt.com/"], :root [id*="ScriptRoot"], :root a[href^="http://fileboom.me/pr/"], :root a[href*=".trust.zone"], :root [href^="https://refpahrwzjlv.top/"], :root a[href^="http://czotra-32.com/"], :root [href*=".mclick.net"], :root [href*=".grtya.com/"], :root a[href^="http://refpaano.host/"], :root a[href*="/cmd.php?ad="], :root [href^="https://bulletprofitsmartlink.com/"], :root [href^="https://join3.bannedsextapes.com"], :root a[href^="http://www.streamtunerhd.com/signup?"], :root div[id^="div-ads-"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="http://at.atwola.com/"], :root div[id^="ad_bigbox_"], :root #content > #right > .dose > .dosesingle, :root a[href^="http://9nl.es/"], :root a[href^="https://www.g4mz.com/"], :root a[href^="http://webgirlz.online/landing/"], :root [href*="cadsecs.com/"], :root a[href^="https://msecure117.com/"], :root [href^="http://stvkr.com/"], :root a[href^="https://keep2share.cc/pr/"], :root [class*="auto-bottom-advertising-"], :root a[href^="https://www.adxtro.com/"], :root [class*="__adv-block"], :root FBS-AD, :root a[href*="//bongacams5.com/track?"], :root a[href^="http://www.afgr3.com/"], :root a[href*="friendlyduck.com/"], :root [ad-id^="googlead"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root [href^="https://join.girlsoutwest.com/"], :root a[href^="http://taboola-"][href*="/redirect.php?app.type="], :root a[href^="http://www.menaon.com/installs/"], :root a[href^="https://financeads.net/tc.php?"], :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > .vci, :root a[href^="https://www.oneclickroot.com/?tap_a="] > img, :root a[href^="//porngames.adult/?SID="], :root DFP-AD, :root a[href^="https://mmwebhandler.aff-online.com/"], :root [href^="https://r.kraken.com/"], :root a[href^="http://www.pinkvisualpad.com/?revid="], :root a[href^="https://www.friendlyduck.com/AF_"], :root [href^="http://advertisesimple.info/"], :root [lazy-ad="lefttop_banner"], :root a[href^="https://a.adtng.com/"] { display: none !important; }
+:root a[href^="http://static.fleshlight.com/images/banners/"], :root a[href^="https://www.adskeeper.co.uk/"], :root [href^="https://www.highrevenuecpm.com"], :root a[href^="https://secure.cbdpure.com/aff/"], :root AMP-AD, :root a[href^="http://aflrm.com/"], :root div[id^="google_dfp_"], :root [href*="get-download.club/"], :root [href^="https://www.xvbelink.com/"], :root a[href^="http://affiliates.pinnaclesports.com/processing/"], :root #header + #content > #left > #rlblock_left, :root a[href^="http://partners.etoro.com/"], :root [id^="google_ads_iframe"], :root .vid-present > .van_vid_carousel__padding, :root a[href^="http://goldmoney.com/?gmrefcode="], :root a[href^="http://papi.mynativeplatform.com:80/pub2/"], :root LEADERBOARD-AD, :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root [class*="-slot_ad-placements-"], :root [href^="http://join.shemale.xxx/"], :root [href^="https://pulsetrack.biz/"], :root AFS-AD, :root [href*=".xiloy.site/"], :root [src^="http://api.lanistaads.com/ServeAd?"], :root a[href^="http://webtrackerplus.com/"], :root [href*=".jetx.info/"], :root [href*=".trackout.business"], :root a[href^="http://get.slickvpn.com/"], :root [data-ad-module], :root a[href^="https://track.bruceads.com/"], :root a[id^="ads_banner_"], :root a[href^="https://porngames.adult/?SID="], :root a[href^="http://findersocket.com/"], :root a[href^="https://m.do.co/c/"] > img, :root [href*=".ltroute.com/"], :root [name*="google_ads"], :root a[href^="//jsmptjmp.com/"], :root a[href*=".adform.net/"], :root a[href^="http://www.onwebcam.com/random?t_link="], :root a[href^="http://www.getyourguide.com/?partner_id="], :root [onclick^="window.open('https://www.brazzersnetwork.com/landing/"], :root a[href^="http://codec.codecm.com/"], :root [href*=".directtf.xyz/"], :root a[href*="//promo-bc.com/track?"], :root a[href^="https://as.sexad.net/"], :root a[href^="//40ceexln7929.com/"], :root .commercial-unit-mobile-top > div[data-pla="1"], :root [href*=".securesafemembers.com"], :root a[href^="https://secure.adnxs.com/clktrb?"], :root a[href^="http://adserver.adtechus.com/"], :root a[href^="https://topoffers.com/"][href*="/?pid="], :root a[href^="http://vinfdv6b4j.com/"], :root [href^="https://dooloust.net/"], :root [data-freestar-ad], :root a[href*=".opskln.com/"], :root a[href^="http://xads.zedo.com/"], :root [class^="div-gpt-ad"], :root [href*=".revrtb.com/"], :root a[href^="https://goraps.com/"], :root [href*=".etracking.pro"] { display: none !important; }</style><script src="chrome-extension://enegjkbbakeegngfapepobipndnebkdk/web3_insights_page.js"></script><script charset="utf-8" src="./TMS_files/0.812e0a21.chunk.js.letöltés"></script><script charset="utf-8" src="./TMS_files/1.f7d2ec75.chunk.js.letöltés"></script><link rel="stylesheet" type="text/css" href="./TMS_files/8.3eb36d1d.chunk.css"><script charset="utf-8" src="./TMS_files/8.391110b6.chunk.js.letöltés"></script><link rel="stylesheet" type="text/css" href="./TMS_files/12.871dc786.chunk.css"><script charset="utf-8" src="./TMS_files/12.233b33c5.chunk.js.letöltés"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="NotificationToast_notificationContainer__36-Co"></div><nav class="p-0 navbar navbar-expand-md navbar-dark bg-dark sticky-top"><span class="mx-2 navbar-brand"><img src="data:image/jpeg;base64,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" class="d-inline-block align-top BrandLogo_logo__3UgBm" alt="TMS Logo"> TMS</span><button aria-controls="navbar-nav" type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="navbar-nav"><div class="ml-2 navbar-nav"><div class="nav-item dropdown"><a aria-haspopup="true" aria-expanded="false" id="nav-dropdown-role" href="https://tms.inf.elte.hu/student/task-manager/tasks/2170#" class="dropdown-toggle nav-link" role="button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="svg-inline--fa fa-graduation-cap fa-w-20 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg> Hallgató</a></div><a href="https://tms.inf.elte.hu/student/task-manager" data-rb-event-key="/student/task-manager" class="active nav-link active"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file" class="svg-inline--fa fa-file fa-w-12 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg> Beadandókezelő</a><a href="https://tms.inf.elte.hu/student/exam" data-rb-event-key="/student/exam" class="nav-link"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" class="svg-inline--fa fa-pen fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z"></path></svg> Vizsgáztató</a></div><div class="ml-auto ml-2 navbar-nav"><div class="nav-item dropdown"><a aria-haspopup="true" aria-expanded="false" id="nav-dropdown-semester" href="https://tms.inf.elte.hu/student/task-manager/tasks/2170#" class="dropdown-toggle nav-link" role="button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="calendar" class="svg-inline--fa fa-calendar fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M12 192h424c6.6 0 12 5.4 12 12v260c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V204c0-6.6 5.4-12 12-12zm436-44v-36c0-26.5-21.5-48-48-48h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v36c0 6.6 5.4 12 12 12h424c6.6 0 12-5.4 12-12z"></path></svg> 2021/22/1</a></div><a href="https://tms.inf.elte.hu/settings" data-rb-event-key="/settings" class="nav-link"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cog" class="svg-inline--fa fa-cog fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"></path></svg> Beállítások</a><a href="https://tms.inf.elte.hu/logout" data-rb-event-key="/logout" class="nav-link"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-out-alt" class="svg-inline--fa fa-sign-out-alt fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"></path></svg> Kijelentkezés (d4cx8o)</a></div></div></nav><div class="mt-3 container"><div class="row"><nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block SideBar_sidebar__1CRMf collapse"><div class="SideBar_sidebarSticky__1m0QO"><div class="pb-1 border-secondary border-bottom"><h4>Csoportok</h4></div><div><a class="border-bottom border-secondary d-block text-decoration-none text-dark" href="https://tms.inf.elte.hu/student/task-manager/groups/433"><strong>Funkcionális programozás</strong><p>IP-18FUNPEG | 19</p></a></div><div><a class="border-bottom border-secondary d-block text-decoration-none text-dark" href="https://tms.inf.elte.hu/student/task-manager/groups/452"><strong>Imperatív programozás</strong><p>IP-18IMPROGEG | 1520</p></a></div><div><a class="border-bottom border-secondary d-block text-decoration-none text-dark" href="https://tms.inf.elte.hu/student/task-manager/groups/480"><strong>Funkcionális programozás</strong><p>IP-18FUNPEG | </p></a></div></div></nav><main role="main" class="col-md-9 ml-sm-auto col-lg-10"><button type="button" class="d-md-none btn btn-primary"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="columns" class="svg-inline--fa fa-columns fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64V160h160v256zm224 0H288V160h160v256z"></path></svg> Csoportok</button><div class="my-3 p-3 bg-white rounded shadow-sm border"><div class="d-flex justify-content-between flex-wrap flex-md-nowrap
+         align-items-center pb-2 mb-2 border-bottom"><h5>Vizsga - 2022.01.10.</h5></div><div class="row"><div class="col-md-2"><strong>Kategória: </strong></div><div class="col-md-10">Vizsgafeladatok</div></div><div class="row"><div class="col-md-2"><strong>Elérhető: </strong></div><div class="col-md-10">2022. 01. 10. 10:00</div></div><div class="row"><div class="col-md-2"><strong>Pótolható határidő: </strong></div><div class="col-md-10"></div></div><div class="row"><div class="col-md-2"><strong>Végső határidő: </strong></div><div class="col-md-10">2022. 01. 10. 12:00</div></div><div class="row"><div class="col-md-2"><strong>Kiírta: </strong></div><div class="col-md-10"></div></div><hr><div class="row"><div class="col-md-2"><strong>Leírás: </strong></div><div class="col-md-10"><div class="MarkdownRenderer_markdownRenderer__1hOhW"><h1>Előzetes tudnivalók</h1>
+<p>Használható segédanyagok:</p>
+<ul>
+<li><a href="http://lambda.inf.elte.hu/haskell/doc/libraries/">Haskell könyvtárak dokumentációja</a>,</li>
+<li><a href="http://lambda.inf.elte.hu/haskell/hoogle/">Hoogle</a>,</li>
+<li><a href="http://lambda.inf.elte.hu/">a tárgy honlapja</a>, és a</li>
+<li><a href="http://lambda.inf.elte.hu/CheatSheet.xml">Haskell szintaxis összefoglaló</a>.</li>
+</ul>
+<p>Ha bármilyen kérdés, észrevétel felmerül, azt a felügyelőknek kell
+jelezni, <strong>nem</strong> a diáktársaknak!</p>
+<p><strong>FONTOS:</strong> A megoldásban legalább az egyik (tetszőleges) függvényt
+rekurzívan kell megadni. Azaz a vizsga csak akkor érvényes, ha az
+egyik feladatot rekurzív függvénnyel adtátok meg és az helyes
+megoldása a feladatnak. A megoldást akkor is elfogadjuk, ha annak egy
+segédfüggvénye definiált rekurzívan. A könyvtári függvények (length,
+sum, stb.) rekurzív definíciója nem fogadható el rekurzív
+megoldásként.</p>
+<p>A feladatok tetszőleges sorrendben megoldhatóak. A pontozás szabályai
+a következők:</p>
+<ul>
+<li>Minden teszten átmenő megoldás ér teljes pontszámot.</li>
+<li>Funkcionálisan hibás (valamelyik teszteseten megbukó)
+megoldás nem ér pontot.</li>
+<li>Fordítási hibás vagy hiányzó megoldás esetén a teljes megoldás 0 pontos.</li>
+</ul>
+<p>Ha hiányos/hibás részek lennének a feltöltött megoldásban, azok
+kommentben szerepeljenek.</p>
+<p><em>Tekintve, hogy a tesztesetek, bár odafigyelés mellett íródnak, nem
+fedik le minden esetben a függvény teljes működését, határozottan
+javasolt még külön próbálgatni a megoldásokat beadás előtt vagy
+megkérdezni a felügyelőket!</em></p>
+<h1>Feladatok</h1>
+<h2>Két szám négyzetösszege (1 pont)</h2>
+<p>Definiáljunk azt a függvényt, amely egy rendezett párból, egy rendezett
+hármast ad vissza, ahol a számhármas első két komponense a kapott
+pár értékeivel egyezik meg, a harmadik komponens pedig a két szám
+négyzetösszege legyen!</p>
+<pre><code class="language-hs">squareSum :: Num a =&gt; (a, a) -&gt; (a, a, a)
+</code></pre>
+<pre><code class="language-hs">squareSum ( 1 , 1) == (1,1,2)
+squareSum (-3, 3) == (-3,3,18)
+squareSum ( -1, -1) == (-1,-1,2)
+squareSum (-3, -3) == (-3,-3,18)
+squareSum (0,0) == (0,0,0)
+squareSum (2.5 ,2.5) == (2.5, 2.5, 12.5)
+</code></pre>
+<h2>Teljes nevek (1 pont)</h2>
+<p>Egy listában egy osztály tanulóinak vezetéknevei, egy másikban a
+tanulók keresztnevei szerepelnek. Definiáljuk azt a függvényt, ami
+megadja a tanulók neveit!</p>
+<p>Az eredménylista hossza, a rövidebb lista hosszával egyezzen meg.</p>
+<p>A függvény tartsa meg az eredeti listák sorrendjét!</p>
+<pre><code class="language-hs">names :: [String] -&gt; [String] -&gt; [String]
+</code></pre>
+<pre><code class="language-hs">names [] [] == []
+names ["Bokros"] ["Gizella"] == ["Bokros Gizella"]
+names ["Kovács", "Nagy", "Szabó"] ["Sára", "Zoltán", "Géza"] == ["Kovács Sára", "Nagy Zoltán", "Szabó Géza"]
+names (replicate 4 "Berényi") ["András", "Zoltán", "Miklós", "Attila"] == ["Berényi András", "Berényi Zoltán", "Berényi Miklós", "Berényi Attila"]
+names (replicate 5 "Berényi") ["András", "Zoltán", "Miklós", "Attila"] == ["Berényi András", "Berényi Zoltán", "Berényi Miklós", "Berényi Attila"]
+names (repeat "Berényi") ["András", "Zoltán", "Miklós", "Attila"] == ["Berényi András", "Berényi Zoltán", "Berényi Miklós", "Berényi Attila"]
+names (replicate 3 "Berényi") ["András", "Zoltán", "Miklós", "Attila"] == ["Berényi András", "Berényi Zoltán", "Berényi Miklós"]
+</code></pre>
+<h2>Megszerkeszthető derékszögű háromszög területe (1 pont)</h2>
+<p>Definiáljuk a <code>triangleArea</code> függvényt, amely megvizsgálja, hogy egy
+derékszögű háromszög oldalainak hosszát kapta-e meg paraméterül, majd
+kiszámolja annak területét!</p>
+<p>A függvény egy rendezett hármast kap paraméterül, melynek első két
+komponense a háromszög befogóinak hossza, a harmadik komponens az átfogó hossza.
+Amennyiben a háromszög megszerkeszthető és derékszögű, adja meg a
+területét egy <code>Just</code> konstruktorba csomagolva, ellenkező esetben adjon
+vissza <code>Nothing</code>-ot.</p>
+<p><em>Segítség:</em></p>
+<ul>
+<li>A háromszög megszerkeszthető, ha minden oldal hossza pozitív, és
+bármely két oldal hosszának összege nagyobb a harmadik oldal
+hosszánál.</li>
+<li>A háromszög derékszögű, ha a befogói hosszainak négyzetösszege
+megegyezik az átfogó hosszának négyzetével.</li>
+<li>A derékszögű háromszög területe = a befogók hosszának szorzata /
+2.</li>
+</ul>
+<pre><code class="language-hs">triangleArea :: (Double, Double, Double) -&gt; Maybe Double
+</code></pre>
+<pre><code class="language-hs">triangleArea (4,0.9,4.1) == Just 1.8
+triangleArea (9,40,41) == Just 180
+triangleArea (4,3,5) == Just 6
+triangleArea (5.04,6.72,8.4) == Just 16.9344
+triangleArea (3.36,2.52,4.2) == Just 4.2336
+triangleArea (8.0,6,10.0) == Just 24.0
+triangleArea (8,6,10) == triangleArea (6,8,10)
+triangleArea (21,21,21) == Nothing
+triangleArea (2,-1,5.0) == Nothing
+triangleArea (-2,4,5.0) == Nothing
+triangleArea (0,0,0) == Nothing
+triangleArea (5,3,2) == Nothing
+triangleArea (-4,3,5) == Nothing
+triangleArea (4,-3,5) == Nothing
+triangleArea (3,4,-5) == Nothing
+</code></pre>
+<h2>Megegyező elemek (2 pont)</h2>
+<p>Adjuk meg azt a függvényt, ami kap egy rendezett párokból álló listát
+és visszaadja azon párok sorszámát, ahol a pár két komponense megegyezik!
+Amennyiben léteznek ilyen elemek, az eredményt <code>Just</code> konstruktorba
+csomagolva adja meg, ellenkező esetben az eredmény legyen
+<code>Nothing</code>.</p>
+<p>Az indexelés kezdjük <code>1</code>-től.</p>
+<pre><code class="language-hs">doubleIdxs:: Eq a  =&gt; [(a,a)] -&gt; Maybe [Int]
+</code></pre>
+<pre><code class="language-hs">doubleIdxs [] == Nothing
+doubleIdxs [(1,2)] == Nothing
+doubleIdxs [(1,0), (5,6)] == Nothing
+doubleIdxs [(1,0), (5,5)] == Just [2]
+doubleIdxs (zip [1..10] [1..10]) == Just [1..10]
+doubleIdxs [ (i,j)| i &lt;- [1..6], j &lt;- [1..5]] == Just [1,7,13,19,25]
+doubleIdxs [ (i,j)| i &lt;- "zold tea", j &lt;- "fekete tea"] == Just [47,55,58,62,64,66,69,80]
+</code></pre>
+<h2>Snake case (2 pont)</h2>
+<p>A <em>snake_case</em> és a <em>camelCase</em> a programozásban használt konvenciók a
+változók nevére. Előbbiben a különálló szavakat az <code>'_'</code> karakterrel
+kötjük össze és csak kisbetűket használunk (pl.:
+<em>snake_case_valtozonev</em>), utóbbiban a  különálló szavakat egybe írjuk,
+de minden új szó kezdetét nagybetűvel írjuk, kivéve az elsőt (pl.:
+<em>mindenUjSzoNagybetuvel</em>).
+Írjunk egy függvényt, amely <em>snake_case</em> stílusból <em>camelCase</em> stílusba
+konvertál változóneveket! Feltételezhető, hogy a bemenet megfelelő
+lesz.</p>
+<pre><code class="language-hs">snakeToCamel :: String -&gt; String
+</code></pre>
+<pre><code class="language-hs">snakeToCamel "" == ""
+snakeToCamel "a" == "a"
+snakeToCamel "apple" == "apple"
+snakeToCamel "snake_to_camel" == "snakeToCamel"
+snakeToCamel "snake_2_camel" == "snake2Camel"
+snakeToCamel "i_am_in_snake_case" == "iAmInSnakeCase"
+take 32 (snakeToCamel ("very_long_variable" ++ cycle "_name")) == "veryLongVariableNameNameNameName"
+</code></pre>
+<h2>Legkisebb és legnagyobb értékek eltávolítása (2 pont)</h2>
+<p>Definiáld a <code>removeExtremes</code> függvényt, ami egy lista elemei közül
+eltávolítja a legkisebb és legnagyobb értékeket! Ha többször is
+szerepelnek ezek az értékek, akkor minden előfordulásukat távolítsuk
+el.</p>
+<p>Feltehető, hogy a lista véges.</p>
+<pre><code class="language-hs">removeExtremes :: Ord a =&gt; [a] -&gt; [a]
+</code></pre>
+<pre><code class="language-hs">removeExtremes [] == []
+removeExtremes [4] == []
+removeExtremes [1,2] == []
+removeExtremes [1..10] == [2..9]
+removeExtremes [5,6,3,4,1,2,7,1,2] == [5,6,3,4,2,2]
+removeExtremes "haskell" == "hkell"
+</code></pre>
+<h2>Utolsó előfordulás lecserélése (2 pont)</h2>
+<p>Készíts egy függvényt, amely a kapott listában a keresett elem utolsó
+előfordulását kicseréli a paraméterben megadott értékre! Ha a csere
+sikeres volt, az eredményt <code>Just</code> konstruktorba csomagolva adja meg,
+ellenkező esetben az eredmény legyen <code>Nothing</code>.</p>
+<p>Feltehető, hogy a lista véges elemszámú.</p>
+<pre><code class="language-hs">replaceLastOcc :: Eq a =&gt; a {-mit-} -&gt; a {-mire-} -&gt; [a] -&gt; Maybe [a]
+</code></pre>
+<pre><code class="language-hs">replaceLastOcc 'a' 'e' "alma" == Just "alme"
+replaceLastOcc 1   2   [1,2,23,23,2,1,3,21,2,3] == Just [1,2,23,23,2,2,3,21,2,3]
+replaceLastOcc 1   2   [1,2,23,23,2,3,21,2,3] == Just [2,2,23,23,2,3,21,2,3]
+replaceLastOcc 42 0 [] == Nothing
+replaceLastOcc 'x' 'y' "haskell" == Nothing
+</code></pre>
+<h2>Anagramma (2 pont)</h2>
+<p>Az anagramma egy szójáték, melynek lényege, hogy egy szó, vagy mondat
+betűit összekeverve, egy új szót, vagy mondatot kapunk, amelyben
+minden karakter (szóközöket is beleértve) pontosan annyiszor szerepel,
+ahányszor a kiindulási karaktersorozatban.</p>
+<p>Definiáljuk azt a függvényt, amely két paraméterül kapott szövegről
+eldönti, hogy azok egymás anagrammái-e!</p>
+<pre><code class="language-hs">anagram :: String -&gt; String -&gt; Bool
+</code></pre>
+<pre><code class="language-hs">anagram "élet" "étel"
+anagram "lakó" "kóla"
+anagram "szekrény" "kényszer"
+not $ anagram "szekrény" "kényszerű"
+not $ anagram "kalap" "alak"
+anagram "eleven plus two" "twelve plus one"
+anagram "ronald wilson reagan" "insane anglo warlord"
+not $ anagram "alma" "llama"
+</code></pre>
+<h2>Adott hosszú listák összege (2 pont)</h2>
+<p>Definiáld azt a függvényt, ami egy listák listájában összegzi az <code>n</code>
+hosszúságú listák elemeit! A listák listájáról feltehető hogy véges,
+de az elemek nem biztos hogy végesek.</p>
+<pre><code class="language-hs">sumWithLenghtN :: Num a =&gt; Int -&gt; [[a]] -&gt; a
+</code></pre>
+<pre><code class="language-hs">sumWithLenghtN 0 [] == 0
+sumWithLenghtN (-1) [] == 0
+sumWithLenghtN (-1) [[1,2,3], [32,2,1]] == 0
+sumWithLenghtN 4 [[1,2,3], [32,2,1]] == 0
+sumWithLenghtN 4 [ replicate i (2*i+1) | i &lt;- [2,4,5]] == 36
+sumWithLenghtN 2 [ replicate i (2*i+1) | i &lt;- [2,4,5]] == 10
+sumWithLenghtN 5 [ replicate i (2*i+1) | i &lt;- [2,4,5]] == 55
+sumWithLenghtN 2 [repeat 4 , [2,3], [1,2,3], repeat 5] == 5
+sumWithLenghtN 2 [[], repeat 4 , [2,3], [1,2,3], repeat 5, []] == 5
+</code></pre>
+<h2>Azonos érték (2 pont)</h2>
+<p>Definiáljuk azt a függvényt, amely eldönti egy paraméterül kapott
+függvényről, hogy mindig ugyanazzal az értékkel tér-e vissza a
+megadott értelmezési tartományon!</p>
+<pre><code class="language-hs">isSteady :: Eq b =&gt; (a -&gt; b) -&gt; [a] -&gt; Bool
+</code></pre>
+<pre><code class="language-hs">isSteady (*0) [] == True
+isSteady (*2) (replicate 10 2) == True
+isSteady (*0) [1..100] == True
+isSteady (\x -&gt; mod x 2) [2,4..100] == True
+isSteady length ["alma", "toll", "baba"] == True
+isSteady id ([] :: [Int]) == True
+isSteady id "a" == True
+isSteady id (replicate 42 'a') == True
+
+isSteady (*1) ([1..100]) == False
+isSteady (\x -&gt; mod x 2) [2,4,6,7,8,10,12] == False
+isSteady length ["alma", "barack", "baba"] == False
+isSteady id ['a'..'z'] == False
+</code></pre>
+<h2>Norvég mitológiai futárszolgálat</h2>
+<p>A norvég mitológiában 9 világ van, a különböző lényeknek. A
+futárszolgálat most <em>Asgardba</em>, <em>Vanaheimba</em> (Istenek és Istennők
+világa), <em>Midgardba</em> (az emberek világa) és <em>Alfheimba</em> (elfek
+világa) szállít.</p>
+<h3>Adattípus definiálása (1 pont)</h3>
+<p>Definiáljunk egy adatszerkezetet, ami egy csomagot (<code>Parcell</code>) fog
+reprezentálni. A típushoz egy konstruktor tartozik (<code>P</code>), amelynek
+három pramétere legyen:</p>
+<ul>
+<li>cím: <code>String</code>,</li>
+<li>súly: <code>Double</code>,</li>
+<li>utánvét összege: <code>Int</code>.</li>
+</ul>
+<p>Kérjünk a fordítótól automatikus példányosítást a <code>Show</code> és <code>Eq</code>
+típusosztályokra!</p>
+<h3>Szállítási költség (1 pont)</h3>
+<p>A különböző világokba a <em>Bifrost</em> (amin keresztül a világok közti
+utazás lehetséges, tekinthetjük most ezt a futárszolgálatnak is)
+különböző díjakért szállít. A megadott költségek kg-onként értendőek,
+amelyek a következő szerint alakulnak:</p>
+<pre><code>Asgard - 100
+Midgard - 10
+Vanaheim - 80
+Alfheim - 50
+</code></pre>
+<p>A megadott költségek figyelembevételével, add meg azt a függvényt, ami
+kiszámítja, hogy egy csomagnak mennyi a szállítási költsége. A
+szállítási költséget <code>Just</code> konstruktorba csomagolva adjuk meg. Ha az
+adott világba nem szállít, akkor az eredmény legyen <code>Nothing</code>.</p>
+<pre><code class="language-hs">deliveryFee :: Parcell -&gt; Maybe Double
+</code></pre>
+<pre><code class="language-hs">deliveryFee (P "Asgard" 10 1500) == Just 1000
+deliveryFee (P "Midgard" 5.2 2800) == Just 52
+deliveryFee (P "Vanaheim" 4 3400) == Just 320
+deliveryFee (P "Alfheim" 3.5 1860 ) == Just 175
+deliveryFee (P "Alfa Centauri" 2.3 1400) == Nothing
+</code></pre>
+<h3>Futár bevétele (2 pont)</h3>
+<p>Adjuk meg azt a függvényt, amivel kiszámítható a futárnak az aznapi
+bevétele! A bevétele a szállítási díjakból és az utánvétekből áll.
+Előfordulhat, hogy a futár olyan csomagot kap, amit nem tud
+kiszállítani (mert olyan helyre van címezve), ez esetben azt a nap
+végén visszaviszi a raktárba, de természetesen ez nem fog bevételt
+(sem kiadást) generálni.</p>
+<pre><code class="language-hs">delivery :: [Parcell] -&gt; Double
+</code></pre>
+<pre><code class="language-hs">delivery  [(P "Asgard" 12.34 2500)] == 3734
+delivery [(P "Asgard" 12.34 2500), (P "Midgard" 18.24 2350)] == 6266.4
+delivery  [(P "Asgard" 12.34 2500),  (P "Midgard" 18.24 2350), (P "Alfa Centauri" 56.3 5600)] == 6266.4
+delivery [(P "Alfa Centauri" 56.3 5600)] == 0
+delivery [(P "Asgard" 12.34 2500), (P "Midgard" 18.24 2350), (P "Vanaheim" 12.34 2500), (P "Alfheim" 12.34 2500), (P "Alfa Centauri" 56.3 5600)] == 12870.599999999999
+</code></pre>
+<h2>Növekvő elemszámú listák (3 pont)</h2>
+<p>Készíts egy függvényt, mely egy lista sorozatról eldönti, hogy a benne
+található listák elemszáma szigorú monoton növekszik-e! A függvény
+adjon vissza <code>Nothing</code> értéket, ha a tulajdonság igaz. Illetve adja
+meg azon listák sorszámát, rendezett pár formájában,
+<code>Just</code> konstruktorba csomagolva, ahol ez a tulajdonság először sérül.</p>
+<p>Az indexelést <code>0</code>-tól kezdjük.</p>
+<p><em>Megjegyzés:</em> A sorozatban előfordulhatnak végtelen listák is, azonban
+az feltételezhető, hogy két szomszédos lista nem lesz végtelen!</p>
+<pre><code class="language-hs">inconsistencyInGrowing :: [[a]] -&gt; Maybe (Int, Int)
+</code></pre>
+<pre><code class="language-hs">inconsistencyInGrowing [] == Nothing
+inconsistencyInGrowing [[]] == Nothing
+inconsistencyInGrowing [[1]] == Nothing
+inconsistencyInGrowing [[1..10]] == Nothing
+inconsistencyInGrowing [[1..]] == Nothing
+inconsistencyInGrowing [[],[5,4],[1,2,4], [0,6,3,6,3]] == Nothing
+inconsistencyInGrowing ["bb", repeat 'a'] == Nothing
+inconsistencyInGrowing [ replicate i True | i &lt;- [1..100]] == Nothing
+inconsistencyInGrowing [[],[5,3],[2,23,1], [0..]] == Nothing
+
+
+inconsistencyInGrowing [[4], [5], [1,2], [0,6,3]] == Just (0,1)
+inconsistencyInGrowing [[4], [5,6], [1,2], [0,6,3]] == Just (1,2)
+inconsistencyInGrowing [[4], [5,6], [1,2], [0,6]] == Just (1,2)
+inconsistencyInGrowing [[4], [5,6], [1,2], [0,6]] == Just (1,2)
+inconsistencyInGrowing [[4..], [5,6], [1,2], [0,6,3]] == Just (0,1)
+inconsistencyInGrowing [[4..], [5,6], [1..], [0,6,3]] == Just (0,1)
+</code></pre>
+<h2>Szöveg helyettesítése (3 pont)</h2>
+<p>Definiáld a <code>findAndReplace</code> függvényt, ami egy szövegben megkeresi és
+helyettesíti az összes előfordulását egy adott részszövegnek! Ha a
+keresett szöveg átfedésekkel többször is illeszkedne, akkor az átfedő
+előfordulások közül csak az elsőt helyettesítsük.</p>
+<p>A keresett (második paraméterként kapott) szövegről feltehető, hogy
+véges és nem üres.</p>
+<pre><code class="language-hs">findAndReplace :: String {- miben -} -&gt; String {- mit -} -&gt; String {- mire -} -&gt; String
+</code></pre>
+<pre><code class="language-hs">findAndReplace "almafa" "alma" "korte" == "kortefa"
+findAndReplace "eme" "e" "a" == "ama"
+findAndReplace "igen, ez egy teljes szoveg" "eg" "eG" == "igen, ez eGy teljes szoveG"
+findAndReplace "" "alma" "korte" == ""
+findAndReplace "itt vannak szokozok" " " "" == "ittvannakszokozok"
+findAndReplace "ez egy szoveg" " " ". " == "ez. egy. szoveg"
+findAndReplace "aaa" "aa" "bb" == "bba"
+findAndReplace "Nem minden tarka fajta szarka farka tarka, csak a tarka farku szarkafajta szarka farka tarka." "szarka" "roka" == "Nem minden tarka fajta roka farka tarka, csak a tarka farku rokafajta roka farka tarka."
+take 100 (findAndReplace (concat (repeat "alma")) "ma" "ap") == take 100 (concat (repeat "alap"))
+take 7 (findAndReplace "haskell" "kell" (repeat 'x')) == "hasxxxx"
+</code></pre>
+<h2>Zárójelben lévő szöveg kihagyása (3 pont)</h2>
+<p>Definiáld a <code>shrinkText</code> függvényt, amely egy paraméterként kapott
+szövegből kihagyja a zárójelben lévő részeket! A szöveg
+feldolgozásánál egymásba ágyazott zárójelekkel nem kell törődni, az
+első összeillő zárójelpárban lévő szöveget kell elhagyni.</p>
+<pre><code class="language-hs">shrinkText :: String -&gt; String
+</code></pre>
+<pre><code class="language-hs">shrinkText "" == ""
+shrinkText "minden fontos!" == "minden fontos!"
+shrinkText "(elhagyando)" == ""
+shrinkText "(minden)(elhagyando)" == ""
+shrinkText "ez a lenyeg(de ez nem fontos), de ez is fontos" == "ez a lenyeg, de ez is fontos"
+shrinkText "(nincs befejezve" == "(nincs befejezve"
+shrinkText "ez (nincs befejezve" == "ez (nincs befejezve"
+shrinkText "nincs eleje)" == "nincs eleje)"
+shrinkText "ebben minden ()fontos " == "ebben minden fontos "
+shrinkText "(ebben)(semmi)(sem)fontos" == "fontos"
+shrinkText "(elhagyando (meg ez is)de ez mar nem)" == "de ez mar nem)"
+take 1 (shrinkText ("(erdekesen) (hosszu" ++ cycle "zarojel")) == " "
+</code></pre></div></div></div></div><div class="my-3 p-3 bg-white rounded shadow-sm border"><div class="d-flex justify-content-between flex-wrap flex-md-nowrap
+         align-items-center pb-2 mb-2 border-bottom"><h5>Megoldás</h5><button type="button" class="btn btn-outline-secondary btn-sm"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" class="svg-inline--fa fa-download fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg> Letöltés</button></div><div class="row"><div class="col-md-2"><strong>Név: </strong></div><div class="col-md-10">vizsga.zip</div></div><div class="row"><div class="col-md-2"><strong>Feltöltés ideje: </strong></div><div class="col-md-10">2022. 01. 10. 11:56</div></div><div class="row"><div class="col-md-2"><strong>Értékelés: </strong></div><div class="col-md-10"></div></div><div class="row"><div class="col-md-2"><strong>Státusz: </strong></div><div class="col-md-10">Frissítve</div></div><div class="row"><div class="col-md-2"><strong>Értékelte: </strong></div><div class="col-md-10"></div></div><div class="row"><div class="col-md-2"><strong>Megjegyzések: </strong></div><div class="col-md-10"><div class="MultiLineTextBlock_multiLineTextBlock__1s_ey"></div></div></div><div role="alert" class="fade mt-2 alert alert-primary show"><h6>Automatikus tesztelés eredményei</h6><hr>Még nem tesztelte le az automatikus tesztelő a beküldött megoldást.</div></div><div class="my-3 p-3 bg-white rounded shadow-sm border"><div class="d-flex justify-content-between flex-wrap flex-md-nowrap
+         align-items-center pb-2 mb-2 border-bottom"><h5>Mellékelt fájlok</h5></div></div></main></div></div></div><script>!function(e){function t(t){for(var n,o,u=t[0],i=t[1],f=t[2],l=0,s=[];l<u.length;l++)o=u[l],Object.prototype.hasOwnProperty.call(a,o)&&a[o]&&s.push(a[o][0]),a[o]=0;for(n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n]);for(d&&d(t);s.length;)s.shift()();return c.push.apply(c,f||[]),r()}function r(){for(var e,t=0;t<c.length;t++){for(var r=c[t],n=!0,o=1;o<r.length;o++){var i=r[o];0!==a[i]&&(n=!1)}n&&(c.splice(t--,1),e=u(u.s=r[0]))}return e}var n={},o={4:0},a={4:0},c=[];function u(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,u),r.l=!0,r.exports}u.e=function(e){var t=[];o[e]?t.push(o[e]):0!==o[e]&&{2:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,15:1}[e]&&t.push(o[e]=new Promise((function(t,r){for(var n="static/css/"+({}[e]||e)+"."+{0:"31d6cfe0",1:"31d6cfe0",2:"3baf7325",5:"31d6cfe0",7:"0f0501c6",8:"3eb36d1d",9:"994c4cd3",10:"4d2e372d",11:"78fbacde",12:"871dc786",13:"33220935",14:"31d6cfe0",15:"3d2cd661",16:"31d6cfe0",17:"31d6cfe0"}[e]+".chunk.css",a=u.p+n,c=document.getElementsByTagName("link"),i=0;i<c.length;i++){var f=(d=c[i]).getAttribute("data-href")||d.getAttribute("href");if("stylesheet"===d.rel&&(f===n||f===a))return t()}var l=document.getElementsByTagName("style");for(i=0;i<l.length;i++){var d;if((f=(d=l[i]).getAttribute("data-href"))===n||f===a)return t()}var s=document.createElement("link");s.rel="stylesheet",s.type="text/css",s.onload=t,s.onerror=function(t){var n=t&&t.target&&t.target.src||a,c=new Error("Loading CSS chunk "+e+" failed.\n("+n+")");c.code="CSS_CHUNK_LOAD_FAILED",c.request=n,delete o[e],s.parentNode.removeChild(s),r(c)},s.href=a,document.getElementsByTagName("head")[0].appendChild(s)})).then((function(){o[e]=0})));var r=a[e];if(0!==r)if(r)t.push(r[2]);else{var n=new Promise((function(t,n){r=a[e]=[t,n]}));t.push(r[2]=n);var c,i=document.createElement("script");i.charset="utf-8",i.timeout=120,u.nc&&i.setAttribute("nonce",u.nc),i.src=function(e){return u.p+"static/js/"+({}[e]||e)+"."+{0:"812e0a21",1:"f7d2ec75",2:"cf534e5e",5:"0447e125",7:"dfc69546",8:"391110b6",9:"36b2c231",10:"f3cdb783",11:"6e5b1775",12:"233b33c5",13:"c9c31c62",14:"fe5406d6",15:"53ca1a7d",16:"9d1a4964",17:"50be7e35"}[e]+".chunk.js"}(e);var f=new Error;c=function(t){i.onerror=i.onload=null,clearTimeout(l);var r=a[e];if(0!==r){if(r){var n=t&&("load"===t.type?"missing":t.type),o=t&&t.target&&t.target.src;f.message="Loading chunk "+e+" failed.\n("+n+": "+o+")",f.name="ChunkLoadError",f.type=n,f.request=o,r[1](f)}a[e]=void 0}};var l=setTimeout((function(){c({type:"timeout",target:i})}),12e4);i.onerror=i.onload=c,document.head.appendChild(i)}return Promise.all(t)},u.m=e,u.c=n,u.d=function(e,t,r){u.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},u.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},u.t=function(e,t){if(1&t&&(e=u(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(u.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)u.d(r,n,function(t){return e[t]}.bind(null,n));return r},u.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return u.d(t,"a",t),t},u.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},u.p="/",u.oe=function(e){throw console.error(e),e};var i=this["webpackJsonptms-react"]=this["webpackJsonptms-react"]||[],f=i.push.bind(i);i.push=t,i=i.slice();for(var l=0;l<i.length;l++)t(i[l]);var d=f;r()}([])</script><script src="./TMS_files/6.18ecf4b4.chunk.js.letöltés"></script><script src="./TMS_files/main.358afa3f.chunk.js.letöltés"></script><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" src="./TMS_files/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div></body></html>
