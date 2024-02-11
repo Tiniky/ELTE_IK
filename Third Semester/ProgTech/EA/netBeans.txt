@@ -1,0 +1,14 @@
+New Project -> Java with Ant -> Java Aplication
+
+
+bal ALT + INS = automatikus metódusok
+ctrl + Space = automatikus kitöltés
+
+sou + ctrl + space = System.out.println
+
+bal ALT + Enter = hozzáad dolgokat pl importál
+
+ctrl + delete/ ctrl+backspace = gyors törlés
+ctrl + e = egész sor törlés
+
+kijelölés + refactor + introduce + method = létrehoz egy metódust a kijelölt adatokból
