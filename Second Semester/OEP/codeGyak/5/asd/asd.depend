@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1647214661 source:c:\users\40757\desktop\elte stuff\second semester\oep\codegyak\otodikgyak\asd\main.cpp
+	<iostream>
+	"SeqInFile.hpp"
+
+1647214683 c:\users\40757\desktop\elte stuff\second semester\oep\codegyak\otodikgyak\asd\seqinfile.hpp
+	<string>
+	<fstream>
+	<sstream>
+
