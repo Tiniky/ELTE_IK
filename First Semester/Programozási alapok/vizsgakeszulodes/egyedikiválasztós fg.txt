@@ -1,0 +1,23 @@
+int egyediKivalasztas(string a[], string egyedi[], int N)
+{
+    egyedi[0] = a[0];
+    int egyediDB = 1;
+    for(int i=1; i<N; i++)
+    {
+        bool bent = false;
+        for(int j=0; j<egyediDB; j++)
+        {
+            if(a[i] == egyedi[j])
+            {
+                bent = true;
+            }
+        }
+
+        if(!bent)
+        {
+            egyedi[egyediDB] = a[i];
+            egyediDB++;
+        }
+    }
+    return egyediDB;
+}
