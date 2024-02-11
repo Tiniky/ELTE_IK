@@ -1,0 +1,12 @@
+MINI RPG
+- küldetéseket kell teljesíteni
+- van egy kezdő karakter LVL 1, x hp
+- xp-t lehet gyűjteni küldetések teljesítésével és enemyk megölésével
+- a karakter csak nála kisebb szintű enemyket tud megölni baj nélkül, ha azonos a szintje az enemyvel akkor sebződik
+- szintlépéskor resetelődik a hpja és szintet lépnek az enemyk is (-1, 0, +1)
+- minden szintlépés után több xp kell a következő szinthez
+- minden harmadik szintlépésnél nő a hp
+- minden szintnél ami a 10 többszöröse boss fight
+	- boss fight ötlet: több kör mindig annyi d20-al dobunk ahány hpja van a karakternek
+	- 
+- ha meghal a karakter kiírodik a szintje, hány enemyt szedett le, hány bosst szedett le és hány küldetést teljesített-
