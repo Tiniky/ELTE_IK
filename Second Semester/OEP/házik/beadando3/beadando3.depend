@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1651681547 source:c:\users\40757\desktop\elte stuff\second semester\oep\házik\beadando3\main.cpp
+	<iostream>
+	"FileSystem.hpp"
+	"Entry.hpp"
+
+1651681624 c:\users\40757\desktop\elte stuff\second semester\oep\házik\beadando3\filesystem.hpp
+	<string>
+	<vector>
+	"Entry.hpp"
+
+1651681573 c:\users\40757\desktop\elte stuff\second semester\oep\házik\beadando3\entry.hpp
+	<string>
+	<vector>
+
+1651505805 c:\users\40757\desktop\elte stuff\second semester\oep\házik\beadando3\filesystem.cpp
+	"FileSystem.hpp"
+

@@ -1,0 +1,85 @@
+
+/*void daysLater(vector<Plant*> &plants, Radiant* &rad, int* &dayDB, std::string &strongestSurvivor, vector<std::string>& report){
+    try{
+        while(*dayDB > 0){
+            int need = 0;
+
+
+
+            if(need >= 3){
+                rad->~Radiant();
+                rad = Alpha::Instance();
+                report.push_back("ALPHA RADIATION");
+            } else if(need <= -3){
+                rad->~Radiant();
+                rad = Delta::Instance();
+                report.push_back("DELTA RADIATION");
+            } else {
+                rad->~Radiant();
+                rad = NoRad::Instance();
+                report.push_back("NO RADIATION");
+            }
+
+            for(Plant* p : plants){
+                std::string plant = "";
+                stringstream ss;
+
+                need = p->transMute(need, rad);
+
+                plant = plant + p->getName() + " ";
+                ss << p->getNut();
+
+                if(p->isPuffancs()){
+                    plant = plant + "puffancs " + ss.str();
+                } else if(p->isDeltafa()){
+                    plant = plant + "deltafa " + ss.str();
+                } else if(p->isParabokor()){
+                    plant = plant + "parabokor " + ss.str();
+                }
+
+                report.push_back(plant);
+            }
+
+            dayDB--;
+        }
+
+        int nutMax = 0;
+        std::string strongest;
+
+        for(Plant* p : plants){
+            if(p->isAlive() && p->getNut()>nutMax){
+                strongest = p->getName();
+            }
+        }
+
+        if(nutMax == 0){
+            strongestSurvivor = "There are no survivors.. wthigo";
+        } else{
+            strongestSurvivor = "The strongest survivor is " + strongest;
+        }
+    } catch(exception e){
+        std::cout << e.what() << std::endl;
+    }
+}
+
+void destroyAll(vector<Plant*> &plants){
+    for(Plant* p : plants){
+        delete p;
+    }
+
+    Alpha::destroy();
+    Delta::destroy();
+    NoRad::destroy();
+}
+*/
+
+std::string ss;
+    vector<std::string> report;
+    //daysLater(plants, rad, days, ss, report);
+
+    for(std::string s : report){
+        std::cout << s << std::endl;
+    }
+    std::cout << ss << std::endl;
+
+    //destroyAll(plants);

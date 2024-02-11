@@ -1,0 +1,28 @@
+		vec: |p 7|d 5|b 4|d 3|
+
+Need resetelődik		Need NEM resetelődik
+
+első nap => NoRad		első nap => NoRad
+|p 6|d 4|b 3|d 2|		|p 6|d 4|b 3|d 2|
+Need = 10 - 4 - 4 = 2		Need = 10 - 4 - 4 = 2
+
+Need == 2 => NoRad		Need == 2 => NoRad
+|p 5|d 3|b 2|d 1|		|p 5|d 3|b 2|d 1|
+Need = 10 - 4 - 4 = 2		Need = 2 +10 - 4 - 4 = 4
+
+Need == 2 => NoRad		Need == 4 => Alpha
+|p 4|d 2|b 1|d 0|		|p 7|d 0|b 3|d 0|
+Need = 10 - 4 = 6		Need = 4 + 10 = 14
+
+Need == 6 => Alpha		Need == 14 => Alpha
+|p 6|d 0|b 2|-|			|p 9|-|b 4|-|
+Need = 10			Need = 14 + 10
+
+Need == 10 => Alpha		Need == 24 => Alpha
+|p 8|-|b 3|-|			|p 11|-|b 5|-|
+Need = 10			Need = 24
+
+Need == 10 => Alpha		Need == 24 => Alpha
+|p 10|-|b 4|-|			|-|-|b 6|-|
+
+Túlélte: b 4			Túlélte: b 6
