@@ -1,0 +1,27 @@
+//reverse parancs
+
+//OUTPUTra ír ki
+
+//(sorszámoló parancs)
+//kiírja a sorokat is
+
+//beolvassa az argumentumként kapott fájlt
+//-> HA hibás => standard error output "File opening unsuccesful!":
+//fprintf(stderr, "File opening unsuccesful!\n");
+//exit(1);
+
+HA nincs megadva argumentum => beolvas a standard inputról
+
+//dinamikus tömbökbe tároljunk
+//-> előre rögzített érték -> HA sikertelen a memóriafoglalás => "Memory //allocation failed!" -> fejezzük be hibakóddal
+
+//main -> main.c
+//fg -> reverse.c
+//header + header guard:
+//#ifndef REVERSE_H
+//#define REVERSE_H
+//..
+//#endif
+
+NO globális változó
+NO memóriaszivárgás -> valgrind 
