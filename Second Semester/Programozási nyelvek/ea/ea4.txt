@@ -1,0 +1,52 @@
+nem kell dinamikus memóriát használni <- kevesebb hiba
+
+//Statikus mezők
+példány szintű adattag 	<- static nélkül
+osztály szintű adattag
+
+class Item{
+	static void print(){	<-osztály szintű metódus
+	..
+	}
+}
+
+úgy kell meghívni a printet, hogy: Item.print()
+
+//Tömb
+pl. int[] nums = {1,2,3}	<- csak referencia
+- a tömbök objektumok, a heapen tárolódnak
+- létrehozás a new hívással
+- tárolja a saját méretét
+
+for(int i=0; i<nums.length; ++i){}
+VAGY
+for(int n : nums){}
+
+int [] numbs = new int[args.length]	<- létrehozza a tömböt, feltölti 0-al
+
+java.utils.Arrays.sort(nums)	<- sorba rakja a tömböt
+
+//Mátrix
+double[][]
+
+//Tömbök tömbjének tömbje
+double[][][]
+
+C-ben: char *argv[]
+Java-ban: char[][] argv VAGY String[] args
+
+//Referencia típusok
+- osztályok (class)
+- interfészek (interface)
+- felsorolási típusok (enum)
+- annotáció típusok (@interface)
+
+//Felsorolási típus
+enum Day {SUN, MON, TUE, WED, THU, FRI, SAT}
+=> referencia típus
+- értékei objektumok
+- nem hívható meg a konstruktorral pl. new Day()
+
+//Karakterkódolási szabványok
+pl ASCII, ISO/IEC, Windows, Unicode
+javac -encoding		<- be lehet állítani másik szabványt

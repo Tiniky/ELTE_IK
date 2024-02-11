@@ -1,0 +1,60 @@
+//Inicializálás konstruktorral
+class Point {
+    int x, y;
+    Point( int initialX, int initialY ){
+        x = initialX;
+        y = initialY;
+    }
+}
+
+class Main {
+    public static void main( String[] args ){
+        Point p = new Point(0,3);   <- lehet értéket adni mostmár
+        System.out.println(p.x + " " + p.y);
+    }
+}
+
+-több ugyanolyan nevű változó => elfedés
+pl.
+class Point {
+    int x, y;
+    Point( int x, int y ){ // elfedés
+        this.x = x; <- kell a this
+        this.y = y; <- itt is kell
+    }
+}
+
+konstruktor nélkül és üres konstruktorral is 0
+=> alapértelmezett konstruktor <- automatikusan generálja, paraméter nélküli
+
+//Egységbe zárás
+Típusinvariáció és Értelmetlen érték
+pl. ha rossz értéket adunk a konstruktornak akkor automatikusan 0 lesz
+=> silent failure = csendes hiba, nem észrevehető
+pl2 ha rossz értéket adunk a konstruktornak akkor átlép a kivétel kezelésbe
+=> IllegalArgumentException
+
+//Kivétel
+- futás közbeni érzékelés
+- probléma jelzés   <- throw new
+- try-catch utasítás
+- jelezhet dinamikus szemantikai hibát(=forditási időben nem, csak futási időben derül ki)
+- kilép, nem fut tovább a program
+
+//Mező elrejtése: private
+- ne lehessen kívülről módosítani
+- Getter-Setter konvenció   <- get érték és set érték
+=> lehet privát értéket módosítani de csak belső metódussal
+
+//Csomag    <- package utasítás
+pl. package geometry;
+class Point {..};
+=> osztály teljes neve: geometry.Point
+
+- lehetnek alpackegek
+- fordítás, futtatás:
+    - munkakönyvtár
+    - hierarchikus csomag- és könyvtárszerkezet
+    - fordítás a munkakönyvtárból   <- fájlnév, teljes elérési úttal
+    - futtatás a munkakönyvtárból   <- teljes osztálynév
+    pl. javac geometry/basics/*.java

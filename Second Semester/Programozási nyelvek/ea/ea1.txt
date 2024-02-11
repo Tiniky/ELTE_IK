@@ -1,0 +1,244 @@
+//JAVA nyelv
+- C-alapú szintaxis
+- Objektumelvű (object-oriented) ÉS Osztályalapú (class-based)
+- Imperatív (mostanában egy kis Funkcionális Programozás beütés)
+- Fordítás bájtkódra, JVM
+- Erősen típusos
+- Statikus + dinamikus típusrendszer
+
+Jellemzői:
+- Könnyű/olcsó szoftverfejlesztés
+- Gazdag infrastruktúra
+    – Szabványos és egyéb programkönyvtárak
+    – Eszközök
+    – Kiterjesztések
+    – Dokumentáció
+- Platformfüggetlenség (JVM)
+    – Write once, run everywhere
+    – Compile once, run everywhere
+- Erőforrásintenzív
+
+//Történelem
+1991: James Gosling
+Oak -> Green -> Java
+
+JVM = Java Virtual Machine
+=> a Java elválaszthatatlan a JVMtől => lehetővé teszi, hogy bárhol futtatható legyen a program => a Java programokat dinamikusan szerkesztjük
+
+JIT = Just In Time <- fordításnál
+
+//C és Java hasonlósága
+int lnko( int a, int b ){
+    while( b != 0 ){
+        int c = a % b;
+        a = b;
+        b = c;
+    }
+    return a;
+}
+
+Szintaxisok és Szemantika BNF-ben:
+
+<statement> ::= <expression-statement>
+            | <while-statement>
+            | <if-statement>
+            | …
+            
+<while-statement> ::= while (<expression>) <statement>
+
+<if-statement> ::= if (<expression>) <statement>
+                <optional-else-part>
+
+<optional-else-part> ::= ""
+                        | else <statement>
+
+//C és Java különbsége
+double sum( double array[] ){
+    double s = 0.0;
+    for( int i=0; i<array.length; ++i ){
+        s += array[i];
+    }
+    return s;
+}
+=> a tömbök tárolják a saját méretüket
+=> C-ben egy tömb helyett az első elemre mutató pointer adódik át paraméterként, itt maga a tömb objektum
+
+double sum( double[] array ){
+    double s = 0.0;
+    for( double item: array ){
+        s += item;
+    }
+    return s;
+}
+=> enhanced for-loop és a tömbhöz tartozó zárójelek az elemtípus mögött
+
+//Hello World!
+class HelloWorld {
+    public static void main( String[] args ){
+        System.out.println("Hello world!");
+    }
+}
+=> public static void a main fg paramétere egy Stringekből álló tömb
+=> a char *-ot leváltja a String
+=> osztály neve MINDIG nagybetűs
+System.out.println <- kiír a képernyőre
+
+//Objektumelvű programozás = Object-oriented programming (OOP)
+- Objektum
+- Osztály
+- Absztrakció
+    – Egységbe zárás (encapsulation)
+    – Információ elrejtése
+- Öröklődés
+- Altípusosság, altípusos polimorfizmus
+- Felüldefiniálás, dinamikus kötés
+=> Java az OEP paradigmára épül
+
+//Egységbezárás
+JAVA
+p.x = 0;
+p.y = 0;
+p.move(3,5);
+
+C
+p.x = 0;
+p.y = 0;
+move(p,3,5);
+
+//Osztály
+class Point {
+    int x, y;
+    void move( int dx, int dy ){...}
+}
+
+//Példányosítás
+Point p = new Point();
+=> new kifejezés végzi a példányosítást == malloc a C-ben
+
+//Példa: szövegek
+String name = "James Arthur Gosling";
+String[] names = name.split(" ");   <- split = szétbpntja a szöveget
+String abbrev = names[names.length-1] + ", " + names[0].charAt(0) + "."; <- charAt = kiszedi az adott indexű karaktert
+
+//Java programok felépítése
+- [modul (module)]
+- csomag (package)
+- osztály (class)
+- tag (member)
+    – adattag (mező, field)
+    – metódus (method)
+
+//Java forrásfájl
+- Osztálynévvel
+- .java kiterjesztés
+- Fordítási egység
+- Csomagjának megfelelő könyvtárban
+- Karakterkódolás
+
+//Fordítás, futtatás
+- A „tárgykód’ ’ a JVM bájtkód (.class)
+- Nem szerkesztjük statikusan
+- Futtatás: bájtkód interpretálása + JIT
+
+//Parancssorban
+$ ls
+HelloWorld.java
+$ javac HelloWorld.java
+$ ls
+HelloWorld.class HelloWorld.java
+$ java HelloWorld
+Hello world!
+$
+
+//Java programok futása
+- Végrehajtási verem (execution stack)
+    – Aktivációs rekordok
+    – Lokális változók
+    – Paraméterátadás
+- Dinamikus tárhely (heap)
+    – Objektumok tárolása
+
+
+
+//Absztrakció - típusmegvalósítás
+- Egységbe zárás (encapsulation)
+- Információelrejtés
+
+1 Egységbe zárás
+//Osztály, objektum, példányosítás
+
+Point.java
+class Point { // osztálydefiníció
+    int x, y; // mezők
+}
+. . .
+Main.java
+class Main {
+    public static void main( String[] args ){ // főprogram
+        Point p = new Point(); // példányosítás (heap)
+        p.x = 3; // objektum állapotának
+        p.y = 3; // módosítása
+    }
+}
+
+
+//Fordítás, futtatás
+$ ls
+Main.java Point.java
+$ javac *.java
+$ ls
+Main.class Main.java Point.class Point.java
+$ java Point
+Error: Main method not found in class Point, please define
+the main method as:
+public static void main(String[] args)
+$ java Main
+$
+=> *.java az összes java filet lefordítja
+
+//Mező alapértelmezett inicializációja
+=> automatikusan egy nulla-szerű értéket kap
+
+class Point {
+    int x, y = 3;
+}
+class Main {
+    public static void main( String[] args ){
+        Point p = new Point();
+        System.out.println(p.x + " " + p.y); // 0 3
+    }
+}
+
+=> szám 0, karakter '0', logikai típus hamis lesz
+
+1.1 Metódusok
+
+class Point {
+    int x, y; // 0, 0
+    void move( int dx, int dy ){ // implicit paraméter: this
+        this.x += dx;
+        this.y += dy;
+    }
+}
+class Main {
+    public static void main( String[] args ){
+        Point p = new Point();
+        p.move(3,3); // p -> this, 3 -> dx, 3 -> dy
+    }
+}
+
+//A this implicit lehet
+class Point {
+    int x, y; // 0, 0
+    void move( int dx, int dy ){
+        this.x += dx;
+        y += dy;
+    }
+}
+class Main {
+    public static void main( String[] args ){
+        Point p = new Point();
+        p.move(3,3);
+    }
+}
+=> a this elhagyható, a fordító az y += valamit this.y-nak veszi

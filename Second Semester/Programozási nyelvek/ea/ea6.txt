@@ -1,0 +1,14 @@
+//Túlterhelés
+-több metódus ugyanazzal a névvel
+-egyformán illeszkedő kód részek 	<- az első hajtódik végre
+-több azonos nevű konstruktor
+-konstruktorok egymást hívják
+-> nincs operátor túlterhelés Javaban
+
+//Globális konstans
+public static final int x = 80	<- miután értéket kapott nem lehet megváltoztani SOHA
+= módosíthatatlan formális paraméter
+
+//Paraméterátadás
+-érték szerinti
+-megosztás szerinti

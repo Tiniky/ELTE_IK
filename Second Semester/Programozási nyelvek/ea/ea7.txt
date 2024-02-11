@@ -1,0 +1,64 @@
+//Parametrikus polimorfizmus
+
+Tömbök előnyei és hátrányai:
+- elemek hatékony elérése (indexelés)
+- fix hossz: létrehozáskor
+- törléshez/bővítéshez új tömb létrehozása + másolás
+
+//Generikusok
+- kényelmes szabványos könyvtár
+- hasonlóan működik
+
+pl
+tömb:
+String[] names = { "Tim",
+"Jerry" };
+names[0] = "Tom";
+String mouse = names[1];
+String[] trio = new String[3];
+trio[0] = names[0];
+trio[1] = names[1];
+trio[2] = "Spike";
+names = trio;
+
+könyvtár:
+String[] names = { "Tim",
+"Jerry" };
+names[0] = "Tom";
+String mouse = names[1];
+String[] trio = new String[3];
+trio[0] = names[0];
+trio[1] = names[1];
+trio[2] = "Spike";
+names = trio;
+
+//Paraméterezett típus
+pl. ArrayList<Time> times
+ugyanaz mint Time[] times / Time times[]
+
+=> hasonló a funkcionális programozásra(HASKELL)
+
+!!primitív típussal helytelen
+ArrayList<int> nums
+!!referenciatípussal helyes
+ArrayList<Integer> nums = new ArrayList<>();
+nums.add(27) VAGY nums.add(Integer.valueOf(27));
+
+//Sorozat VS Halmaz
+ArrayList<String> colors = new ArrayList<>();
+vs
+HashSet<String> colors = new HashSet<>();
+
+//Leképezés
+HashMap<String, String> colors = new HashMap<>();
+colors.put("red","piros");
+
+//Típustörlés
+type erasure
+
+//Kompatibilis: nyers típus
+raw type
+pl. ArrayList szám = new ArrayList();
+szám.add(27); szám.add("kettő");
+
+

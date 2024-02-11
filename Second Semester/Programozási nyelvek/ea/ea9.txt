@@ -1,0 +1,30 @@
+LSP: Liskov's Substitution Principle
+=> egy A típus altípusa a B típusnak, ha az A egyedeit használjuk a B egyedei helyett
+
+//Statikus és dinamikus típus
+statikus = a változó DEKLARÁLT típusa	<-állandó
+dinmikus = a változó TÉNYLEGES típusa	<-változékony
+
+//Felüldefiniálás
+@override
+túlterhelés = ugyanazzal a névvel, különböző paraméterrel
+felüldefiniálás = ugyanazzal a névvel és paraméterezéssel
+
+//Dinamikus kötés
+ExactTime e = new ExactTime();
+Time t = e;
+
+//Konverziók referenciatípusokon
+- automatikus/upcast = altípusosság
+- explicit/downcast = type-cast operátor	<- típuskényszerítés
+pl. 
+String str = "Java";
+Object o = str;
+str = (String)o;
+
+instanceof	<- típusellenőrzés
+pl "apple" instanceof Integer	<- nem fut le világos h apple az string
+pl2 "12:07" instanceof Time
+
+//Auto-unboxing
+= automatikus kétirányú konverzió

@@ -1,0 +1,48 @@
+//Névtelen csomag
+=> default anonymous csomag ha nem írunk package utasítást
+- a forrásfájl közvetlen a munkakönyvtárban van
+- ez kis báziskódnák lehetséges
+
+//Láthatósági kategóriák
+- private	<- csak az osztálydefiníción belül
+- semmi		<- félnyilvános, ugyanabban a csomagban látható
+- public	<- minden nyilvános
+
+//Több csomagból álló program
+=> az osztály teljes nevében fel kell sorolni a csomagokat
+
+//Egy forrásfájl több típusdefinício
+- általában csak egy típusdefinició
+- ha több akkor is olyan 500 sor körül
+
+//Import utasítás
+=> rövid név elég az osztály meghívásához
+- import után a packagek és elég egy *
+pl. import hu.elte.java.eloadas.*;
+
+//Fordítási egység szerkezete
+- opcionális package utasítás
+- 0, 1 vagy több import utasítás
+- 1 vagy több típusdefiníció
+
+//Javac és Classpath
+javac -d <directory>	<- meg lehet adni, hogy máshova mentse a tárgykódot
+javac -classpath	<- megadja hol keresse a Class fileokat
+jar parancs 		<- java archívum
+
+//Típusok
+8 alap típus
+
+végrehajtási verem: lokális változók és paraméterek
+heap: objektumok, mezők
+
+-objektumokat lehet inicializálni de nem kell törölni
+
+//Üres referencia
+pl. Point p = null;
+
+//Szemétgyűjtés		<- felszabadítja a feleslegessé vált objektumokat
+- mindent felszabadít amit nem lehet elérni
+
+//Mark-and-Sweep garbage collection
+- csak a megjelölt részeket törli

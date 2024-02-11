@@ -1,0 +1,85 @@
+//Lexikális elemek
+- kulcsszavak
+- azonosítók
+- operátorok
+- literálok
+- zárójelek
+- speciális jelek
+- megjegyzések
+
+- mellékhatásos kifejezés 	pl. beolvasás EOF-ig
+
+//Logikai művelet kiértékelése
+- lusta: A && B, A || B
+- mohó: A & B, A | B
+
+//Bitművelet
+- bitenkénti és/vagy
+- XOR
+- bitenkénti ellentett
+- léptetés
+
+//Hagyományos switch
+String name;
+switch( dayOf( new java.util.Date() ) ){
+case 0: name = "Sunday"; break;
+case 1: name = "Monday"; break;
+case 2: name = "Tuesday"; break;
+case 3: name = "Wednesday"; break;
+case 4: name = "Thursday"; break;
+case 5: name = "Friday"; break;
+case 6: name = "Saturday"; break;
+default: throw new Exception("illegal value");
+}
+
+
+//Biztonságosabb switch
+String name;
+switch( dayOf( new java.util.Date() ) ){
+case 0 -> name = "Sunday";
+case 1 -> name = "Monday";
+case 2 -> name = "Tuesday";
+case 3 -> name = "Wednesday";
+case 4 -> name = "Thursday";
+case 5 -> name = "Friday";
+case 6 -> name = "Saturday";
+default -> throw new Exception("illegal value");
+}
+
+assert = egy felététel ellenőrzésén használjuk, ha a feltétel nem teljesül és be van kapcsolva az assertiön akkor futási hibát kapunk
+
+/**	<- dokumentációs megjegyzés
+!ne legyen túl sok fölös komment!
+
+javadoc		<-dokumentációt készít
+
+hibajelzés:
+- IllegalArgumentException
+- assert
+- dokumentációs megjegyzés
+
+try-catch elfogja a hibákat
+-> lehet több catch ág
+-> egy catch ágban lehet több kivétel
+-> finally mindig vezérlést kap
+
+//Szövegfájl írás
+import java.io.*
+
+try( FileWriter out = new FileWriter(fname) ){
+out.write("árvíztűrő ütvefúrógép", 0, 21);
+}
+
+//Szövegfájlok olvasása soronként
+import java.io.*
+
+try(
+BufferedReader in = new BufferedReader(
+new InputStreamReader(
+new FileInputStream(fname),
+"Cp1250"
+) )
+){
+String line;
+while( (line=in.readLine()) != null ){ ... }
+}

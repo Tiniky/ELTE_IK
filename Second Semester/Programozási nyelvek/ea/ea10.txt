@@ -1,0 +1,19 @@
+//Interface
+=> public interface X{				<- classként szerint definiálás
+	abstract public int getter();		<-abstract kulcsszó = később deklarálható
+	abstract public void setter();
+}
+- automatikusan publicoc a tagok
+- megvalósítás: public class Y implements X {}
+- többször is lehet implementálni
+
+//Generikus interface
+pl. 	public interface List<T>
+	public class ArrayList<T> implements List<T>
+	public class LinkedList<T> implements List<T>
+=> az ArrayList és a LinkedList a List altípusa
+- NEM példányosítható mint az osztály
+
+//Iterable és Iterator
+iterálható = egy adatszerkezet, amitől kérhetünk iterátort
+iterátor = egy adatszerkezet elemeinek egymás utáni lekérdezése

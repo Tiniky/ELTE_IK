@@ -1,0 +1,25 @@
+//Öröklődés
+-> class A extends B {}
+- egy típust a másik típusból származtatunk
+- a fenti példában az A gyermekosztály (child class), B meg a szülőosztály (parent class)
+- tranzitivitás: alosztály-bázisosztály
+- ki van zárva a ciklikus körkörösség
+- konstruktorok függetlenek az öröklődéstől
+- a gyermekosztályba is kell konstruktor
+- implicit super() hívás
+
+//Konstruktorok egy osztályban
+- egy vagy több explicit konstruktor
+- alapértelmezett konstruktor
+- explicit this- és super hívás
+
+//Öröklődéssel definiált osztály
+- a szülőosztály tagjai átöröklődnek
+- újabb tagokkal bővíthető
+- újradefiniálható
+
+//túterhelés és felüldefiniálás (@override)
+- túlterhelés: ugyanazzal a névvel, különböző paraméterrel
+	- megörökölt és bevezetett műveletek
+	- a fordító választ az aktuális paraméterlista szerint
+- felüldefiniálás: ugyanazzal a névvel és paramérterezéssel
