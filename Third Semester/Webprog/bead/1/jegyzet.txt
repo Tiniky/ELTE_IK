@@ -1,0 +1,12 @@
+Tábla: mezők mátrixa
+    Mező:
+    - akadály-e
+    - van-e rajta lámpa
+    - meg van-e világítva
+    - hány szomszédos lámpa kell
+
+MEGJELENÍTÉS
+
+ESEMÉNYEK
+    - új játék nehézség szerint
+    - lámpa elhelyezése
