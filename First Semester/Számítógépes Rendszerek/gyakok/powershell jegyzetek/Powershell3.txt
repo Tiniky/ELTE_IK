@@ -1,0 +1,273 @@
+Powershell 3 - 11.csoport
+
+1.feladat
+
+param(
+	[Parameter(Mandatory=$True)][int]$a
+	[Parameter(Mandatory=$True)][int]$b
+)
+
+try
+{ 
+	throw "valami hiba" #runtime exception generálása ezzel
+	$a/$b
+}
+catch #[RuntimeException] 
+{
+	"NEM OK"
+}
+finally #(ez opcionális), erőforrások felszabadítása, ha a tryban próbáltunk lefoglalni vmit akk itt felszabadíthatom
+{
+	"ez mindig lefut"
+}
+
+ha 0-val osztunk: runtime exception
+exception kezelés: try blockon belül mindent lefuttat a Powershell, ha azon belül dob exceptiont azt a catch blockban el tudjuk kapni és ott kezelni tudjuk
+érdemes specifikusan kezelni a dolgokat
+
+2.feladat
+
+rm foobar.txt
+-object not found exception
+-ha ez egy ciklusban van a többi fájlt utána nem törli
+
+(delete.ps1)
+$input | % {
+	if(Test-Path $_)
+	{
+	Remove-Item $_ -ErrorAction SilentlyContinue
+	}
+}
+
+New-Item -ItemType file 2.txt
+1.txt 2.txt | delete.ps1
+
+-continue: tovább fut
+-stop: megáll
+-silentlycontinue: megy tovább hibakiírás nélkül
+-ignore: nem ír ki hibát
+-inquire: megkérdezi mit csináljunk
+
+(delete2.ps1)
+$input | % {
+	if(Test-Path $_)
+	{
+	Remove-Item $_ -ErrorAction Stop
+	}
+}
+
+3.feladat
+
+(neptun.txt)
+DVJM5J
+A9T953
+EY6UZG
+INLBIX
+ABCD
+L_GFHD
+
+(neptun_match.ps1)
+
+$neptun = $args[0]
+$pattern = $args[1]
+
+$tmp="szurt.txt"
+if(Test-Path $tmp){rm $tmp}
+New-Item -ItemType File $tmp
+
+cat $neptun | % {
+	if ($_ | Select-String $pattern)
+	{
+		Write-Output $_ | Out-File -Append $tmp
+	}
+}
+
+Select-String: itt grep
+	-vagy adunk neki 1 paramétert és akkor az inputján keres
+	-két paraméternél a másodiknak megadott fájlban keres
+
+.\neptun_match.ps1 neptun.txt DVM 
+
+(neptun_match2.ps1)
+
+Select-String $args[1] $args[0] | Out-File tmp.txt
+
+4.feladat
+
+(neptun_general.ps1)
+
+$neptun = $args[0]
+$readme= $args[1]
+
+foreach($file in $neptun,$readme)	# for file in $neptun $readme
+{
+	if (-Not(Test-Path $file))
+	{
+		Write-Error "nincs ilyen file $file"
+		Exit
+	}
+}
+
+function is_neptun
+{
+	param([Parameter(mandatory=$true)][string]$neptun)
+	return $neptun -match "^[a-zA-Z0-9]{6}$
+}
+
+cat $neptun | % {
+	if ((is_neptun $_) -and -not(Test-Path -PathyType Container $_))
+	{
+		New_Item -itemtype directory $_
+		Copy-Item $readme $_
+	} 
+}
+
+^-legelején
+$-végén
+^$-a sorban csak ez legyen
+[a-zA-Z0-9] - ezekből lesz vmi
+
+^[\w]-word karakterek, ebben az _ is benne van
+
+(read.me)
+
+Hello
+
+.\neptun.txt .\read.me
+
+5.feladat
+
+(neptun_passwords.ps1)
+
+function is_neptun
+{
+	param([Parameter(mandatory=$true)][string]$neptun)
+	return $neptun -match "^[a-zA-Z0-9]{6}$
+}
+
+cat $args[0] | % {
+	if(-not(Test-Path "passwd.txt"))
+	{New-Item -ItemType File "passwd.txt"}
+	if is_neptun $_
+	{
+	$passwd = (0..9 | Get-Random -Count 10) -join ""
+	Write-Output("$_;$passwd") | Out-File -append "passwd.txt"
+	}
+}
+
+Get-Random
+
+0..100 | Get-Random
+1..6 | Get-Random (dobókocka) -count 5 | sort (ezzel 5öt ad vissza)
+
+.\neptun_password.ps1 .\neptun.txt
+
+cat .\passwd.txt
+-join: egy listára működik, adhatunk neki egy karaktert h mivel fűzzük össze őket
+
+(1..10 -join " ").split(" ") - ezzel visszakapjuk a listát
+
+6.feladat
+
+(valogat2.ps1)
+
+param(
+	[Parameter(mandatory=$True)]$kiterjesztes
+)
+$basedir= 'utvonalat ide'
+cd $basedir
+
+foreach($kirejesztes in $kierjesztesek)
+{
+	new-item -ItemType Directory $kiterjesztes -ErrorAction SilentlyContinue | Out-Null
+	ls | % {
+		if($_.Extension -match $kiterjesztes)
+		{
+			Copy-Item $_ $kiterjesztes
+		}
+	}
+}
+
+(ls).extension
+
+Remove-Item -recurse txt
+ennek ott kéne létrejönnie ahol futtatom
+
+
+(valogat3.ps1)
+
+$basedir= 'utvonalat ide'
+
+ls $basedir | %{
+		$kiterjesztes = $_.Extension.Substrin(1)
+		if(-not(Test-Path -PathType Container $_))
+		{
+		new-item -ItemType Directory $kiterjesztes -ErrorAction SilentlyContinue | Out-Null
+		Copy-Item $basedir/$_ $basedir/ $kiterjesztes
+		}
+}
+
+7.feladat
+
+du: aktuális könyvtár mérete
+df -h: az egész fájlrendszer
+du -h --max-depth=1
+
+(du.ps1)
+
+function size
+{
+	param($konyvtar)
+	$konyvtar
+	(Get-Childitem -Recurse $konyvtar | Measure-Object -Sum -Property Length).sum
+	Get-Childitem -directory $konyvtár | % {size $konyvtar/$_}
+}
+
+size '.'
+
+
+ls -R
+gci -R
+Recurse: ezért az összes fájl külön megjelenik, az adott könyvtárakba is belemegy
+cat .\neptun.txt | Measure-Object 
+ls | Measure-Object -Property LastAccessTime -min
+ls | Measure-Object -Property LastAccessTime -max
+
+ls | Measure-Object -Property Length -max: legnagyobb fájlt írja
+
+ls -R | Measure-Object -Property Length -sum: ez az mint a ps1 fájlé
+
+tetszőleges mélység: rekurzió
+
+(Get-date).DayOfYear
+(Get-Date).Millisecond
+
+INPUT-KEZELÉS
+
+Parancssori argumentumként:
+param($a,$b,$c)
+
+$args - benne van az össze paraméter amit átadunk neki # $* lista
+$args[0] #$1 elem
+$args.Count # $# int
+
+Felhasználótól olvassuk be:
+$d = Read-Host # read, terminálról bekéri, nem lehet pipeolni
+
+Standard inputból:
+$input | % {}  #nem lehet tömbként kezelni 
+
+Fileból:
+cat $file | % {}
+
+for ($i=0; $i -lt 5; $i++)
+{
+	$i
+}
+
+0..4 | % { $_}
+
+foreach ($cucc in 0..4)
+{
+	$cucc
+}

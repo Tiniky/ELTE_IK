@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $USER = "tiniky" ]]
+then
+	echo "user: tiniky"
+
+elif [[ $USER = "BÉLA" ]]
+then
+	echo "user: BÉLA"
+
+else
+	echo "valaki más"
+fi

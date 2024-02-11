@@ -1,0 +1,453 @@
+Powershell 2 - 11.csoport
+
+Függvények & paraméterkezelés
+
+Paraméterek:
+
+(sum.ps1)
+
+Param(
+    $a,
+    $b
+)
+
+echo($a*$b)
+
+<#
+nevesítjük a paramétereket,megtudjuk adni milyen paraméternévvel akarjuk társítani
+#>
+
+szöveget számmal szorozva annyiszor írjuk ki a szöveget amennyi a szám
+számot nem tudunk szöveggel szorozni viszont
+
+típusmegkötéssel:
+Param(
+    [Parameter(mandatory=$true)][string]$a,
+    [int]$b
+)
+
+[Parameter(mandatory=$true)] - ilyenkor kötelező paramétert megadni
+
+Függvények:
+
+			(function.ps1)
+
+function MyFun
+{
+    param([parameter(mandatory=$true)[int]$n)
+    [math]::pow($n, 2)
+}
+
+MyFun 5
+-meg kell hívni utána a fgv-t
+
+			(for.ps1)
+
+for($i=0; i -lt 5; $i++)
+{
+    $i
+}
+
+0..4 | ForEach-Object {$_}   #vagy %
+
+"hello world" | % {$_}
+
+foreach ($cucc in 0..4)
+{
+    $cucc
+}
+-ezzel is végig tudunk iterálni egy listán
+
+<#
+sötétebb kék: nyelvi elemek
+#>
+
+FELADATOK:
+
+1.Faktoriális számítása
+
+#param([Prameter(mandatory=$true)][int]$n)
+
+if($args.length -lt 1)
+{
+	[int]$n = Read-host "n"
+}
+else
+{
+	$n = $args[0]
+}
+
+$fakt= 1
+for($i= 2; $i -le $n; $i++)
+{
+	$fakt *= $i
+}
+$fakt 
+
+read-host mindig szövegként olvas be
+
+2. Az összes paraméter összege
+
+$sum = 0
+foreach($szam in $args)
+{
+	$sum +=$szam
+}
+$sum
+
+-de amúgy nullára inicializál
+
+$sum = 0
+$args | % {$sum += $_}
+$sum
+
+$sum=0
+
+//ez kerülendő, nagy az esélye a túlindexilésre, 0-át ad vissza
+for($i=0; $i -lt $args.length; $i++)
+{
+	$sum += $args[$i]
+}
+$sum
+
+3.feladat
+
+ha szűrőként használunk vmit akk nagy eséllyel $input
+
+if ($args.count -lt 1)
+{
+	$szamok = $input
+}
+else
+{
+	$szamok = $args
+}
+
+$sum = 0
+$szamok | % {$sum += $_}
+$sum
+
+-itt ha nem adunk meg paramétert akk inputot dolgozza fel, ha van paraméter akk azt, az inputot nem
+
+4.feladat (masodfoku.ps1)
+
+# x12 = (-b +- sqrt(b*b - 4ac)) / (2a)
+
+param(
+	[Parameter(mandatory=$true)][int]$a,
+	[Parameter(mandatory=$true)][int]$b,
+	[Parameter(mandatory=$true)][int]$c
+)
+
+<# 
+read-host "a"
+read-host "b"
+read-host "c"
+#>
+
+$x1 = ((-$b + [math]::sqrt($b*$b - 4 * $a * $c) / (2* $a))
+$x2 = ((-$b - [math]::sqrt($b*$b - 4 * $a * $c) / (2* $a))
+
+write-host "x12 = "
+$x1
+$x2
+
+5.feladat (valogat.ps1)
+
+$filenev = $args[0]
+
+if (-not (Test-Path $filenev))				-ha nem létezik a fájl
+{
+	write-error ("nincs ilyen file: " + $filenev)
+}
+else
+{ 
+	$paratlen = "paratlan.txt"
+	$paros="paros.txt"	
+
+	if(Test-Path $paros)
+	{
+		remove-item $paros
+	}
+	
+	if(Test-Path $paratlan)
+	{
+		remove-item $paratlan
+	}
+
+	new-item -itemtype File $paros
+	new-item -itemtype File $paratlan
+
+	$szoveg = cat $filenev 
+	for($i=0; $i -lt $szoveg.length; $i++)
+	{
+		if($i % 2 -eq 1)
+		{
+			write-output $szoveg[$i] >> $paros
+		}
+		else
+		{
+			write-output $szoveg[$i] >> $paratlan
+		}
+}
+-0-tól indexelünk, a 0-ás sor az első
+
+.\valogat.ps1 ..\test.txt
+
+>> helyett out-file -append $paros
+
+Optimalizálunk:
+
+$filenev = $args[0]
+
+if (-not (Test-Path $filenev))				-ha nem létezik a fájl
+{
+	write-error ("nincs ilyen file: " + $filenev)
+}
+else
+{ 
+	$paratlen = "paratlan.txt"
+	$paros="paros.txt"	
+
+	$paros, $paratlan | % {
+	if(Test-Path $_)
+	{
+		remove-item $_
+	}
+
+		new-item -itemtype File $_ | out-null	# > /dev/null, kiement eltüntetése
+	}
+
+	$szoveg = cat $filenev 
+	for($i=1; $i -le $szoveg.length; $i++)
+	{
+		if($i % 2 -eq 0)
+		{
+			$hova=$paros
+		}
+		else
+		{
+			$hova=$paros	
+		}
+		write-output $szoveg[$i-1] | out-file -append $hova
+}
+
+-not logikai feltétel negálása
+-or
+-and
+
+6.feladat
+			(prim.ps1)
+
+param(
+	[Parameter(mandatory=$true)][int]$n
+)
+
+if($n -eq 1)
+{
+	$prim=$false
+}
+else
+{
+	$prim = $true
+}
+
+for($i = 2; $i -lt $n; $i++)
+{
+	if ($n % $i -eq 0)
+	{
+		$prim = $false
+	}	
+}
+$prim
+
+Egyszerűsítjük:
+
+param(
+	[Parameter(mandatory=$true)][int]$n
+)
+
+if($n -eq 1)
+{
+	$prim=$false
+}
+else
+{
+	$prim = $true
+}
+
+for($i = 2; $i -lt ([math]::sqrt($n)+1); $i++)
+{
+	if ($n % $i -eq 0)
+	{
+		$prim = $false
+		break
+	}	
+}
+$prim
+
+
+8.feladat
+
+function is_prime 
+{
+	param(
+	[Parameter(mandatory=$true)][int]$n
+)
+
+if($n -eq 1)
+{
+	return $false
+}
+
+	$prim = $true
+
+
+for($i = 2; $i -lt ([math]::sqrt($n)+1); $i++)
+{
+	if ($n % $i -eq 0)
+	{
+		return $false
+	}	
+}
+	return $true
+}
+
+$args[0]..$args[1] | % {if(is_prime $_){$_}}
+
+
+is_prime 13
+is_prime 25
+
+-függvényeknél elsőként hívjuk meg
+
+INDEXELÉS:
+
+0..10
+-legenerál számokat, a szélső értékeket is
+10..0
+
+(0..10)[5] - meg tudjuk címkézni
+(1..100)[5..7]
+6
+7 
+8
+-ha 1 index => egy listaelem
+-h a több => egy lista lesz
+
+
+7.feladat
+
+function LNKO {
+	param($a,$b)
+	
+	if ($a -lt $b)
+	{
+		$kisebb = $a
+	}
+	else
+	{ 
+		$kisebb = $b
+	}
+	
+	$lnko = 1
+<#
+	foreach($oszto in 2..$kisebb)
+	2..$kisebb | %
+#>
+	for($i=2; $i -le $kisebb; $i++)
+	{
+		if(($a % $i -eq 0) -and ($b % $i -eq 0))
+		{
+			$lnko=$i
+		}
+	}
+	return $lnko
+}
+
+LNKO 12 24
+LNKO 13 97
+
+9.feladat
+
+(emailek.txt)
+gipsz kukac jakab pont hu
+gipsz kukac jakab pont hu
+gipsz kukac jakab pont hu
+
+(dekodol.ps1)
+
+$input | % {
+	$tokens = $_.split(' ')
+	$tokens[0] + "@" + $tokens[2] + "." + $tokens[4]
+}
+
+
+cat .\emailek.txt | .\dekodol.ps1
+
+(emailek.txt)
+
+gipsz_nospam_jakab_.hu
+
+$input | % {
+	$tokens = $_.split(' ')
+	$tokens[0] + "@" + $tokens[2]
+}
+
+
+split: egy stringet föl tudunk darabolni egy token mentén listára
+
+10.feladat
+
+(forditva.ps1)
+
+$input csak egy sort vesz ki
+
+$sorok = cat $args[0]
+
+$sorok[$sorok.length..0]
+# $sorok[-1..-$sorok.length]
+
+másik megoldás:
+$sorok = @()
+$sorok = {}
+$input | % {
+	$sorok += $_
+}
+sorok[$sorok.length..0]
+
+-minden egyes sort az inputban hozzáfűzzük a listához és azt fordítjuk meg
+
+11.feladat
+
+			(forditva2.ps1)
+$input | % {
+	$_[$_.length..0] -join ""
+}
+-nem spliteltük csak megfordítottuk, karaktereket kezeltünk
+
+12.feladat
+			(forditva3.ps1)
+$input | % {
+	$_.split(' ')[1,0] -join " "
+}
+
+-megcseréli oszloponként az egyes sorokat
+
+13.feladat (nem ZH-s)
+
+konzolon:
+
+get-psdrive
+
+echo $env:ALLUSERSDARA
+set-location env:\
+get-childitem
+
+write-output "<ol>"
+$basepath= "C:\Users\nemesm\Documents\gyak_11"
+foreach($file in (ls $basepath))
+{
+	write-output ("<tr><a href=" + $file.Name + ">" + $file.Name +"</a></li>")
+}
+write-output "</ol>"

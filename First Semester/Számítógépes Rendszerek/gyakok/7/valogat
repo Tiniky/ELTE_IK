@@ -1,0 +1,18 @@
+#!/bin/bash
+
+i=0
+
+echo -n "" > paros.txt
+echo -n "" > paratlan.txt
+
+while read sor || [[ -n $sor ]]
+do
+	(( i++ ))
+	(( i=i%2 ))
+	if (( $i ))
+	then
+		echo $sor >> paratlan.txt
+	else
+		echo $sor >> paros.txt
+	fi
+done < $1

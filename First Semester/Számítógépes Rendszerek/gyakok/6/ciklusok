@@ -1,0 +1,17 @@
+#!/bin/bash
+
+a=0
+
+while [ $a -lt 10 ]
+do
+	let a=a+1
+	echo $a
+	((a++))
+done
+
+input='foo bar baz bon'
+
+for szo in $input
+do
+	echo $szo
+done

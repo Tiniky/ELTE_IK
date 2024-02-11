@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $# -eq 1 ]
+then 
+	echo IGEN
+else
+	echo NEM
+fi

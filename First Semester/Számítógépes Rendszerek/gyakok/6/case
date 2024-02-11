@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $1 in
+	alma)
+		echo gyümölcs
+	;;
+	korte)
+		echo ezisgyümölcs
+	;;
+	[1-10]*)
+		echo naezszám
+	;;
+	*)
+		echo fogalmamsincs
+	;;
+esac

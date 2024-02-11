@@ -1,0 +1,360 @@
+Powershell 1 - 11.csoport
+
+nincs kis/nagybetű érzékenység (akkor kell odafigyelni amikor más rendszeren akarjuk futtatni a dolgokat)
+útvonal a különbség:
+`\ - spec karaktereket escapeli, de nem használjuk
+idézőjelek hasonlóan működnek, ""- behelyettesítődnek az értékek
+Linuxos parancsok aliasként be vannak állítva
+alias cd (Set-Location)
+pwd (Get-Location)
+cd paraméter nélkül
+cd $HOME
+
+Változó:
+$a = 5 
+kell a dollárjel, rakhatunk szóközöket
+$a
+vannak típusok
+$b = "string"
+$(valtneve).GetType() - lekérdezi a típusát
+objektumok a változóink
+. - operátor, tagfgv-ek lekérése
+$b.(ilyenkor kiírja az összes metódust, tag változóját, beépített fgv-eket meg tudjuk hívni)
+
+alias cp (Copy-Item)
+alias mv(Move-Item)
+2 paramétert várnak, honnan hova másoljunk/mozgassunk
+
+Rename-Item: átnevezünk dolgokat
+
+jobb oldalt commands ablak:
+-itt megnézhetjük, hogy milyen egy parancs
+-gethelp
+-examples: kapunk pár példát, h h kell használni
+
+ls: get-childitem
+
+-full legrészletesebb infó az adott parancsról
+
+new-Item: létrehozni dolgokat
+	-itemtype File
+	-itemtype Directory
+
+new-item -itemtype file file1
+mv file1 dir1
+ls dir1
+(ezek a parancsok a registrybe is működik)
+
+Szűrők:
+
+pipeokkal itt is
+itt minden objektum
+pipeolásnál is objektum adódik át
+
+measure-object (wc):
+	-meghatározza, h egy adott objektumnak hány eleme van
+
+1,2,3 | measure-object
+-objektumot ad vissza
+(1,2,3 | measure-object).count
+3
+(1,2,3 | measure-object -average).average
+
+(1,2,3 | measure-object -sum).sum
+6
+(1,2,3 | measure-object -max).max
+3
+(1,2,3 | measure-object -average -max -min -sum)
+
+array megadása=értékek vesszővel elválasztása
+
+cls - clear screen
+
+$var = 12
+van scopejuk, csak a scripten, fgven belül lehet őket hasz
+$lista = 1,2,3
+$lista[0]
+0...tól kezdve indexelünk
+
+alias cat= get-content
+
+(get-content vmi fájl )[1]
+-az első sort ki tudjuk szedni 
+
+[1..2] - ilyenkor 1-től 2.sorig 
+
+1..3 - listát csinál a két érték között
+
+(12..24)[5]
+-6.elemet adja vissza ami, 17
+
+$hash=@{'a'=5;'b'=6}
+-kulcsérték párok def
+$hash['a']
+$hash['b']
+$hash[0] -itt nem 0. elem hanem 0ás kulcs
+
+grep - van itt is
+grep CR .\Documents\linux.txt (ilyenkor megadja az összes sort amibe ez szerepekt)
+Select-String: enneka  windowsos megfelelője, ez is mintát keres vmilyen bemenetben (fájlban v standard inputon)
+(ez kiírja h melyik fájl hanyadik sorában van benne)
+
+(select-string cr ).filename
+(select-string cr ).pattern
+
+(grep cr .\documents\linux.txt)[0]
+(grep cr .\documents\linux.txt).count/length
+megnézni h van e találata, mérete
+
+SCRIPTEK:
+
+(ezt már nem a konzolon)
+
+(hello.ps1)
+echo "Hello world!"
+echo "Hello world!"
+echo "Hello world!"
+
+F5-futtatás
+
+echo: Write-output
+	- a parancs kimenetét feltölti
+
+(.\hello.ps1).count 
+3
+(háromelemű lista mert 3xecho v 3xwrite-output)
+
+ha write-hosttal íratjuk ki akkor már a (.\hello.ps1).count 2
+
+write-host: mindenképp kiíródik
+(.\hello.ps1)[0]
+Hello world 2!
+Hello world 1
+
+vannak logok:
+write-error
+write-warning
+^^^^hibakezelés
+
+PARAMÉTEREK:
+(par.ps1)
+
+$args # $*-al egyenlő
+$args[0] # $1
+$args[1] # $2
+$args.count # $#
+
+<# 
+
+.\par.ps1 a b c
+a
+b
+c -ez a lista amibe benne van az összes par
+a ->$args[0] # $1
+b -> $args[1] # $2
+3 -> $args.count # $#
+
+lehet kötelező paraméter és ennek a típusát is megszabhatjuk
+#>
+
+$i = Read-Host  #beolvasás
+"i: $i"  #nem kell echot írnunk amikor ki akarjuk írni a stringet 
+
+#nem kell expression, tudunk matekozni simán
+
+konzolon:
+$a=read-host;$b =read-host; $a+$b
+[int]$a=read-host;[int]$b =read-host; $a+$b
+
+[int] : ilyenkor csak számok lehetnek, és úgy is kell működniük
+
+(arg.ps1)
+$args[0]+$args[1]
+#amikor átadunk inteket a scriptnek, azok intek maradnak
+
+#read-host mindig stringeket csinál
+#DE
+#[int]i= read-host
+
+ELÁGAZÁSOK:
+
+(if.ps1)
+if ($false)
+{
+    echo IGAZ
+}
+elseif ($true)
+{
+    echo "IGAZ2"
+}
+else
+{
+    echo "HAMIS"
+}
+
+# $true=mindig igaz érték
+#ha nem írunk itt echot akkor a kimenet csak a legutolsó érték
+#elseif egybe
+
+(ciklusok.ps1)
+while ($true)
+{
+    echo "hello"
+    break
+}
+
+for ($i=0;$i -lt 5; $i++)
+{
+    "hello"
+}
+
+#itt az -lt -gt az összehasonlítás, stringekre is működik
+
+(foreach.ps1)
+1,2,3|ForEach-Object{ #kódblokkot vár, amit lefuttat minden elemre amit megkapott {között}, ez nem nyelvi elem, ez a foreachobjectnek a paramétere, egysorba kezdeni
+    echo $_
+}
+
+#ha belepieplünk minden elemén végigmegy
+<#
+    while read line
+    do
+    done
+    megfelelője
+
+    $_ : automatikus változó, azt az értéket veszi ami az aktuális futásnál átadódik
+#>
+
+echo "elso n 3mal oszthato szam"
+$n = 5
+1..$n | ForEach-Object {
+    echo ($_ * 3)
+}
+
+#a zárójelezés fontos
+#ez egy tömb lesz
+
+sort-object -descending -unique (ha több egyforma is van)
+		-erroraction silentlycontinue (kiírja a hibát de nem áll meg a program)
+
+% : foreach-object alias
+
+$n = 5
+1..$n | % {
+	echo ($_*3)
+}
+
+aktuális fájlok közül könyvtárok kiiratása:
+
+get-childitem
+	-file
+	-directory (ehhez ez kell)
+
+Linuxon:
+	for cucc in `ls`
+	do
+		if [-d $cucc]
+		then
+			echo $cucc
+		fi
+	done
+
+Windowson:
+	get-childitem -file
+
+-script ami megszámolja a file sorainak számét
+
+Linuxon:
+	cat if.ps1 | wc -l
+
+WIndowson:
+	cat if-ps1 | measure-object 
+vagy
+	(cat if.ps1).count
+vagy
+	(get-content if.ps1).count
+
+Paraméterek összeadása, szorzása:
+$args[0]+$args[1]
+$args[0]*$args[1]
+
+Linuxon:
+$((2**$n))
+
+[math]::pow(2,10)
+-math osztályból fgvek
+
+
+-script file ami a fájl soraiból kiírja a másodikat:
+
+shdhdds 1222
+shsjdjd 0000
+sjsjhdhd foobar
+
+ebből a második oszlopot
+
+$input | % {
+	$_.split(" ")[1]
+}
+
+cat test.txt | .\split.ps1
+
+ilyenkor az első argumentum a seperator:
+$sep = $args[0]
+$input | % {
+	$_.split($sep)[1]
+}
+
+-egy fájl sorainak 2-5
+
+$sep = $args[0]
+$input | % {
+	$_.substring(2,5)
+}
+
+(sub.ps1)
+$sep = $args[0]
+$input | % {
+	$_.substring(2,5)
+}
+
+<#
+
+$input | % {
+	$_[2..5]
+}
+ez listát csinál
+
+#>
+
+
+cd - : előző 2 meglátogatott könyvtár között
+push-location
+cd c:\
+pop-location
+
+get-date: aktuális dátum
+(get-date).hour
+(get-date).minute
+
+get-date | measure-object -sum -property hour
+
+(get-date),(get-date) | measure-object -property -hour -sum
+(összeadja az órákat)
+
+(get-date),(get-date) | %{$_.Hour} | measure-object -sum
+tömb összefűzés
+
+$arr =1,2,3
+$arr += 4
+$arr
+$arr.indexof(3) - harmas értéknek milyen az értéke
+
+echo hello > foo.txt
+cat foo.txt
+echo hello2 | out-file foo.txt
+cat foo.txt
+
+get-variable : összes definiált vált lekérése, környezeti változók, általunk definiáltak is
+
+unset itt remove-variable

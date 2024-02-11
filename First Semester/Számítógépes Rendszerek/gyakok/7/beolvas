@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while read -r input || [[ -n $input ]]
+do
+	echo $input
+done < $1
