@@ -1,0 +1,23 @@
+--3 szakasz hossz, háromszög
+BE: a, b, c (természetes számok)
+KI: L (logikai típus)
+Ef: a>0 && b>0 && c>0
+Uf: L := a<b+c && b<a+c && c<b+a
+
+--3xAnna és 3xBéla, átlag
+BE: a1, a2, a3, b1, b2, b3 (természetes számok)
+KI: L (logikai típus)
+Ef: -
+Uf: L := (a1+a2+a3)/3 > (b1+b2+b3)/3
+
+--vonat és autó megtett út és idő, átlag sebesség
+BE: vt, at, vi, ai (valós számok)
+KI: L (logikai típus)
+Ef: vi>0 && ai>0
+Uf: L := vt/vi > at/ai
+
+--uralkodás kezdeti és befejezési évét, több századon keresztül
+BE: kezd, vég (természetes számok)
+KI: L (logikai típus)
+Ef: -
+Uf: L := vég/100 - k/100 > 1
