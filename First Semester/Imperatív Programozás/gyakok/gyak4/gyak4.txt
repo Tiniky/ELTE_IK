@@ -1,0 +1,474 @@
+4. gyakorlat 
+14.csop impprog
+
+//1.program//
+
+//irjunk egy fgv-t, ami -1-el megszoroz egy parameterkent kapott szamot (int)
+
+#include <stdio.h>
+
+int minus_one(int a){
+	// a (lokalis) = a (paramter)
+	a = -1 * a;
+	return a;
+}
+
+int main() {
+	int a = 2;
+	printf("a : %d, minus_one(a): %d\n", a, minus_one(a));
+	printf("a (after minus_one): %d\n", a);
+}
+
+Lefutva:
+
+a: 2, minus_one(a) : -2
+a (after minus_one): 2
+
+// ha egy fgv-nek paraméterként átadunk egy változót, akkor a fgv-en belül le fog másolódni (lokális copy), fgv futásáig él a lokális a, az eredeti a értéke nem változik
+
+a program unsigned-al:
+
+#include <stdio.h>
+
+int minus_one(int a){
+	// a (lokalis) = a (paramter)
+	a = -1 * a;
+	return a;
+}
+
+int main() {
+	unsigned int a = 2;
+	printf("a : %d, minus_one(a): %d\n", a, minus_one(a));
+	printf("a (after minus_one): %d\n", a);
+}
+
+Lefutva:
+a: 2, minus_one(a) : -2
+a (after minus_one): 2
+
+//unsignedban a minuszoknak nem kéne kiíródniuk, de itt mégis kiírta -> a fgv paraméterében egy sima int a-t vártam és átváltódott az unsigned int-é
+
+
+#include <stdio.h>
+
+int minus_one(unsigned int a){		egy sima intet akarunk visszaadni még itt is, a -1et unsigneddá adjuk és utána vissza int-é
+	// a (lokalis) = a (paramter)
+	a = -1 * a;		//itt v
+	return a;
+}
+
+int main() {
+	unsigned int a = 2;
+	printf("a : %d, minus_one(a): %d\n", a, minus_one(a));
+	printf("a (after minus_one): %d\n", a);
+}
+
+#include <stdio.h>
+
+unsigned int minus_one(unsigned int a){	 	//még itt is -2-t ír ki mert kiiratásnál intté alakítjuk
+	// a (lokalis) = a (paramter)
+	a = -1 * a;		//itt v
+	return a;
+}
+
+int main() {
+	unsigned int a = 2;
+	printf("a : %d, minus_one(a): %d\n", a, minus_one(a));
+	printf("a (after minus_one): %d\n", a);
+}
+
+Minden minden unsigned:
+
+#include <stdio.h>
+
+unsigned int minus_one(unsigned int a){	 	
+	// a (lokalis) = a (paramter)
+	a = -1 * a;		//itt v
+	return a;
+}
+
+int main() {
+	unsigned int a = 2;
+	printf("a : %d, minus_one(a): %u\n", a, minus_one(a));
+	printf("a (after minus_one): %u\n", a);
+}
+
+//itt már túlcsordul
+
+//2.program (1-arrays.c) tömbök//
+
+#include<stdio.h>
+
+int main() {
+
+    int arr1[] = {1,2,3};
+    // ilyenkor a fordító kitalálja a tömb méretét
+    // a tömb méretét létrehozás után nem tudjuk módosítani
+    //mindig kell az üresnek inicializáló listát { , , } -> ebből tudja, h 3 elemű lesz
+
+    int arr2[3] = {1,2,3};
+    /* the same as arr1 */
+    
+    int arr3[2] = {1,2,3};
+    /* too much element, yields warning */
+    
+    int arr4[3];	//mérettel már tudunk deklarálni tömböt, az elemei így memóriaszemetek lesznek
+    arr4[0] = 1;	//itt indexelés, 0-tól kezdődik
+    arr4[1] = 2;
+    arr4[2] = 3;
+    //arr4[3]-ba már nem lehet rakni, hibákat okoz
+    /* same as arr1 and arr2 */
+    
+    int arr5[3];		//ezekre nem ad warningot, nem szól a forddító, h egy tömbbe oda akarunk írni ahova már nincs jogosultságunk
+    arr5[3] = 11;
+    arr5[4] = 13;
+    arr5[5] = 17;
+    
+    printf("%d\n", arr1[0]);
+    printf("%d\n", arr3[2]);
+    int j;
+    for(j =0; j<=15; j++) {
+        printf("%d, ", arr5[j]);
+    }
+        
+    return 0;
+}
+
+Tömb létrehozása: először megadom, h milyen típusú értékeket akarunk benne tárolni, megadom a változó nevet és mögé [] zárójelet rakunk
+Clang: egy fordító mint a gcc, csak máshogy kezel néhány dolgot, a Clang szól, h túl sok elem, és h túlindexeltünk
+Túlindexelünk -> tömb utáni elemet olvassa ki, memóriaszemetet ad vissza, nagyessélyel hiba de nembiztos
+
+//3.program (2-multi-arrays.c)//
+
+MÁTRIX
+
+#include<stdio.h>
+
+int main() {
+
+    int arr1[3][4] = {  			// ha inicializáló listánál a sorszámot nem kell mindig megadni, de az oszlopszámot igen
+       {0, 1, 2, 3} ,   /*  row indexed by 0 */
+       {4, 5, 6, 7} ,   /*  row indexed by 1 */
+       {8, 9, 10, 11}   /*  row indexed by 2 */
+    };
+
+    int arr2[3][4] = {0,1,2,3,4,5,6,7,8,9,10,11};
+    /* means the same as arr1 */
+    
+    printf("%d", arr2[1][3]);
+    
+    return 0;
+}
+
+//4.program (3-shift.c)//
+
+#include<stdio.h>
+
+int main()
+{
+	char temp;
+	char arr[8] = {1, 2, 3, 4, 5, 6, 7, 8}; 	
+	temp = (arr + 1)[2];				//ha van egy tömb és hozzáadok a tömbhöz 1-et akkor a tömböt shiftelem eggyel balra, ami 0. elem volt az a -1. lesz, olyan mintha az első elemet levágnám
+	printf("%d\n", temp);
+    
+    	int arr2[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+	temp = (arr2 + 1)[2];				//mindig egy elemmel tolja el a +1 a tömböt
+	printf("%d\n", temp);
+    
+    return 0;
+}
+
+char 1 bájt, int 8-4 bájt
+
+//5.program//
+
+	//irj egy programot, ami egy adott elemu tombot feltolt 0-kal	
+	//int a[20];
+	//...itt feltoltom 0-val...
+
+#include <stdio.h>
+
+int main(){
+	int a[20];
+	int i;
+	for (i=0; i<20; ++i){
+	
+	a[i]=0;
+		}
+}
+
+ennél rövidebb:
+
+int main() {
+	
+	int b[20] = {};			//{} automatikus értékadást jelent
+
+}
+
+
+egy inicializáló listában ha kevesebb elemet adok meg mint a több eleme, akkor a többi értéket kinulláza
+ha a[20] = {1,2,3} akkor csak az első háromnak lesz értéke a többi nulla
+globális változókat illik kerülni multicredit programokban, mert bármi hozzáfér
+
+Ha globálisként deklaráljuk a tömböt akkor feltölti nullákkal:
+
+#include <stdio.h>
+int a[1000];
+
+int main() {
+	for (int i=0; i<1000; ++i) {
+		printf("%d ",a[i]);
+	}
+}
+
+//6.program//
+
+//irj egy programot, ami osszeadja egy tomb elemeit (sum nevu valtozoba)
+
+#include <stdio.h>
+
+
+int main() {
+	int a[5] = {1,2,3,4,5};
+	int sum = 0;
+	//printf("%ld\n", sizeof(a)); // így az egész tömbnek a memóriahelyét adta meg
+	printf("%ld\n", sizeof(a) / sizeof(a[0]));	//ekvivalens: sizeof(int)
+	for (int i=0; i < 5; ++i) {
+		sum += a[i];
+	}
+}
+
+
+#include <stdio.h>
+
+int sum(int a[]) {
+	int result = 0;
+	for (int i=0; i<sizeof(a) / sizeof(a[0]); ++i) {
+		printf(%d\n",i);
+		result +=a[i];
+	}
+	return result;
+
+int main() {
+	int a[5] = {1,2,3,4,5};
+	printf("%ld\n", sizeof(a) / sizeof(a[0]));
+	int res = sum(a);
+	printf("res: %d\n",res);
+}
+
+//amikor egy fgv-nek átadok egy tömböt, az nem tömbként adódik át hanem vmi másként
+//a sizeof(a) nem a tömb mérete hanem vmi másnak a mérete (pointer)
+//ha egy fgv-nek átadunk egy tömböt akkor a fgv-en belül nem tudjuk meghatározni a tömb méretét sehogy, érdemes másik paraméterként a méretét is átadni
+
+Itt már a méretet is átadtuk:
+
+int sum(int a[], int size) {
+	int result = 0;
+	for (int i=0; i<size; ++i) {
+		printf(%d\n",i);
+		result +=a[i];
+	}
+	return result;
+
+int main() {
+	int a[5] = {1,2,3,4,5};
+	printf("%ld\n", sizeof(a) / sizeof(a[0]));
+	int res = sum(a, sizeof(a) / sizeof(a[0]));
+	printf("res: %d\n",res);
+}
+
+Pointerek:
+a scanfnél memóriacímbe szeretnénk olvasni, ha egy számot beolvasunk scanf-el akkor második paraméterként egy memóriacíet vár
+pl
+scanf( "%i\n", &a) - itt egy int memóriacímét megkapom és ide olvasom az értéket
+
+a memóriacímkéket el tudjuk tárolni és ezt pointerekkel tesszük meg, a pointerek memóriacímeket tárolnak,
+amikor az a tömböt átadom akkor nem a tömböt adom át, hanem az első elemére mutató pointert, azaz a sum fgv az meg fog kapni egy memóriacímet, h a memóriában itt kezdődik az a tömb amit átadtam
+
+//7.program (what-1.c)//
+
+#include<stdio.h>
+int main(void)
+{
+    int arr[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    
+    printf("%d - %d", arr, arr+1);	// a tömb átkonvertálódik vmivé és ezt a vmit fogja kiírni
+    
+    return 0;
+}
+
+//mit szeretnék itt printelni? egy int-et
+//mit adok meg neki? egy tömböt
+//nincs olyan formatterünk amivel egy tömböt mint egész ki tudjuk dobni 
+
+//8.program (what-2.c)//
+
+#include<stdio.h>
+int main()
+{
+    int arr[2] = {1, 2/*, 3, 4, 5*/};
+    printf("%d, %d, %d", arr[2], arr[3], arr[4]);
+    return 0;
+}
+
+//túlindexelés
+
+//9.program (what-3.c)//
+
+#include<stdio.h>
+int main()
+{
+    int a, b, c;	
+    int arr[5] = {1, 2, 3, 25, 7};
+    a = ++arr[1];		//amikor egy tömböt ++ozok akkor (++arr)[1]-nél shiftelné a tömböt, operátor precedencia lényeges itt, a posztfix erősebb mint a prefix, itt először veszem az arr 1. elemét és azt ++olom
+    b = arr[1]++;		//az array s ++ egyenlő -> balról jobbra haladok
+    c = arr[a++];
+    printf("%d : %d :%d", a, b, c);
+    return 0;
+}
+
+lefuttatva: 4 : 3 : 25
+
+//10.program (max.c)//
+
+MAXIMUM KIVÁLASZTÁS
+
+#include <stdio.h>
+
+int max (int a[], int size) {
+	int res = a[0];
+	for (int i=1; i < size; ++i) {
+		if (a[i] > res) {
+			res = a[i];
+		}
+	}
+	return res;
+}
+
+int main() {
+	int valami[5] = {-2, 0, 42, 12, -20};
+	printf("max: %d\n", max(valami, sizeof(valami)/sizeof(valami[0])));
+}
+
+
+//11.program//
+
+//irjunk fgv-t ami visszaadja a tomb második legkisebb elemét
+
+#include <stdio.h>
+
+int max (int a[], int size) {
+	if (size < 2) {
+		return a[0];
+	}
+	int min = a[0];
+	int min2 = a[0]
+	for (int i=1; i < size; ++i) {
+		if (a[i] < min) {
+			min2 = min;
+			min = a[i];
+		}
+	}
+	return min2;
+}
+
+int main() {
+	int valami[5] = {-2, 0, 42, 12, -20};
+	printf("max: %d\n", max(valami, sizeof(valami)/sizeof(valami[0])));
+}
+
+//ez akkor nem jó ha a legelső a legkisebb elem, 
+
+
+A jó megoldás:
+
+#include <stdio.h>
+
+int max (int a[], int size) {
+	if (size < 2) {
+		return a[0];
+	}
+	int min = a[0];
+	int min2 = a[1]
+	for (int i=1; i < size; ++i) {
+		if (a[i] < min) {
+			min2 = min;
+			min = a[i];
+		} else if (a[i] <min2) {
+			min2 = a[i];
+		}
+	}
+	return min2;
+}
+
+int main() {
+	int valami[5] = {-2, 0, 42, 12, -20};
+	printf("min: %d\n", min(valami, sizeof(valami)/sizeof(valami[0])));
+}
+
+
+HF: írjatok egy programot ami bekér egy stringet és megszámolja a karakterek számát
+
+segítség: ha bekér egy stringet, fgv-t írjunk aminek paraméterül átadunk egy stringet és az visszatér a karakterek számával
+
+#include <stdio.h>
+
+int strlen(char a[], ???)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

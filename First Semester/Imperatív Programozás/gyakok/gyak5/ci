@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -e $1 ]
+then
+	touch $1
+	vim $1
+else
+	echo -e '#include <stdio.h>
+
+int main()
+{
+	
+}' > $1
+	chmod +x $1
+	vim $1
+fi

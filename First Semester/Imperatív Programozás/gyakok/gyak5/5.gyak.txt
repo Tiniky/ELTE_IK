@@ -1,0 +1,460 @@
+5.Gyakorlat impprog 14.csoport
+
+
+#include <stdio.h>
+
+int strlen(char str[]) {
+	int i=0;
+	while (str[i++] != 0); 		//akkor terminál amikor elér a 0 karakterhez, mivel nullától indexelünk ezért megkapjuk, h konkrétan hány karakter van a karakterláncban
+	return i;
+}
+
+//egy karakterlánc végén mindig nulla szerepel, ezért külön nem kell átadnunk a méretét paraméterként a fgv-nek
+
+inicializálás az amikor a létrehozáskor értéket is adunk vminek
+int kukumuku = 0; <- inicializálás
+int kukumuku; <- deklarálás
+
+POINTEREK:
+
+//1.program (0-pointers-intro.c)// (14:20)
+
+#include<stdio.h>
+
+int main() {
+
+    int i = 123;
+    
+    printf("Value: %d, memory address: %p\n", i, &i);		//ha it %d akkor 10-es számrendszerbeli szám lesz
+    
+    /*
+    A pointer egy speciális típusú és felhasználású változó,
+    mely egy memóriacímet - általában egy másik változóét -
+    tartalmaz.
+    */
+    int *j = &i;			//típusmegadás, *-al jellzem, hogy egy pointer, utána pedig a pointer neve, mindegy hol a *
+    					//ha egy változót deklarálunk akkor típus mögé rakjuk fel a csillagot, ha pedig több dolgot akkor a változó elé
+    /*
+    int* j   or   int *j   (means the same to the compiler)
+    
+    int* i, j  or  int *i, *j    (means two different things!!!) //az elsőnél: itt *i: intre mutato pointer, j sima int
+    */
+    
+    i = 220;
+    
+    printf("Value(an address): %p\n", j); 
+    printf("The value stored at that address: %d\n", *j);
+	// j: memoriacim
+	//*j: memoriacimen tarolt ertek    
+    
+    return 0;
+}
+
+pointerek: 
+intro:
+amikor létrehozok egy fgv-en belül pl egy változót, akkor az stackel hozódik létre (stack: ezen létrehozott változók és ezen lefoglalt memória automatikusan kezelődik, bármilyen változót létrehozok (fgv-en belül addig él a változó addig él ameddig a fgv is) a stacken aut kezelődik a memória, ha létrehozok egy int-et akk aut le lesz foglalva annyi hely amennyire az int-et le tudom tárolni, ha kilépek a fgv-ből akkor felszabadul a hely
+
+heep: itt nincs automatikus memóriakezelés, ott magamnak kell lefoglalni/felszabadítani a memóriát, ha lefoglalok int-nyi helyet és nem szabadítom fel a végén pl, akkor a memória elveszik (memory leak), az oprsz úgy veszi, h lefoglaltam annyi memóriát és az az enyém, de ha lefut a programom utána már nem tudom megmondani h az nem fog kelleni ezért amíg újra nem indítom a gépem addig az oprsz úgy kezeli, h az a memória az hozzám tartozik csak én használhatom
+
+& - memóriacím lekérés, ha egy vált elé teszem az operátort, akkor nem a vált értékét kapo vissza hanem azt a memóricímet ahol a változóm tárolódik
+érdemes egy memóriacímet tárolni a pointerben
+a * a változóhoz tartozik és nem a típushoz
+egy memóriacím 8 bájton tárolódik, 64 bit
+
+pointerek már tényleg:
+
+ebben nem értéket szeretnék tárolni hanem egy memóriacímet, egy pointernek meg van ált adva, h milyen típusú értéket tárol a memóriacím amihez mutat
+egységesen 8 bájt a méretük
+létrehozásuk:
+megadom a típust, h milyen értéket tárol a memóriacím amire mutatni akarok
+
+int* j =&i;
+ha van egy pointerem mint a j, az értéket *j-ként tudom elérni róla
+ha lekérem az adatot akkor:
+j - memóriacím
+*j - memóriacímen tárolt érték
+
+    /*
+    Tömb vs pointer
+    */
+    
+    int arr[] = {10,11,12,13};
+    
+    printf("arr: %p\n", arr);
+    printf("*arr: %d\n", *arr);			//*arr az első elemet adja vissza
+    printf("arr[1] == (arr+1)[0] == *(arr+1): %d == %d == %d\n"
+          , arr[1], (arr+1)[0], *(arr+1));
+    
+    printf("*((char*)arr+4): %d\n", *((char*)arr+4));
+
+ha egy tömböt adok át egy printf-nek, akkor pointerré változik és ha a tömbre hivatkozok, akkor kapok egy első elemére mutató pointert
+ha a tömböt akarom kiprintelni akkor csak a memóriacímet printelem ki, ahol a tömb első eleme kezdődik
+egy tömbnek minden eleme egymásután köv a memóriában, ha az első elemének tudom a memóriacímét, onnantól kezdve a többi elemet is el tudom érni ha léptetek egy számlálót v pointert
+
+dereferálás: tömbnek az egyik elemét *pointerrel kérjük le
+
+ezek pointerré konvertálódnak:
+(arr+1)[0] - shiftelve van, mintha a sima arr-nak az első eleme lenne
+*(arr+1) - dereferálom
+
+//karakter pointer castelés későbbre//
+
+
+//2.program (1-null-pointer.c) //
+
+
+#include <stdio.h>
+
+int main () {
+
+   int  *ptr = NULL;		//ez ugyanaz mint *ptr=0;
+   
+   if (!ptr) {
+       printf("The value of ptr is : %p\n", ptr);
+       //printf("The value of *ptr is : %d\n", *ptr);
+   }
+   
+   int c = 123;
+   ptr = &c;	//ha adunk neki értelmes memóriacímet onnan már ki tudjuk olvasni az értéket
+   
+   if (ptr /*!=NULL <-felesleges */) {	//a memóriacímek mindig számok, akkor ad igazat ha az érték nem nulla, ha nulla akkor hamis azza NULL pointer, itt akkor printelünk amikor egy értelmes címre mutat a pointer
+       printf("The value of *ptr is : %d\n", *ptr);
+   }
+   
+   return 0;
+}
+
+NULL pointer: 
+nulla memóriacímre mutató pointer, nem létezik, nem tudunk kiolvasi/beleírni hasznos értéket
+ezzel szoktuk pointerek esetén jelölni az invalid értéket
+ha van egy fgvem ami pointert ad vissta és az hibára fut, akkor ezt tudom jelezni, h visszaadok egy null pointert
+ha null pointerből ki akarunk olvasni értéket akkor segmentation faultal jön vissza
+Tanulság: amikor memóriázunk/pointerezünk, fordítási időben nem lehet ellenőrzi, h valid-e a memória amit elérünk
+futás közben ezt macerás lenne ellenőrizni
+ált ha seg fault egy program, akkor ált memóriakezelési hiba miatt keletkezik (onnan akarok beolvasni/oda akarok írni ahova nincs jogosultságom stb)
+
+//3.program (2-void-pointer.c) //
+
+#include<stdio.h>
+
+int main() 
+{ 
+    int x = 4; 
+    float y = 5.5; 
+      
+    //A void pointer 
+    void *ptr; 
+    ptr = &x; 
+  
+    // (int*)ptr - does type casting of void  
+    // *((int*)ptr) dereferences the typecasted  
+    // void pointer variable. 
+    printf("Integer variable is = %d", *((int*)ptr) ); 	//átcastelem azaz átkonvertálom, itt rákényszerítem h int pointer legyen, 
+  
+    // void pointer is now float 
+    ptr = &y;  
+    printf("\nFloat variable is= %f", *((float*)ptr) ); 
+  
+    return 0; 
+} 
+
+void típusú változó nem lehet
+a void ptr nem azt jelenti h voidra mutat, univerzális pointer, pointerek között tudunk castolni
+egy void pointernek megadhatunk bármilyen típus memóriacímét, szabadon kasztolhatjuk
+amikor dereferálunk egy pointert akkor vmilyen értéket akar visszaadni, és ezért kell megadni h milyen típusú értékre mutat, h tudja a program h mennyi memóriát kell kiolvasni
+a pointer csak azt tudja h ezen a memóriacímen kezdődik az adatunk, ha nem adjuk meg a típusát akkor a pointer nem tudja, mennyi értéket kell visszaadnunk
+ha megadjuk h int ptr tudja h hol kezdődik az adat, és dereferáljuk akkor tudja h 4 bájtot kell visszaadni
+voidnak bármilyen értéket megadhatunk és utána átcastolható
+
+
+//4.program (3-pointer-arithmetic.c) //
+
+#include <stdio.h>
+
+const int MAX = 3;
+
+int main () {
+
+   int  var[] = {10, 100, 200};
+   int  i, *ptr;				//az i integer, és egy intre mutató pointer
+
+   /* let us have address of the first element in pointer */
+   ptr = var;					//amikor egy pointert egyenlővé teszek egy tömmbbel, akkor a pointer az első elem memóriacímét tárolja, a tömbre fog mutatni de csak az első elemére
+   i = 0;
+	
+   while ( ptr <= &(var[MAX - 1]) ) {		//az utolsó elemeig megy a ciklus, amíg a pointerünk kisebb vagy egyenlő az utolsó elem memóriacíménél addig fut a ciklusunk
+
+      printf("Address of var[%d] = %p\n", i, ptr );
+      printf("Value of var[%d] = %d\n", i, *ptr );
+
+      /* point to the previous location */
+      ptr++;
+      i++;
+   }
+   
+   printf("===============\n2. version\n==================\n");
+   //2. version
+   short *ptr2;
+   ptr2 = (short*)var;
+   i=0;
+   
+   while ( ptr2 <= (short*)&var[MAX - 1] ) {
+
+      printf("Address of var[%d] = %p\n", i, ptr2 );
+      printf("Value of var[%d] = %d\n", i, *ptr2 );
+
+      /* point to the previous location */
+      ptr2++;
+      i++;
+   }
+	
+   return 0;
+}
+
+az & kisebb precedensű mint a []
+egy tömbnek az elemei egymás után következnek a memóriában
+mindig igaz lesz az, hogy egy tömb adott elemének a memóriacíme nagyobb lesz mint az előtte lévő memóriacíme
+egy pointert lehet növelni (ptr++), nem egy bájttal növelem, hanem mindig annyival növelem, h konkrétan egy olyan elemet lépjen amire a pointer mutat, 
+ha van egy int pointerem, akkor a memorícimet pontosan annyival növelem, h a memóriában egy intet lépjen arréb,
+ptr++
+pl ha egy intet 4 bájton tárolok, akk a ptr++ olyan mintha fognám kézzel a címet és hozzáadnék 4-et
+ha van a 2-es bájton egy intem, a ptrt ++olom akkor 4 bájtot fog lépni és a 6osra fog mutatni
+pointerekkel ugyanúgy be tudjuk járni az egész tömböt
+
+i nélkül indexelés:
+
+#include <stdio.h>
+
+const int MAX = 3;
+
+int main () {
+
+   int  var[] = {10, 100, 200};
+   int *ptr;				
+
+   /* let us have address of the first element in pointer */
+   ptr = var;					
+	
+   while ( ptr <= &(var[MAX - 1]) ) {		
+
+      printf("Address of var[%d] = %p\n", ptr-var/* ekvivalens azzal, hogy &(var[0])*/, ptr );
+      printf("Value of var[%d] = %d\n", ptr-var, *ptr );	//a tömb inteket tárol, ptr intre mutató, ha kivonom őket megkapom hány intnyi távolságra vannak egymástól, ha 0-ra mutat mindkettő akkor 0 lesz, utána 1 intnyi távolság stb stb
+
+      /* point to the previous location */
+      ptr++;
+      i++;
+   }
+
+
+//5.program (hogyan tudjuk egy változó értékét megváltoztatni pointeren keresztül)//
+
+#include <stdio.h>
+
+int main() {
+	int a = 1;
+	printf("a: %d\n", a);
+	int *ptr = &a;
+	ptr = 2;		//magát a pointert változtatom meg, h ne az a-ra mutasson hanem a 2 memóriacímre
+	*ptr = 2;		//így már az a értéke változik, *-a pointer értékére hivatkozunk ezzel
+	printf("a: d%\n",a);
+}
+
+ha egy fgv-en belül megváltoztatunk vmi értéket, az nem fog igazából megváltozni
+pointerekkel azonban ezeket meg lehet változtatni
+
+//6.program//
+
+//irj egy fgv-t ami a pramaterkent kapott valtozot megnoveli 1-el
+
+void add_one(int* a){
+	*a = *a + 1;
+	return
+}
+
+int main() {
+	int a = 1;
+	printf("a: %d\n", a);
+	add_one(&a);			//ha ide csak a-t írnánk akkor az értéket növelném -> seg fault
+	printf("a: d%\n",a);
+}
+
+
+//7.program//
+
+swap fgv
+
+
+voif swap(int* a, in*t b) {
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+	return;
+}
+
+int main() {
+	int a = 1;
+	int b = 2;
+	printf("a: %d, b: d%\n", a, b);
+	swap(&a,&b);						
+	printf("a: %d, b: d%\n", a, b);
+}
+nem fogja kicserélni mert lokális változóként fogja kezelni a swap-on belül
+lokális változó lesz belőle, le lesznek másolva az értékek, nem történik futáskor semmi
+
+& - memóriacím
+* - érték
+
+// másik órán folytatta az anyagot\\
+
+
+//1.program (4-pointer-to-pointer.c)// pointer pointerek
+
+#include <stdio.h>
+ 
+int main () {
+
+   int  var;
+   int  *ptr;
+   int  **pptr;
+
+   var = 3000;
+
+   /* take the address of var */
+   ptr = &var;
+
+   /* take the address of ptr using address of operator & */
+   pptr = &ptr;							//pointer memóriacímjét adom át neki
+
+   /* take the value using pptr */
+   printf("Value of var = %d\n", var );
+   printf("Value available at *ptr = %d\n", *ptr );
+   printf("Value available at **pptr = %d\n", **pptr); 		//hogy megkapjam az értékét **, ha csak egy lenne előtte akkor a memóriacímet kapom meg
+
+   return 0;
+}
+
+pointer = mutató, nem csak típusra (int, char stb)-re mutathat, hanem mutatóra is 
+pointerek mutathatnak pointerekre, pointerre mutató pointert úgy deklarálunk, h egy * helyett **,
+itt int pointerre mutató pointer 
+uúgy működik mint a sima pointer
+
+//2.program (5-array-of-pointers.c)// pointerek tömbje
+
+#include <stdio.h>
+ 
+const int MAX = 3;
+ 
+int main () {
+
+   int  var[] = {10, 100, 200};
+   int i, *ptr[MAX];				//i egy int, a *ptr[MAX] - egy olyan tömb amire intre mutató pointerek vannak, NEM int tömbre mutató pointer (int **ptr)
+ 
+   for ( i = 0; i < MAX; i++) {
+      ptr[i] = &var[i]; /* assign the address of integer. */	//egyenként a pointer tömbünk i-edik elemének értékül adja a var i-eidik elemének memóriacímét
+   }								//ezután a pointer tömbön keresztül a var összes eleét ki tudjuk írni
+   
+   for ( i = 0; i < MAX; i++) {
+      printf("Value of var[%d] = %d\t%d\t%d\n"
+            , i, *ptr[i], *(*(ptr)+i), *(*(ptr+i)));		//veszem a pointer tömb i. elemét és azt dereferálom, a pointer tömbömet dereferálom (itt átkonvertálódik az első elemére mutató pointerként, ha ezt dereferálom akkor 								megkapom az első értéket) utána hozzáadom az i-t (akkor i-vel léptetem, i db-nyi int-et lépek a memóriában, megkapom a var tömb i. elemét) és azt mégegyszer dereferálom 
+								mert ez egy pointer volt  
+   }								//4. mutatok a ptr tömb első elemére, léptetem a ptr tömböt (i. elem), ezt dereferálom egyszer (memóriacím) és mégegyszer ddereferálom (tényleges érték)
+   
+   return 0;
+}
+
+//3.program//
+
+//feladat: irj egy FGV-t ami 2 intnek az erteket megcsereli
+
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+	return;
+}
+
+int main() {
+	int a = 2;
+	int b = 3;
+	printf("a: %d, b: %d\n", a, b);
+	swap(&a, &b);				//ha nem lenne &, akkor memóriacímet cserélnénk
+	printf("a: %d, b: %d\n", a, b);		//itt meg már nem a memóriacímet hanem az értéket akarom kiírni
+}
+
+//4.program//
+
+int main() {
+	int a;
+	void *ptr = &a;
+	ptr = &ptr;
+	printf("ptr: %p, *ptr: %p", *(int*)ptr);	//más értéket ad vissza
+}
+
+void pointerrel lehet önmagára mutató pointert csinálni, nincs sok értélme
+
+egy pointernek mindig adott mérete van
+egy fgv a paramétereit lemásolja egy lokális változóba, és bármit csinálunk a lokális vált-al az a lokálban marad, fgv-en kívül nem változik
+lemásolódik aka kell extra memória neki
+ha nagy a mérete egy típusnak, akkor célszerűbb egy rámutató pointert átadni a fgv-nek, 2 MB helyett 8 bájt-ot másol le 
+
+STRING MŰVELETEK
+
+"string" = karaktertömb, karakterlánc
+
+//5.program (string_stuff.c)//
+
+int main() {
+	char a[] = "Hello";		//inicializáló listaként működik a hello, ugyanaz mintha ('H', 'e', 'l','l','o', '\0')
+	a[2] = 'a';	
+	char *b= "Hello";		// nem örül a fordító, ha string literált adok, akkor az konstansként van kezelve, bedobja a memóriába mint egy konstans dolgot és pointerrel mutat rá, szóval csak read only
+	b[1] = 'a';
+
+}
+
+//6.pogram//
+
+#include <stdio.h>
+
+int main() {
+	char name[]= "Dominik";
+	char *bad = "read-only";
+	bad[2] = 'a';
+	printf("bad: %s',bad);			=> ez a három sor miatt bus error történik, a processzor nem hajlandó elvégezni a műveletet, tudja h read only és oda akarunk írni
+	printf("Hello %s!\n", name);
+}
+
+
+//7.porgram//
+
+#include <stdio.h>
+
+int main() {
+	char name[256];
+	printf("Add meg a neved:");
+	scanf("%s",name);	// a tömböt átadom egy fgv-nek, pointerré konvertálódik, a pointer értéke az első elem memóriacíme, scanf-nek azt kell megadni, h milyen memóriacímbe olvasok
+	printf("Hello %s", name);
+}
+
+beolvasni egy előre lefoglalt memóriaterületre szeretnék, üres tömb nem lehetne a name[]
+előre meg kell adnom a hosszt, el kell gondolkozni mi a max karakterszám
+char name[4]-nél ha megadom h Dominik pl, kiírja azért de kiindexeltünk a tömbből, olyan memóriaterületre írok ami nem az enyém, semmi se garantálja, hogy amit oda beírok az meg is marad
+printf és legtöbb string fgv úgy működik, h megkapja a nevet azaz 1. karakterre mutató pointert, és addig megy amíg nem talál egy 0 záróelemet
+figyelni erre mert néha addig megy ez így amíg 0-át nem talál
+
+//8.program//
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	char name[256] = "Hello";	//inicializáló lista kinulázza, azaz utána 0 lesz és működik a strlen simán
+	printf("Add meg a neved: ");
+	scanf("%s", name);
+	strlen(name); 			//megszámolja a karakterek számát, akkor lép ki amikor \0-át talál, 
+	strchr();			//tartalmaz e vmilyen karaktert
+	strcmp(name, name); 		// returns -1,(első kisebb mint a második) 0 (egyenlőek), 1
+	//cppreference.com
+}
+

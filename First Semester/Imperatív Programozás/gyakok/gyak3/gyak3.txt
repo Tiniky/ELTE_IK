@@ -1,0 +1,392 @@
+3.gyakorlat
+
+//1.program//
+
+#include<stdio.h>
+int main() {
+    
+//i++: post increment, először visszaadja i értékét, utána megnöveli
+
+    int i = 42;
+    int j;
+    j = (i++ + 10); 
+    // i is now 43
+    // j is now 52 (NOT 53)
+
+
+//++i, pre increment, előbb növeli az i-t utána adja vissza az értékét, értékadás során már az új i fog visszaíródni
+
+    j = (++i + 10);
+    // i is now 44 	<= az előzőnél már 43 volt
+    // j is now 54
+    
+    return 0;
+}
+
+inkrementálás: van egy változónk, ++-al növelünk
+
+//2.program//
+
+#include<stdio.h>
+
+int main() {
+    
+    for( ; ; ) 			<=nincs megadva feltétel, az mindig igaz, végtelenig fut
+    {
+	printf("Fut\n");
+    } 
+
+    return 0;
+}
+
+CTRL+C-vel szakítjuk meg
+
+
+//3.program//
+
+#include<stdio.h>
+
+int main() {
+    
+    int i;
+               				//--i esetén addig fut a ciklus amíg el nem éri a tizet, ha i=11 lenne már le se futna
+	for(i=0; 10>=i--; i+=2) {	//addig fusson a ciklus, amíg 10 nagyobb mint i--, és kettővel növeljük i értékét
+        printf("Fut %d\n", i);		//eggyel fog nőni az i értéke, a ciklus -1-nél kezdődik, a feltétel 1.futás előtt is meg van vizsgálva, i-ből kivonunk egyet mielőtt belelép a ciklusba
+    }					// Vajon hányszor fut le? <= -1től 9ig
+
+    return 0;
+}
+
+//4.program (for-3.c)// 
+
+#include<stdio.h>
+
+int main() {
+    
+    int i;
+            //++i esetén más lenne?		//6-tól 1-ig írja ki a számokat, először növel utána adja vissza az értéket
+    for(i=5; i++; i-=2)				//i++ - nem logikai művelet, nem tudjuk, higaz e vagy hamis -> leszámol 6-tól 2-ig, a c-ben a logikai érték (bool) nem létezik, csak számokat értékel, 0 -hamis, nem nulla -igaz, addig fut 							amíg i nem egyenlő nulla mert akkor a feltétel nem teljesül, bármilyen dolgot írhatunk ide aminek van visszatérési értéke, mert azt átalakítja logikaivá
+    {
+        printf("Fut %d\n", i);
+        // Vajon hányszor fut le?
+    } 
+
+    return 0;
+}
+
+//5.program (for-4.c)//
+
+#include<stdio.h>
+
+int main() {
+    
+    int i;				//0 esetén mi lenne?  <= nem futna le egyszer sem
+    for(i=5; i=1; i--) {		//ez nem összehasonlítás, hanem i-nek értékül adom 1-t, a kiértékelése mindig 1 -> végtelen ciklus
+        printf("Fut %d\n", i);
+        // Vajon hányszor fut le?
+    } 
+
+    return 0;
+}
+
+//6.program (for-5.c)//
+
+#include<stdio.h>
+
+int main() {
+    
+    int i;
+               
+    for(i=0; i<=10; i++) {
+        printf("Fut %d\n", i);		// Vajon hányszor fut le? <= 0tól 10ig kettessével
+        i++;				//nem ajánlott itt is növelni i értékét, itt ugyanaz mint ha i+=2-t írtam volna, de ha az elejére írnánk a blokkon belül az i++-t akkor már bezavarna 
+    } 
+
+    return 0;
+}
+
+
+//RANDOM FACT// scanf 0-val tér vissza ha nem sikeresen olvastunk be
+
+//7.program (for-6.c)//
+
+#include<stdio.h>
+int main() {
+    
+    int i = 42, j = 52;
+    
+    for(i=0; i<3; j=++i) {
+						//i=0 j=52
+						// j=++i => i=1 j=1
+	printf("%d ",j);
+	}					// futási eredmény: i elindulna 0-ról, ezt értékül adnánk a j-nek, hiába adtuk i értékének a 0-át, az elején a j az 52 értéket tárolja, belépek a ciklusba, az i=0, a j=52, kiírom a j-t, 							utána fut le h j=++i
+    						//a for ciklus 3.paramétere, a léptetés csak a ciklusmag lefutása után fut le
+    printf("\n");
+
+//lefutása a fentinek\\: 52 1 2
+    
+//ez uaz mint a felette lévő csak posztinkrementálással	
+    for(i=0; i<3; j=i++) {
+	
+	printf("%d ",j);
+	
+	}
+
+//lefutása\\: 3 0 1
+    
+    return 0;
+}
+
+//8.program (guessing.c)//
+
+    1// int to_guess = 20
+    2//kérjünk be a felhasznalotol számokat, addig amíg el nem találja a számot
+    3//a program minden guess utan irja ki, hogy az adott guess kisebb vagy nagyobb-e mint a kitalalndo szam
+
+	WHILE CIKLUSOK
+	1. előtesztelős
+		while (condition) {
+			do_something();
+		}
+		//
+	
+	2.hátultesztelős
+		do {
+			do_something();
+		} while (condition);		//PONTOSVESSZŐ ITT
+
+		//tudjuk, h az első futásnál amúgy is teljesülne a feltétel, egyszer mindenképpen szeretnénk, hogy lefusson
+
+
+		ˇˇígy ugyanazt csinálja a két fgv
+		
+		int condition = do_something();
+		while (condition) {
+		conditon = do_something();
+		}
+
+
+		do {
+		conditon = do_something();
+		} while (condition);
+
+a program:
+
+#include <stdio.h>
+
+int main() {
+	int to_guess = 20;
+	int guess;
+	do {
+		scanf("%d", &guess);		//%d azaz egy számot szeretnék beolvasni, megmondom h mibe szeretném, a guess csak a változóra vonatkozik, ahhoz, hogy a memóriacímét elérjük elé kell írni a & jelet, ide lesz
+						beolvasva számunk
+		if (guess < to_guess) {
+			printf("A szam (%d) kisebb mint a kitalalndo\n");
+		} else if (guess > to_guess) {
+			printf("A szam (%d) nagyobb mint a kitalalndo\n");
+		}
+
+	} while ( guess != to_guess);
+	printf("Ugyes vagy!\n");
+	return 0;
+}
+
+
+
+a program random számokkal:
+
+#include <stdio.h>		//standard I/O beolvasasa, kiiratasa
+#include <stdlib.h>		//random szam generalasa
+#include <time.h>		//lekerni az adott idot
+
+int main() {
+	srand(time(0));				// ez egyenlő azzal, h time NULL, srand lesz a seed, randomszám generálása előtt kell megadni
+	int to_guess = rand() % 31;		//rand()= int határain belül generál egy random számot, minden futásánál más és ez alapján generálni % - modulo, szám <= itt 0..30
+	int guess;
+	do {
+		scanf("%d", &guess);		//%d azaz egy számot szeretnék beolvasni, megmondom h mibe szeretném, a guess csak a változóra vonatkozik, ahhoz, hogy a memóriacímét elérjük elé kell írni a & jelet, ide lesz beolvasva számunk
+		if (guess < to_guess) {
+			printf("A szam (%d) kisebb mint a kitalalndo\n", guess);
+		} else if (guess > to_guess) {
+			printf("A szam (%d) nagyobb mint a kitalalndo\n", guess);
+		}
+
+	} while ( guess != to_guess);
+	printf("Ugyes vagy!\n");
+	return 0;
+}
+
+ha nem adunk seedet, a c szabvány egy adott randomszám szekvenciát kapsz, aka nem lesz olyan random
+
+int x = condition ? value_if_true : value_if_false;
+
+// ternary operátor: ennek az operátornak az a lényege, hogy if else nélkül kiértékeljek egy logikai értéket, és mással térek vissza ha igaz, ha hamis
+// mindig csak a condition eredményének az ága fog kiértékelődni, ha a c igaz akkor csak az igaz ág értékelődne ki
+
+pl: int x = (1) ? printf("igaz") : printf("hamis");
+
+//hátránya h tényleg csak if else-t helyettesít, nem érdemes stackelni
+
+a program a ternary operátorral:
+
+#include <stdio.h>		
+#include <stdlib.h>		
+#include <time.h>		
+
+int main() {
+	srand(time(0));				
+	int to_guess = rand() % 31;		
+	int guess;
+	do {
+		scanf("%d", &guess);	
+		if (guess == to_guess) {
+			break;					//breakkel mindig kilép a ciklusból
+		}	
+		printf("A szam (%d) %s a kitalalndo szamnal \n", guess, (guess > to_guess) ? "nagyobb" : "kisebb");		//ha a felette lévő if nem lenne, akkor ha kitalájuk a számot a hamis ágra fut, ami a kisebbet írja ki
+
+	} while ( guess != to_guess);
+	printf("Ugyes vagy!\n");
+	return 0;
+}
+
+
+
+
+//9.program //külön fgv-ekbe kiírni a programot
+
+
+#include <stdio.h>		
+#include <stdlib.h>		
+#include <time.h>		
+
+#define TO_GUESS 20 			//alias féle makrók, minden TO_GUESSt kicserél a fordító
+
+int get_guessable();			//ezek fgv deklaráció, ezzel azt mondom a fordítónak, hogy nekem vhol lesz majd egy fgv-em aminek ez lesz a neve, int-tel tér vissza pl, és egy értéke lesz ami int
+int make_guess();
+int evaulate( int guess);
+
+//ha a main alól átmásolnám az evaulate-t akkor nem kell forward deklaráció
+
+int make_guess() {
+	int guess;
+	scanf("%d", &guess);
+	return guess;
+}
+
+int get_guessable() {
+	return TO_GUESS;
+}
+
+
+int main() {
+	int result;
+	do {
+		int result = evaluate(make_guess());
+		if (!result) {			//ekvivalens azzal h result == 0
+			break;					
+		}	
+		//evaluate(guess); 		//ezzel nincs gond ha csak így beleírom a main fgv-be, mert a fordító tudja, h lesz ilyen fgv valahol, ha a main után van a deklaráció és nincs forward az nem tetszik a fordítónak, ha a 						deklarációt előre teszem (forward dec) akkor a mainben tudom, h lesz egy evaulate fgv-em ami egy int paramétert vár és 1 intet ad vissza, de tudom h mit vár és mit ad vissza, így már tudja 						a fordító, h a program amit elé vagy utána írok az helyes-e
+		printf("A szam %s a kitalalndo szamnal \n", (result == 1) ? "nagyobb" : "kisebb");
+		
+
+	} while (result);
+	printf("Ugyes vagy!\n");
+	return 0;
+}
+
+int evaulate(int guess) {
+	if (guess > get_guessable()) {
+		return 1;
+	} else if (guess < get_guassable()) {
+		return -1;
+	} else {
+		return 0;
+	}
+}
+
+ha a main fgv előtt, ha def őket minden olyan fgv előtt amibe használom őket akkor nem kell elődeklarálni
+
+elő kell deklarálni ha a mainben használom de utána definiáltam
+
+//10program// chaining.c
+
+#include <stdio.h>
+
+int main(){
+	int a = 1;
+	int b = 2;
+	int c = 3;
+	if (a< b < c) {
+		printf("a < b < c\n");	
+	}
+}
+
+ez így igaz és kiírja
+
+#include <stdio.h>
+
+int main(){
+	int a = 4;
+	int b = 2;
+	int c = 3;
+	if (a< b < c) {
+		printf("a < b < c\n");	
+	}
+}
+ezt is igaznak veszi, amikor operátorokat chainelek, akkor balról jobbra kiértékeli pket
+először a < b-t kiértékeli, majd ennek a visszatérési értékét fogja hasonlítani a c-hez ami 0 lesz
+
+#include <stdio.h>
+
+int main(){
+	int a = 1;
+	int b = 2;
+	int c = 3;
+	if (a< b < c) {
+		printf("%d < c \n", a<b);	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

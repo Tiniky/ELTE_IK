@@ -1,0 +1,219 @@
+2.Gyakorlat 14.csoport
+
+----1.fájl----
+
+#include<stdio.h> -egy header fájl, ami beimportálja a dolgokat, amikbe itt pl input/outpot függvények vannak
+
+int main() {	  - egész számmal visszatérő fgv, aminek nincs paramétere, a main fgv mindig lefut
+
+    unsigned int a = 1;				-unsigned int: előjel néküli egész szám (természetes számok) -> nem kell 1 bitet lefoglalni a szám előjeléhez, több számot eltudunk tárolni
+    signed int b = -2;				- a sima int is ugyanaz, ezeknek mindig van előjele 
+    printf("a : %u, b: u%, a+b %u\n", a, b a+b) -itt egy nagyobb signed szám lesz, unsignedként nincsenek - értékek, ezért át kell konvertálni egy olyan számmá ami a signed tartományban benne van
+	if(a + b > 0)
+        printf("-1 is larger than 0.\n"); 	-ez ténylegesen kiíródott, két különböző típus a változó, nem tudunk ezekkel egyszerre műveletet végezni, át kel konvertálni őket, ha ezt nem adjuk meg expliciten akkor a tágabb típusba vezet minket (float+int -> mindkettő float lesz, mert itt kevesebb az adatveszteség)
+       					 ^itt a signed int b átkonvertálódik unsigneddá
+    /*****************************************/
+
+    double sum1 = 9*(1./9);
+    double sum2 = 1./9 + 1./9 + 1./9 + 1./9 + 1./9 + 1./9 + 1./9 + 1./9 + 1./9; -végtelen tizedestört, kerekíts miatt hibahatár, véges a memória ezért vmikor le kell vágnia
+    
+    if (sum1 == 1.0 && sum2 == 1.0 && sum1 == sum2) {
+      printf("Comparison succeeds\n");
+    } else {
+      printf("Unexpected result: %1.20f != %1.20f\n", sum1, sum2);
+    }
+    
+    return 0;
+}
+
+ha két intet összeadok,osztok stb -> az eredményét is uolyan típusra szeretné kihozni, ez osztásnál 1/9 itt 0 lesz az eredmény mert a törtrészét eldobtam, ezért itt vmelyik számnak lebegőpontosnak kell enni, 1. -> explicit megmondom h nem int hanem double, int/double -> double (mert így nincs adatveszteség)
+
+----2.fájl----
+
+#include<stdio.h>
+
+int main() {
+
+    char a=65;      /* at least 8 bits,  -128   .. 127*/ 
+    short b=0;      egész/* at least 16 bits, -32768 .. 32767*/ -at least (általában ennyi szokott lenni)
+    int c=0;        egész/* at least 16 bits, typical 32 bits */ -min 16, de ált 32 bit (4 bájt)
+    long d=0;       egész/* at least 32 bits, ~-2 billion .. ~2 billion */ 
+    long long dd=0; egész/* at least 64 bits, if supported */
+    
+	//ha tudjuk, hogy mennyi a tartomány akkor a legszűkebbet kell használni//
+
+    printf("%c, %hi, %i, %li, %li\n", a, b, c, d, dd); -%c ha nem a kódot szeretnénk kiprintelni
+    		short, int, long		       -ha l helyett d-t írunk az is jó
+
+
+    /* unsigned */
+    
+    unsigned char ua=100;     /* 0 .. 255*/ -nincs - karakter, 0. karakter a karakterlánc végét jelenti, a fordító magától hozzácsapja a karaktert h ne csorduljon túl
+    unsigned short ub=0;      /* 0 .. 65535*/
+    unsigned int uc=0;        /* 0 .. */ 
+    unsigned long ud=0;       /* 0 .. */
+    unsigned long long udd=0; /* 0 .. */
+    
+    printf("%c, %hu, %u, %lu, %lu\n", ua, ub, uc, ud, udd); -
+    
+    /* integer literals */
+    
+    printf("%d,   %c,  %d,   %d,  %d,      %d,     %u\n",  -1. a kis a betű kódját, 2. a karakter magát, 3. 012 számként (8as számrendszer) 4. 0x45 (hexadec/16-os számrend), 5. 45L 10-es számrend, az L-el jelzem h long szeretne lenni 6. (3u-5u) itt az u az unsigned  
+           'a',  'a', 012, 0x45, 45L, (3u-5u), (3u-5u));
+					ha signed intként kezeljük akk -2, a másik a nagyszám
+	túlcsordulás
+    
+    /* floats */
+    
+    float f = 3.14f;         /* typically 32 bits, ~6 digits precision */ -mögé teszek fel az az explicit, ha nem teszek utána f-et akk doubleként kezeli, ha nem mondom meg expliciten float f = 3.342243353223 itt először double lesz és átkonvertál floatra, ami adatveszteséggel jár
+    double fd = 3.14;        /* typically 64 bits, ~15 digits precision */
+    long double lfd = 3.14l; /* even bigger */
+    
+    printf("%f, %lf, %Lf\n", f, fd, lfd);
+    
+    /* floating point literals */
+    
+    printf("%f, %f, %f, %f\n"
+          , 3.14159, 314.159E-2, 314159E-5, 0.0314159E+2); -ugyanaz a szám
+    
+    /* type of literals by default */ -literálok: konstans értékek
+    
+    printf("%d\t", sizeof(2.5) == sizeof(double)); -1-et ír ki ha igaz, 0-át ha hamis,nincs boolean érték, számokal jelzi
+    printf("%d\t", sizeof(2)   == sizeof(int));	   -sizeof() az egy operátor: pl +,-,* stbstb megmondja mennyi helyet foglal a memóriában
+    printf("%d\t", sizeof('A') == sizeof(char)); 	-karaktert nem karakterként kezel automatikusan a fordító-memóriaértékeket hasonlítgatni, hogy melyik milyen fajta
+    
+    /* void, the type for no-value */
+    
+    // void v;       // compile error -nincs visszatérési érték, nem használjuk fel, csak fgv visszatérési értéknek adunk meg
+    
+    return 0;
+}
+
+void exit(int status);
+
+int rand(void); -korábbi c szabv kötelező dolog, paraméternélküli fgv-eknél nem vt elég a () hanem a (void) kellett
+
+
+---3.program----
+
+---Típuskonverziók--- 
+
+#include<stdio.h>
+
+int main() {
+    char ch; 			-csak deklarálva van, de nincs definiálva, a lefoglalt memóriaterület értékét adja vissza (memóriaszemét)
+    int i = 321;
+    
+    /* downcasts */	-castelés, egy tágabb típusból egy szűkebb típusba konvertálók, int -> char, double -> float, sokszor adatveszteséggel járhat
+    
+	== <- összehasonlítás
+	= <- értékadás
+
+    printf("Downcasts: %d, %d, %c\n", ch = i, (char)i, (char)i); 	//mindig visszatér az adott értékkel a c
+						//amikor veszek egy változót/értéket és elé egy típust írok, ezt az értéket mindenképpen konvertálja át egy másik típussá    
+						//túlcsordult itt, visszaugrik 0-ra és utána 321-hez még ami kell 255 
+
+	//0-255 az értéke a karakternek
+ 	//amikor a ch-nak egyenlővé adom az i-t, utána vissza fog térni azzal az értékkel amit egyenlőül adtam, ezért nem sír a program azon h értékadás történt
+
+
+	if (i =2){
+
+	}
+	-ide kettős egyenlőségjel kéne, itt az i egyenlő lesz 2, visszaadja a kettőt, amit logikai értékként kezel (ha i=0 akkor az mindig false értéket ad)
+
+
+    /* upcast */ 						-szűkebb típusból tágabba, nincs adatveszteség
+    printf("Upcasts: %d, %d\n", sizeof(i+ch), sizeof(ch+i));	-char -> int (itt mindig belefér a tartományba), sizeof bájtban írja ki, h mennyit foglal a memóriában
+    								-a C mindig a tágabb típust tartja meg, int+char=int
+    /*******************************/
+    
+    double pi = 3.14159;
+    int j;
+    /* downcasts */
+    printf("Downcasts: %d, %d\n", j = pi, (int)pi); 	//a tizedes rész elveszik, csak az egészrész marad meg, nem kerekítés történik
+
+    /* upcast */
+    printf("Upcasts: %d, %d\n", sizeof(j+pi), sizeof(pi+j)); //a tágabb típust tartotta meg, annak írja ki a méretét
+    
+    /************************/
+    
+    int score = 17;
+    /* convert this from a 0..20 range to a 0..100 range */
+    
+    int s1 = (score / 20) * 100;  			//int/int=int, a tizedes rész elveszik, át kell castolni double-é
+    /* NO -- score/20 truncates to 0 */
+    
+    int s2 = ((double)score / 20) * 100;		//át kell castolni az intet double-é
+    /* OK -- floating point division from cast */
+    
+    int s3 = (score / 20.0) * 100;			//így float lesz de jo
+    /* OK -- floating point division from 20.0 */
+    
+    int s4 = (int)(score / 20.0) * 100;			//it át lett castolva és lecsapta a végét ennek is
+    /* NO -- the (int) truncates the floating quotient back to 0 */
+    
+    printf("%d, %d, %d, %d", s1, s2, s3, s4);
+    
+    return 0;
+}
+
+4.program
+
+{} - blokkok, nem muszáj kiírni de nagyon érdemes
+
+#include <stdio.h>
+
+int main()
+        {int a;
+
+        printf("Kerlek adj meg egy szamot: ");
+        scanf("%d", &a); // & - azt mondja, h egy adott változónak a memóriacímét szeretném elkérni, scanf (megmondom mit szeretnék beolvasni, utána megmondom, hogy hova szeretném beolvasni)
+
+        if (a>0)
+        {
+                printf("A %d szam pozitiv\n",a);
+        }
+        else if (a<0)
+        {
+                printf("A %d szam negativ\n",a);
+        }
+        else
+        {
+                printf("A %d szam 0.\n",a);
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,186 @@
+vim szövegszerkesztő
+	- i betű: insert mód, innentől kezdve tudunk beleírni dolgokat
+	- escape az insert módból való kilépés
+	- :w mentés
+	- :q kilépés
+	- :q! kilépés mentés nélkül
+
+
+wc
+-m karakter szám
+-w szó szám
+-l sor szám
+
+
+vim hello.c
+
+#include <stdio.h>
+
+int main() {
+        printf("Hello world!\n");
+	return 0;
+}
+
+gcc hello.c -o hello.exe
+./hello.exe
+VAGY
+gcc hello.c   <= ez automaikusan generál egy a.out filet
+./a.out
+
+
+(halado_feladatok)
+a.txt, b.txt, c.txt
+grep -r -e "alma" halado_feladatok/   <= megkeresi a mappában az almát
+
+find a b c -name alma.txt
+
+
+vim nev.c
+
+#include <stdio.h>
+
+int main() 
+{
+        printf("FTN\n");
+	return 0;
+}
+
+gcc nev.c -o nev.exe
+./nev.exe
+
+
+vim osszeg.c
+
+#include <stdio.h>
+
+int main() 
+{
+        int a=2;
+	int b=7;
+	printf("összeg: %d\n", a+b);
+	return 0;
+}
+
+gcc osszeg.c -o osszeg.exe
+./osszeg.exe
+
+
+vim osztas.c
+
+#include <stdio.h>
+
+int main()
+{
+        float a=10;
+        float b=4;
+        printf("osztás lesz: %.2f\n", a/b);
+        return 0;
+}
+
+gcc osztas.c -o osztas.exe -W -Wall -Wextra
+./osztas.exe 
+
+
+vim negyszog.c
+
+#include <stdio.h>
+
+int main()
+{
+        int a,b;
+        printf("add meg a négyszög 2 oldalát: \n");
+        scanf("%d %d",&a, &b);
+
+        int ker;
+        ker = 2*a + 2*b;
+        int ter;
+        ter = a*b;
+
+        printf("Kerület = (%d)\n", ker);
+        printf("Terület = (%d)\n", ter);
+        return 0;
+}
+
+gcc osztas.c -o a.out -W -Wall -Wextra
+./a.out
+
+
+vim kor.c
+
+#include <stdio.h>
+
+int main()
+{
+        int r;
+        printf("add meg a kör sugarát: \n");
+        scanf("%d",&r);
+
+        float ker;
+        ker = 2*r*3.1415;
+        float ter;
+        ter = r*r*3.1415;
+
+        printf("Kerület = (%.2f)\n", ker);
+        printf("Terület = (%.2f)\n", ter);
+        return 0;
+}
+
+gcc kor.c -o a.out -W -Wall -Wextra
+./a.out
+
+
+vim hello2.c
+
+#include <stdio.h>
+
+int main()
+{
+        char nev[25]= "Fábián Tímea Nikolett";
+        printf("Hey Hey %s is BACK boii\n", nev);
+        return 0;
+}
+
+gcc hello2.c -o a.out -W -Wall -Wextra
+./a.out
+
+
+vim evhetnap.c
+
+#include <stdio.h>
+
+int main()
+{
+        int napok;
+        printf("add meg a napok számát: \n");
+        scanf("%d", napok);
+
+        int ev = napok / 365;
+        int maradek_napok = napok % 365;
+        int het = maradek_napok / 7;
+        int nap = maradek_napok % 7;
+
+        printf("ez pontosan %d év, %d hét és %d nap\n", ev, het, nap);
+	return 0;
+}
+
+gcc evhetnap.c -o a.out -W -Wall -Wextra
+./a.out
+
+
+vim fahrenheit.c
+
+#include <stdio.h>
+
+int main()
+{
+        float celsius;
+        printf("add meg a hőmérsékletet Celsiusban: \n");
+        scanf("%f", &celsius);
+
+        float fahrenheit = (celsius * 9 / 5) + 32;
+        printf("ez kérlek szépen %.2f fahrenheit lesz köszi puszi\n", fahrenheit);
+        return 0;
+}
+
+gcc fahrenheit.c -o a.out -W -Wall -Wextra
+./a.out

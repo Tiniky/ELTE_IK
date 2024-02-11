@@ -1,0 +1,104 @@
+1.Gyakorlat
+
+Linux terminál: egér csak kijelölésre, mindig egy adott mappában benne vagyunk, általában van egy prompt a terminálban, ami kiírja, hol vagyok pl mappa1/14>
+~ - adott belépett usernek home könyvtárát mutatja
+pwd - kiírja a teljes elérési útvonalat a mappához
+ls - kilistáz
+touch - hozzányúl egy fájlhoz, ha nincs újat készít
+mkdir - mappakészítés
+ls -l - hosszú kilistázás <- első betű megmutatja h fájlról vagy könyvtárról van e szó, utána jogosultságok
+cd [utána elérési útvonal] - change directory
+relatív útvonal: mindig ahhoz képest nézem amilyen mappában vagyok, minden olyan útvonal ami nem egy /-el kezdődik
+cd elso - jelenlegi mappában keresem ezt és belépni ebbe
+cd .. - egy mappával feljebb lépek
+cd ../.. - két mappával feljebb stb <- cd - argumentum nélkül visszadob a home könyvtárba
+tab - megpróbálja kitölteni, kiegészíteni a szövegeket
+
+vim szövegszerkesztő
+	- i betű: insert mód, innentől kezdve tudunk beleírni dolgokat
+	- escape az insert módból való kilépés
+	- :w mentés
+	- :q kilépés
+	- :q! kilépés mentés nélkül
+
+cp [fájl] (hova szeretnél másolni ->) [mappa, fájl] pl. cp alma.txt elso/barack.txt (itt az első mappába mentünk, barack.txt néven)
+ls [mappa] - annak a mappának tartalmát mutatja amit beírunk
+mv [fájl] [mappa] - áthelyezés pl. alma.txt elso
+mv [fajl] [fajl] - átnevezés pl mv alma.txt korte.txt, külön parancs nincs, áthelyezem a fájlt egy másik fájlba
+cat [fájl] - kiírja a tartalmát => [file] [file].. = annyi filet ír ki ahányat felsorolsz
+man [parancs] -manual/kézikönyv, leírja a fontos infókat, legalsó sor (q-val kell kilépni)
+rm [fájl] - törlés
+rm -r [könyvtár] - -r rekurzívan töröljön ki mindent a könyvtárból utána a könyvtárt is 
+
+c forrásfájlokat .c kiterjesztéssel menteni
+vim hello.c
+
+#include <stdio.h>
+
+int main() {
+        printf("Hello world!\n");
+	return 0;
+}
+
+ha egy függvénynek (itt a main() ) nem mondom meg milyen értékkel térjen vissza, akkor egy memóriaszeméttel fog visszatérni (ált 0-val de ha fontos akk nem)
+ha return -1 azzal hibát jelzünk, nem várt működést, a program ettől még lefuthat de jelzi a hibát, olyanra használni beolvasni fájlt és feldolgozni, de nincs joga megnyitni a fájltfájlt akkor visszatérés -1-re hogy a felhasználó látja a hibá
+egy c programnak 0-val kell lefutnia ha jól működik
+gcc - gnu c compiler, c lefordítása, futtatható állomány készítése
+a c nem egy interpretált nyelv, nekünk le kell fordítani egy futtatható állománnyá a kódunkat, hogy működjön
+
+pl
+ cat hello.c ezt mi tudjuk olvasni
+ amit a gép tud olvasni: cat a.out
+
+ha nincs kapcsoló akkor a gcc mindig egy a.out fájlt készít, de meg is mondhatom neki, hogy mit szeretnék
+fájlkiterjesztés itt nem számít, de ált .o vagy .out (jelzés h futtatható), de nem muszáj kiterjesztés
+
+gcc hello.c -o hello.exe
+./hello.exe - megynitja
+
+./ - ha megadok egy a.out fájlt a mappában, azt nem fogja megtalálni, manuálisan kell megmondani, a . jelöli h az adott mappát , a ./ h adott mappán belül
+
+#include <stdio.h> - külső könyvtárak használata, standard könyvtárből standardio (standard ki és bemenet fájl), kiírás/beolvasás
+
+int main() {				-main() függvény (mindig lefut), int a visszatrési értéke, main nevű fgv ami vmilyen számmal szeretne visszatérni, zárójeleken belül a fgv paraméterek, ha () üres akkor az azt jelenti, h nem akarunk semmiféle paramétert átadni
+        printf("Hello world!\n");	-{függvénytest}, ezek között fut le a program, itt van függvényhívás printf (kiírás), \n - 1 karakter, new line karakter, új sort kezd ;-val végződik
+	return 0;			- az érték amivel visszatér
+}
+
+kilépés inster módból - u betűvel undo
+
+printf - karaktersorozatokat ki tud írni (számokat is)
+
+int a =2;
+int b =3;
+printf(a+b) - így nem tud számokat kiírni a printf
+printf("Az a (%d) es b(%d) osszege: %d", a, b, a+b); - utána kell írni vesszővel az értékeket, a a %d-t pedig oda ahova akarjuk, hogy kiírja a számot?
+%d - egy egész számot kell megadni
+printf("%d\n", a)
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
