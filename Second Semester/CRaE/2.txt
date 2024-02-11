@@ -1,0 +1,25 @@
+//Decision making methods
+Causation processes 	<- take a particular effect as given and focus on selecting means to create that effect
+Effectuation processes 	<- take a set of means as given and focus on selecting between possible effects that can be created with that set of means
+
+Principles of Effectuatuion
+Affordable Loss 	<- decrease loss
+Lemonade		<- avoiding surprises
+Patchwork Quilt		<- Competetive analysis
+Pilot-in-the-plane	<- Inevitable trends
+
+//Opportunity discovery & opportunity creation
+!not luck
+
+//Prior knowledge
+- work experience
+- personal events
+- education
+- ..
+
+//Startup principles
+"learning by doing"
+- communicate with costumers about their opinions
+
+LEAN concept <= don't just execute the plan, ask first, improve
+Does your idea solve a problem? Can you find potential costumers? Does anyone care?
