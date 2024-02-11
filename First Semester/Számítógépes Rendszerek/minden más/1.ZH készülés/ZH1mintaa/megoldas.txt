@@ -1,0 +1,10 @@
+Fábián Tímea Nikolett
+RDDZXA
+/mnt/c/Users/40757/Desktop/ELTE stuff/számítógépes rendszerek/Zh1mintaa
+less
+lessecho
+lessfile
+lesskey
+lesspipe
+rm -rf - törlés akkor is ha nem üres
+yes>szepmunka.txt - a yes belekerül a szepmunka.txt-be

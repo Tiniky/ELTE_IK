@@ -1,0 +1,101 @@
+0.
+ls ~ -a -r
+
+1.
+mkdir ZH1
+
+2.
+cd ZH1
+touch megoldas.txt
+cat>> megoldas.txt
+'Fábián Tímea Nikolett
+RDDZXA' (ctrl+D)
+
+3.
+pwd
+cat>> megoldas.txt
+'/mnt/c/Users/40757/ZH1minta' (ctrl+D)
+
+4.
+mkdir Foo
+cd Foo
+mkdir Bar Baz Bon FooBar FooBaz FooBon
+mv FooBar Bar
+mv FooBaz Baz
+mv FooBon Bon
+
+5.
+rm Bon -rf
+
+6.
+cd Bar
+cd FooBar
+touch .farkas
+touch barany
+
+7.
+ls -a
+
+8.
+cd ..
+cd ..
+mv Bar Baz
+cd Baz
+mv Bar FooBaz
+
+9.
+cd ..
+ls -R
+
+10.
+a) ps u
+b) top
+c) q
+
+11.
+a) sleep 10
+b) ctrl+C
+
+12.
+a) sleep 10m
+b) ctrl+c
+c) sleep 10m & bg
+
+13.
+sleep 300 &
+
+14.
+ps aux | grep sleep
+
+15.
+killall sleep
+
+16.
+/ - könyvtárfa kiindulópontja
+. - a munkakönyvtár
+.. - egyel fölötte levő könyvtár
+~ - a felhasználó home könyvtára
+
+17.
+ls /bin
+cat>> megoldas.txt
+" less
+lessecho
+lessfile
+lesskey
+lesspipe" (ctrl+D)
+
+18.
+touch ManHelpHossz.txt
+cat>> ManHelpHossz.txt
+copy past man -help
+cat -n ManHelpHossz
+wc -l ManHelpHossz
+
+19.
+cat megoldas.txt
+
++1)
+cat>> megoldas.txt
+rm -rf - törlés akkor is ha nem üres
+yes>szepmunka.txt - a yes belekerül a szepmunka.txt-be

@@ -1,0 +1,41 @@
+1.
+cd ~
+pwd
+
+2.
+mkdir ZH1minta2
+chmod u+rwx ZH1minta2
+
+3.
+mkdir .ELTE .IK .BSc .MSc BTK MA MB
+mv .Bsc .IK
+mv .Msc .IK
+mv .IK .ELTE
+mv MA BTK
+mv MB BTK
+mv BTK .ELTE
+
+4.
+cd .ELTE
+find -name M*
+
+5.
+cd .IK
+cd .BSc
+touch proginf.tyt
+cat>> proginf.tyt
+"Kiss Boldizsar
+Kozepes Sandor
+Nagy Lara Timea" (ctrl+D)
+cd ..
+cd..
+cd BTK
+cd MA
+touch germanisztika.txt
+cat>> germanisztika.txt
+"Bal Aliz
+Jobb Dorottya
+Kozepes Reka" (ctrl+D)
+
+6.
+mv proginf.tyt proginf.txt

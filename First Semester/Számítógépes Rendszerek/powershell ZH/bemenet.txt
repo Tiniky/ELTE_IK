@@ -1,0 +1,7 @@
+ProgAlap;6;5
+SzámRend;5;3
+MatAlap;4;3
+FunkcProg;5;5
+ImpProg;5;2
+Jog;3;3
+EgyetemAlapozó;1;5

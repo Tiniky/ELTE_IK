@@ -1,0 +1,37 @@
+1  mkdir ZH
+
+2. feladat | nem tudom sehova i guess
+
+3. feladat | Rekurzív listázás
+
+4.  cd ZH
+
+5.  mkdir ./{.allat/{.emlos/{.kutya,.macska},.hullo/{.kigyo,.krokodil}},.gomba/} -p
+?  ls -aR
+
+6.  echo O >> ki.txt
+
+7.  cat ki.txt
+
+8.  ls /bin | wc -l
+
+9a  sleep 5m&
+9b  sleep 4m
+9b1 ctrl+c
+9b2  bg
+
+10.  ps aux | grep sleep
+11.  killall sleep
+?    ps aux
+
+12.  alias c="cd .."
+    c
+
+13 cd ZH
+   touch bogyo.txt
+   vim bogyo.txt
+   chmod 711 bogyo.txt
+   ls -l
+
+   71  alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
+   72  lst

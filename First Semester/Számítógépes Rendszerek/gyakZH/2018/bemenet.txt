@@ -1,0 +1,5 @@
+﻿Alistar;7;3
+Morgana;6;3
+MF;5;2
+Tristana;5;1
+Veigar;5;2

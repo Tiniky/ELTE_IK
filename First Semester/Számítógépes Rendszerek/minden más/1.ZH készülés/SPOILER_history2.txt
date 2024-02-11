@@ -1,0 +1,62 @@
+    1  ls -ar
+
+    2  mkdir ZH1
+    3  cd ZH1
+
+    4  touch megoldas.txt
+    5  ls
+    6  vim megoldas.txt
+    7  cat megoldas.txt
+
+    8  pwd >> megoldas.txt
+    9  cat megoldas.txt
+
+   13  mkdir Foo/{Bar/Foobar,Baz/Foobaz,Bon/Foobon} -p
+   15  ls -R
+
+   16  cd Foo/
+   17  cd Bar/
+   18  cd Foobar/
+   19  touch .farkas
+   20  touch barany
+  
+   27  ls -a
+
+   28  cd ..
+   29  cp Bar Baz -r
+   30  cd Baz
+   31  ls
+
+   32  cd ..
+   33  ls -R >> megoldas.txt
+   34  cat megoldas.txt
+
+   35  ps aux
+   36  top
+c | q vagy Ctrl+c
+
+   37  sleep 10
+CTRL+C
+
+   39  sleep 10m
+CTRL+Z
+   40  bg
+
+   41  sleep 300&
+
+   42  ps aux | grep sleep
+
+   43  killall sleep
+
+16. Feladat | root, jelenlegi könyvtár, szülőkönyvtár, home
+
+   45  ls /bin/ -l | grep less >> megoldas.txt
+   46  cat megoldas.txt
+
+   47  man -help | wc -l
+   48  cat megoldas.txt
+
+   49  man rm
+
++1 minden rekurzív törlése a gyökérkönyvtártól kezdve
++2 szepmunka.txt-be végtelen ciklusba y betűket ír

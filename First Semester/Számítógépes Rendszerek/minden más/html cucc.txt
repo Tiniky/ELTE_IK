@@ -1,0 +1,165 @@
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1"
+http-equiv="content-type">
+<title>Miért szeretem az informatikát?</title>
+<meta content="Fábián Tímea Nikolett" name="author">
+</head>
+<body style="color: black; background-color: rgb(12, 255, 204);"
+alink="#ccffff" link="#000099" vlink="#6633ff">
+<h1 style="text-align: justify;">Miért szeretem az informatikát?</h1>
+<p style="text-align: justify;">Az <span
+style="font-weight: bold; font-style: italic;">informatika</span>
+világa sokoldalú. Észrevétlenül a minden napjaink részévé vált. Mielőtt
+azt mondanád, hogy nincs igazam emlékezz vissza arra, hogy pár nappal
+ezelőtt (pontosabban október 4-én), mennyire felhúzott a tény, hogy nem
+működik a <span style="font-style: italic;">Facebook</span> és az <span
+style="font-style: italic;">Instagram</span>.<br>
+</p>
+<p style="text-align: justify;">Mindenki útja máshogy kezdődött. A
+következőkben leírom, hogy engem, hogyan szippantott magába az <span
+style="font-style: italic; font-weight: bold;">informatika</span>.<br>
+</p>
+<p style="text-align: justify;">Ugorjunk vissza 2013-ba. Minden egy <span
+style="font-style: italic;">Nokia C2-01</span> telefonnal kezdődött.
+Az a fajta <span style="font-style: italic;">Nokia </span>volt, amit
+amikor leejtettem a lépcsőházban az emeletről, berepesztette a
+földszinten a padlót. Órákon át <span style="font-style: italic;">Snake</span>ztem
+és hetente 1x töltöttem, mert akkoriban így működtek a telefonok.<br>
+</p>
+Lassan kezdtek elterjedni a
+touchscreenes telefonok. Végül mindenkinek okostelefonja volt az
+osztályban rajtam kívül. Nem is terveztem egyelőre lecserélni a kis
+téglám. Ehelyett másképp próbáltam versenyben maradni. Az én kis Nokiám
+volt az egyetlen gombos telefon az egész suliban, amelyiken futott a <span
+style="font-style: italic;">Flappy Bird</span>.
+Úgy bizony, addig keresgéltem és próbálkoztam, amíg le nem szedtem
+valahonnan. A hír hamar szétterjedt és random diákok jöttek megnézni,
+hogy tényleg igaz-e. (aki nem hiszi írjon DC-n és megmutatom lol)
+<p style="text-align: center;"><img style="width: 279px; height: 237px;"
+alt="intense flappy bird" src="flappy_bird.gif"> <img
+style="width: 307px; height: 237px;" alt="nokia" src="nokia_c2.jpg"><br>
+</p>
+<p style="text-align: justify;">A fentiek hatására bekerültem egy full
+fiú baráti körbe. Ők vezettek be a videojátékok világába. Az első
+játék, amivel valaha játszottam az nem más volt mint..<br>
+</p>
+<p style="text-align: center;">...<br>
+</p>
+<p style="text-align: center;">Dobpergés<br>
+</p>
+<p style="text-align: center;">...<br>
+</p>
+<p style="text-align: justify;">A <span style="font-style: italic;">Minecraft</span>
+volt, a haverom <span style="font-style: italic;">XBox 360</span>-án.<br>
+</p>
+<p style="text-align: justify;">2014 vége fele vettem az első <span
+style="font-style: italic;">laptop</span>om. Akkor mélyedtem el úgy
+igazán a videojátékokban. Egyre több genret és játékot próbáltam ki.</p>
+<table
+style="text-align: left; width: 50%; margin-left: auto; margin-right: auto; background-color: rgb(153, 255, 255);"
+border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; text-align: center;"><span
+style="font-style: italic;">genre</span><br>
+</td>
+<td style="vertical-align: top; text-align: center;"><span
+style="font-style: italic;">játék név</span><br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: center;">mmorpg<br>
+</td>
+<td style="vertical-align: top; text-align: center;">World of
+Warcraft<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: center;">fps<br>
+</td>
+<td style="vertical-align: top; text-align: center;">Counter-Strike:
+Global Offensive<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: center;">moba<br>
+</td>
+<td style="vertical-align: top; text-align: center;">Dota2<br>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><br>
+</p>
+<p style="text-align: justify;">2015 a kísérletezés éve volt. Annyi
+játékkal játszottam, amennyivel csak bírtam. Folyton újabb és újabb
+címmel bővült a <span style="font-style: italic;">Steam könyvtár</span>am.
+A legtöbb játékkal 2-3 órát mentem. Túl sok lehetőség volt és nem
+tudtam dönteni, hogy mivel játszak.<br>
+</p>
+<p style="text-align: justify;">2016 elején megismertem a<span
+style="font-style: italic;"> League of Legends</span>t.
+Azóta ez az egy játék került előtérbe. Lelassult a játékgyűjtés, aminek
+a pénztárcám kifejezetten hálás volt. WARNING! Nem ingyenes, a lelkedbe
+kerül: <a href="https://www.leagueoflegends.com/hu-hu/">LoL</a>.</p>
+<p style="text-align: center;"><img style="width: 278px; height: 254px;"
+alt="nagyon fun a lol no cap" src="lol_is_fun.gif"><br>
+</p>
+<p style="text-align: justify;">2017-18as tanévben megismerkedtem a <span
+style="font-style: italic;">C++</span>
+programozási nyelvvel. Elég könnyen átláttam és megszerettem. Két év
+alatt minden programozás felmérőm 100%os volt. Ez segített növelni az
+önbizalmam ezen a téren.<br>
+</p>
+<p style="text-align: justify;">2018ban megvettem az első <span
+style="font-style: italic;">Pc</span>-m. Ezen mégtöbb minden elfutott
+és újabb lehetőségeket adott új dolgok kipróbálására. Ekkoriban nagyon
+magába szippantott a <span style="font-style: italic;">videogame
+developement</span> és a <span style="font-style: italic;">visual
+design</span>
+dolgok, de nem volt időm jobban beleásni magam. Ebben segített a vírus
+és a karantén, csak mégjobban összehozott az informatikával. <br>
+</p>
+<p style="text-align: justify;">Több időm volt videojátékokra, főle <span
+style="font-style: italic;">WoW</span>-ra.</p>
+<p style="text-align: center;"><img
+style="width: 1280px; height: 720px;" alt="" src="wowo.jpg"><br>
+</p>
+<p>Megismerkedtem a <span style="font-style: italic;">Blender</span>rel.
+Megvoltak az alapok és hónapról hónapra új projektekkel próbálkoztam.</p>
+<p style="text-align: center;"><img style="width: 765px; height: 430px;"
+alt="" src="donut.png"> <img style="width: 759px; height: 428px;"
+alt="" src="sword_scene.png"><br>
+</p>
+<p style="text-align: justify;">2020-21es tanévben megismerkedtem a <span
+style="font-style: italic;">Python</span> programozási nyelvvel. Végül
+ebbe írtam az emelt info érettségit.<br>
+</p>
+<p style="text-align: justify;">Szabadidőmben még mindig foglalkozok <span
+style="font-style: italic;">Blender</span>rel. Újracsináltam a kezdő
+projektem.</p>
+<p style="text-align: center;"><img
+style="width: 1280px; height: 720px;" alt="" src="donutZ.png"><br>
+</p>
+<p style="text-align: justify;">Valamint kiéltem a sci-fi világalkotós
+álmaim.</p>
+<p style="text-align: center;"><img
+style="width: 1280px; height: 720px;" alt="" src="scifi_scene%20.png"><br>
+</p>
+És még szobát is modelleztem magamnak, hamár sosem volt saját szobám.<br>
+<div style="text-align: center;"><img
+style="width: 1280px; height: 720px;" alt="" src="virtual_room.png"><br>
+</div>
+<p style="text-align: justify;">A nyár elején vettem egy <span
+style="font-style: italic;">Oculus Quest 2</span>-t. A <span
+style="font-style: italic;">virtuális valóság</span> egy zseniálos ága
+az <span style="font-style: italic; font-weight: bold;">informatikának</span>.<br>
+</p>
+<p style="text-align: justify;">Ideértünk a jelenhez. A fenti út ha
+néha göröngyös is volt, de ide hozott, az <span
+style="font-weight: bold;">ELTE IK</span>-ra. És minden egyes részét
+imádom ennek az útnak :D<br>
+</p>
+</body>
+</html>
