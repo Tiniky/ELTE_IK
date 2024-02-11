@@ -1,0 +1,49 @@
+40
+l	2000
+p
+l	300
+p
+s	200
+s	300
+p
+l	300
+p
+p
+s	1000
+p
+s	200
+p
+p
+s	300
+p
+l	300
+p
+p
+s	100
+p
+l	500
+p
+p
+s	300
+p
+p
+s	200
+p
+s	1000
+p
+p
+l	300
+p
+s	300
+l	300
+p
+s	500
+p
+7
+Zusz	mohó
+suu	mohó
+ogike	taktikus
+Tiniky taktikus
+Krumpli	óvatos
+Arki	óvatos
+VanillaCoke	óvatos
