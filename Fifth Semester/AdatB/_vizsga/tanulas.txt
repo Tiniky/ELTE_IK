@@ -1,0 +1,48 @@
+1) Kommutativitás
+E1 x E2 = E2 x E1
+E1 |x| E2 = E2 |x| E1
+
+2) Asszociativitás
+E1 x (E2 x E3) = (E1 x E2) x E3
+
+3) Vetítések összekapcsolása, bővítése
+Legyen A és B két részhalmaza az E reláció oszlopainak úgy hogy A <= B
+PIa(PIb(E) = PIa(E)
+
+4) Kiválasztások felcserélhetősége, felbonthatósága
+Legyen F1 és F2 az E reláció oszlopain értelmezett kiválasztási feltétel
+qF1^F2(E) = qF1(qF2(E)) = qF2(qF1(E))
+
+5) Kiválasztás és vetítés felcserélhetősége
+Legyen F az E relációnak csak az A oszlopain értelmezett kiválasztási feltétel
+PIa(qF(E)) = qF(PIa(E))
+Legyen F az E relációnak csak az AuB oszlopain értelmezett kiválasztási feltétel, továbbá AMB = O
+PIa(qF(E)) = PIa(qF(PIaub(E)))
+
+6) Kiválasztás és szorzás felcserélhetősége
+Legyen F feltétel az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel
+qF(E1xE2) = qF(E1) x E2
+Legyen i=1,2 és Fi az Ei reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, továbbá F = F1 ^ F2
+qF(E1xE2) = qF1(E1) x qF2(E2)
+Legyen F1 az E1 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel és F2 az E1xE2 reláció oszlopainak egy részhalmazán értelmezett kiválasztási feltétel, továbbá F = F1 ^ F2
+qF(E1xE2) = qF2(qF1(E1) x E2)
+
+7) Kiválasztás és egyesítés felcserélhetősége
+Legyenek E1 és E2 relációk sémája megegyező és F a közös sémán értelmezett kiválasztási feltétel
+qF(E1uE2) = qF(E1) u qF(E2)
+
+8) Kiválasztás és kivonás felcserélhetősége
+Legyenek E1 és E2 relációk sémája megegyező és F a közös sémán értelmezett kiválasztási feltétel
+qF(E1-E2) = qF(E1) - qF(E2)
+
+9) Kiválasztás és természetes összekapcsolás felcserélhetősége
+Legyenek F az E1 és E2 relációk közös oszlopainak egy részhalmazán értelmezett kiválasztási feltétel
+qF(E1|x|E2) = qF(E1) |x| qF(E2)
+
+10) Vetítés és szorzás felcserélhetősége
+Legyen i=1,2 és Ai az Ei reláció oszlopainak egy halmaza, valamint A=A1uA2
+PIa(E1xE2) = PIa1(E1) x PIa2(E2)
+
+11) Vetítés és kivonás felcserélhetősége
+Legyenek E1 és E2 relációk sémája megegyező és legyen A a sémában szereplő oszlopok egy részhalmaza
+PIa(E1uE2) = PIa(E1) u PIa(E2)
