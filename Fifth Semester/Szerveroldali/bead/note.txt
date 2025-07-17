@@ -1,0 +1,18 @@
+resources > views > welcome.blade.php
+wipe és <x-guest-layout>
+<x-slot name="title">
+
+resources > views > views > guest.blade.php
+title beállítás
+base-textcolors meghívva
+
+.env
+APP_NAME = CRASH
+DB_CONNECTION=sqlite
+
+resources > css > app.css
+base-textcolors implementáció
+
+php artisan make:model Vehicle -mfs
+php artisan make:model Crash -mfs
+php artisan make:model SearchHistory -mfs
