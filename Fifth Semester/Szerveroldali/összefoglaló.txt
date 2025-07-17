@@ -1,0 +1,450 @@
+https://github.com/gvikthor/Webprogramozas/tree/master/23-24-1/Szerveroldali/1115%2009.%20Gyak
+
+npm init --yes
+!! ha canceleli akkor: npm install
+npm install sequelize
+npm install sqlite3
+npm install sequelize-cli --save-dev
+npx sequelize-cli init
+
+config.json-ba
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "database.sqlite"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "database.sqlite"
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "database.sqlite"
+  }
+}
+
+npx sequelize-cli model:generate --name Genre --attributes name:string,rating:integer,isGood:boolean
+
+npx sequelize-cli db:migrate
+
+package.json-ba
+"scripts": {
+    "db-fresh": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate"
+}
+
+!!allowNull: false KIVÉVE ahol feladat kéri
+ahol modellhez van ModelId oda kell a references és az onDelete pl
+UserId: {
+	allowNull: false,
+	type: Sequelize.INTEGER,
+	references: {
+		model: "users",
+		key: "id",
+	},
+	onDelete: "cascade",
+},
+
+1-N
+1: this.hasMany(models.Order);
+N: this.belongsTo(models.User);
+
+npm run db-fresh
+
+N-N kapcsolótáblával
+npx sequelize-cli migration:generate --name create-genre-movie
+
+a migration upba:
+await queryInterface.createTable('OrderProduct', {
+  id: {
+	allowNull: false,
+	autoIncrement: true,
+	primaryKey: true,
+	type: Sequelize.INTEGER
+  },
+  OrderId: {
+	allowNull: false,
+	type: Sequelize.INTEGER
+  },
+  ProductId: {
+	allowNull: false,
+	type: Sequelize.INTEGER
+  },
+  createdAt: {
+	allowNull: false,
+	type: Sequelize.DATE
+  },
+  updatedAt: {
+	allowNull: false,
+	type: Sequelize.DATE
+  }
+});
+await queryInterface.addConstraint('OrderProduct', {
+    fields: ['OrderId', 'ProductId'],
+    type: 'unique',
+    name: 'unique_order_product'
+});
+await queryInterface.addConstraint('OrderProduct', {
+    fields: ['OrderId'],
+    type: 'foreign key',
+    name: 'fk_order_product_order',
+    references: {
+    table: 'Orders',
+    field: 'id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade'
+});
+await queryInterface.addConstraint('OrderProduct', {
+    fields: ['ProductId'],
+    type: 'foreign key',
+    name: 'fk_order_product_product',
+    references: {
+    table: 'Products',
+    field: 'id'
+    },
+    onDelete: 'cascade',
+    onUpdate: 'cascade'
+});
+
+N1: this.belongsToMany(models.Order, { through: "OrderProduct" });
+N2: this.belongsToMany(models.Product, { through: "OrderProduct" });
+
+npm run db-fresh
+
+npm i @faker-js/faker
+
+npx sequelize-cli seed:generate --name DatabaseSeeder
+
+addjuk hozzá a package-es db-freshnek hogy: && npx sequelize-cli db:seed:all
+
+SEEDERBE ez alapján:
+"use strict";
+const models = require("../models");
+const { Product, User, Order } = models;
+const faker = require("@faker-js/faker").faker;
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    try {
+      const productDB = faker.number.int({ min: 7, max: 15 });
+      const userDB = faker.number.int({ min: 5, max: 10 });
+
+      const products = [];
+      for (let i = 0; i < productDB; i++) {
+        products.push(
+          await Product.create({
+            name: faker.commerce.productName(),
+            description: faker.datatype.boolean()
+              ? faker.commerce.productDescription()
+              : null,
+            price: faker.number.int({ min: 1000, max: 100000 }),
+            count: faker.number.int({ min: 1, max: 20 })
+          })
+        );
+      }
+
+      //email: faker.helpers.unique(faker.internet.email())
+      for (let i = 0; i < userDB; i++) {
+        const user = await User.create({
+          email: faker.internet.email(),
+          isWorker: faker.datatype.boolean()
+        });
+
+        const orderDB = faker.number.int({ min: 1, max: 3 });
+        for (let j = 0; j < orderDB; j++) {
+          const order = await Order.create({
+            address: faker.location.streetAddress(true),
+            UserId: user.id,
+            shipped: faker.datatype.boolean()
+          });
+          await order.setProducts(faker.helpers.arrayElement(products));
+        }
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  },
+
+  async down(queryInterface, Sequelize) {},
+};
+!!ha nem akar fordulni a db-fresh akkor töröld a databaset
+
+--------------------------------------------------------
+!! MINDEN FUTTATÁSHOZ FIREFOX RESTer
+
+npm i express
+npm i express-async-errors
+
+készíts egy servers.js filet és tölts fel pl:
+cconst { Product, User, Order } = require("./models");
+const express = require("express");
+require("express-async-errors");
+const app = express();
+
+//POSThoz kell
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//a product hívásokhoz
+app.use('/products', require('./routers/products'));
+
+//hibakezelés
+app.use((err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+  res.status(500).json({
+    name: err.name,
+    message: err.message,
+    stack: err.stack.split(/$\s+/gm),
+  });
+});
+
+app.listen(4000, () => {
+  console.log("Server is running on port 4000");
+});
+
+csinálj egy mappát routers névvel és js(ek)-t ahhoz a modelhez amihez a hívások mennek pl:product.js
+const { route } = require("express/lib/router");
+const { Product } = require("../models");
+const express = require("express");
+const router = express.Router();
+
+router.get("/", async (req, res) => {
+  const products = await Product.findAll();
+  res.json(products);
+});
+
+router.get("/:id", async (req, res, next) => {
+  if (!req.params.id || !Number.isInteger(parseInt(req.params.id)))
+    return res.status(400).json({ message: "product ID is not an integer" });
+  const product = await Product.findByPk(req.params.id);
+  if (!product) return res.status(404).json({ message: "product not found" });
+  res.json(product);
+});
+
+router.post("/", async (req, res) => {
+  const { name, price, count } = req.body;
+  if (!name || !count || !price)
+    return res
+      .status(400)
+      .json({ message: "the name, price and count parameters are mandatory" });
+  const product = await Product.create(req.body);
+  res.status(201).json(product);
+});
+
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  if (!id) return res.status(400).json({ message: "missing product ID" });
+  if (!Number.isInteger(parseInt(id)))
+    return res.status(400).json({ message: "product ID is not an integer" });
+  if (parseInt(id) < 1)
+    return res.status(400).json({ message: "product ID is not positive" });
+
+  const product = await Product.findByPk(id);
+  if (!product) return res.status(404).json({ message: "product not found" });
+  await product.destroy();
+  res.json({ message: "product deleted successfully" });
+});
+
+router.patch("/:id", async (req, res, next) => {
+  const validParameters = ["name", "description", "price", "count"];
+  const bodyKeys = Object.keys(req.body);
+
+  for (let key of bodyKeys) {
+    if (!validParameters.includes(key)) {
+      return res
+        .status(400)
+        .json({ message: `Unidentified parameter: ${key}` });
+    }
+
+    if(key === "name" || key === "description"){
+        if (typeof req.body[key] !== "string") return res.status(400).json({ message: `${key} should be a string` });
+    } else if(key === "count" || key === "price"){
+        if (typeof req.body[key] !== "integer") return res.status(400).json({ message: `${key} should be an integer` });
+    }
+  }
+
+  if (!req.params.id || !Number.isInteger(parseInt(req.params.id)))
+    return res.status(400).json({ message: "product ID is not an integer" });
+  const product = await Product.findByPk(req.params.id);
+  if (!product) return res.status(404).json({ message: "product not found" });
+  await product.update(req.body);
+  res.json(product);
+});
+
+module.exports = router;
+
+
+npm i jsonwebtoken
+npm i express-jwt
+
+User dolgai -- ha nincs megadva köztes / akkor mehet server.jsbe DE kell még oda
+const jwt = require('jsonwebtoken')
+const {expressjwt} = require('express-jwt')
+
+!!FONTOS kimásolni a tokent és HEADERS Authorization Bearer-be bemásolni
+
+API hivások user related a server.jsben:
+app.post("/login", async (req, res) => {
+  keys = Object.keys(req.body);
+  if (!req.body || keys.length > 1 || keys[0] !== "email")
+    return res
+      .status(400)
+      .json({ message: "only the email parameter is needed for login" });
+
+  const { email } = req.body;
+  const user = await User.findOne({ where: { email } });
+  if (!user)
+    return res.status(401).json({ message: "login failed, user not found" });
+
+  const token = jwt.sign(user.toJSON(), "secret-key", {
+    algorithm: "HS256",
+    expiresIn: "1h",
+  });
+
+  res.status(200).json({ token });
+});
+
+app.get(
+  "/my-orders",
+  expressjwt({ secret: "secret-key", algorithms: ["HS256"] }),
+  async (req, res) => {
+    const { id } = req.auth;
+    const user = await User.findOne({ where: { id } });
+    if (!user)
+      return res.status(401).json({ message: "no currently logged in user" });
+    res.json(await user.getOrders());
+  }
+);
+
+app.post(
+  "/my-orders",
+  expressjwt({ secret: "secret-key", algorithms: ["HS256"] }),
+  async (req, res) => {
+    const invalidProducts = [];
+    const validProducts = [];
+
+    const { id } = req.auth;
+    const user = await User.findOne({ where: { id } });
+    if (!user)
+      return res.status(401).json({ message: "no currently logged in user" });
+
+    const validParameters = ["address", "products"];
+    const keys = Object.keys(req.body);
+
+    for (let key of keys) {
+      if (!validParameters.includes(key)) {
+        return res
+          .status(400)
+          .json({ message: `Unidentified parameter: ${key}` });
+      }
+    }
+
+    const { address, products } = req.body;
+    if (!address || !products)
+      return res.status(400).json({ message: "missing parameter value" });
+
+    for (let product of products) {
+      if (!Number.isInteger(parseInt(product)) || parseInt(product) < 0) {
+        invalidProducts.push(product);
+      } else {
+        validProducts.push(product);
+      }
+    }
+
+    const order = await Order.create({
+      address: address,
+      UserId: user.id,
+      shipped: false,
+    });
+
+    await order.addProduct(validProducts);
+
+    res.status(201).json({
+      id: order.id,
+      shipped: false,
+      address: order.address,
+      UserId: order.UserId,
+      udatedAt: order.updatedAt,
+      createdAt: order.createdAt,
+      invalidProducts: invalidProducts,
+      validProducts: validProducts,
+    });
+  }
+);
+
+app.post(
+  "/ship-orders",
+  expressjwt({ secret: "secret-key", algorithms: ["HS256"] }),
+  async (req, res) => {
+    const { id } = req.auth;
+    const user = await User.findOne({ where: { id } });
+    if (!user)
+      return res.status(401).json({ message: "no currently logged in user" });
+
+    if (!user.isWorker)
+      return res.status(403).json({ message: "user has no permission" });
+
+    const keys = Object.keys(req.body);
+
+    if (!req.body || keys.length > 1 || keys[0] !== "orders")
+      return res
+        .status(400)
+        .json({ message: "only the orders parameter is needed for login" });
+
+    const { orders } = req.body;
+    if (!orders)
+      return res.status(400).json({ message: "missing parameter value" });
+
+    invalidOrder = [];
+    alreadyShipped = [];
+    justShipped = [];
+    const allOrders = await Order.findAll();
+    for (let orderId of orders) {
+      if (
+        !Number.isInteger(parseInt(orderId)) ||
+        parseInt(orderId) < 0 ||
+        parseInt(orderId) > allOrders.length
+      ) {
+        invalidOrder.push(orderId);
+      } else {
+        const order = await Order.findByPk(parseInt(orderId));
+
+        if (order.shipped) {
+          alreadyShipped.push(orderId);
+        } else {
+          await order.update({ shipped: true });
+          justShipped.push(orderId);
+        }
+      }
+    }
+
+    res.status(201).json({ invalidOrder, alreadyShipped, justShipped });
+  }
+);
+
+
+---------------------------------------------------------------
+
+npm i express-graphql graphql
+npm i @graphql-tools/schema
+
+graphql mappa létrehozása
+
+index.js létrehozása és feltöltése:
+const { graphqlHTTP } = require('express-graphql')
+const { makeExecutableSchema } = require('@graphql-tools/schema')
+const { readFileSync } = require('fs')
+
+const typeDefs = [readFileSync('./graphql/typedefs.gql').toString()]
+const resolvers = [require('./graphql/resolvers')]
+const schema = makeExecutableSchema({ typeDefs, resolvers })
+
+module.exports = graphqlHTTP({
+    schema: schema,
+    graphiql: {
+        headerEditorEnabled: true 
+    }
+})
