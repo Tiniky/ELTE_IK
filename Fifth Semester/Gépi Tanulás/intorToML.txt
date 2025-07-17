@@ -1,0 +1,45 @@
+1. Tests for Artificial General Intelligence.
+AGI refers to a machine's ability to understand, learn and apply it's intelligence to solve problems more like a human. Test for AGI include the Turing test which evolves wheter a machine can exhibit a human-like intelligence indistinguishable from a human. Other tests involve complex problem solving across various domains, adapting to new environments and understanding abstract concepts. These tests also asses a machine's capability to reason, plan and exhibit social intelligence.
+
+2. Techniques for generative AI.
+Generative AI is a type of AI that generates new content. One of the techniques is called Generative Adversarial Networks, GANs for short, where two networks: a generator and a discriminator, work against eachother to improve the output. An other technique is called Variational AutoEncoders, VAEs for short, which generates new instances by modifying the input data. Generative AI is used in the creative art field, data augmentation and realistic simulations. GANs are usually used for generating realistic human faces while VAEs is commonly used for recommandation systems.
+
+3. Text to image models.
+These models turn textual input to images. They are based on deep learning modules like DALL-E, which uses a version of GPT architecture to generate image from text. They rely on large datasets and neural networks to understand and visualize the textual input. It is mostly used in the creative art field and for educational purposes. The accuracy and quality of the images continue to upgrade with advancements in AI and computational power.
+
+4. The computational model for Foraging Ants and the details of its workings.
+This model is using ant foraging behaviour for solving optimization problems. It implements the logic behind the pheromone trails. The simulated ants 'search for food' and leave a pheromone behind. The path with the strongest pheromone indicates the shortest path so that becames the optimal route. It is a type of swarm intelligence. It is mostly used in routing and scheduling problems. It's success comes from it's simplicity and the decentralized nature of decision making mirroring real ant behaviour.
+
+5. The Schelling model and it’s working on examples.
+segregation without the need of it
+
+6. Basic ethical frameworks for technology.
+The basic ethical framework revolves around beneficience, non-maleficience, autonomy and fairness.
+privacy, transparency, accountability and fairness
+to make AI more appealing in the public eye.
+
+7. Different approaches to machine learning (i.e., supervised, unsupervised and reinforcement learning) and their basic premises, data requirements and limitations.
+Supervised learning is based on the agent getting data maps that tell for which input what should be the output.
+Unsupervised learning is the opposite, the agent only gets the input and has to figure out relationships and hidden patterns.
+Reinforcement learning is when based on the decision the agent makes it is rewarded or punished.
+The requirements for supervised learning is a large dataset with the input-output connections and for the reinforcement learning the reward mechanism is needed.
+
+8. The basic concept of supervised learning.
+
+
+9. Supervised learning by decision trees.
+10. The basic concept of unsupervised learning.
+11. The working mechanism of k-means algorithm.
+12. The mechanism of reinforcement learning.
+13. The Q-learning method.
+14. Deep Learning methods. Value learning and policy learning.
+15. The policy gradient algorithm.
+16. The basic concept of evolutionary algorithms.
+17. Optimization by genetic algorithm.
+18. The basic concept of genetic programming. Differences compared to genetic algorithms.
+19. The basic concept of swarm intelligence.
+20. Optimization by Particle Swarm Optimization.
+21. More recent swarm intelligence techniques. The firefly algorithm. Grey wolf optimizer.
+22. The basics of neural networks.
+23. Perceptron. Perceptron training.
+24. The basic concept of CRISP-DM
