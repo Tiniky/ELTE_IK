@@ -1,0 +1,33 @@
+-- 1) Kik szeretik az almát
+πnev σgyumolcs='alma' Szeret
+
+-- 2. Kik nem szeretik az almát? (de valami mást igen)
+πnev(Szeret)
+-
+πnev σgyumolcs='alma' Szeret
+
+-- 3. Kik szeretik vagy az almát vagy a körtét?
+πnev σ gyumolcs='alma' ∨ gyumolcs='korte' Szeret
+-- VAGY
+πnev σgyumolcs='alma' Szeret
+∪
+πnev σgyumolcs='korte' Szeret
+
+-- 4. Kik szeretik az almát és a körtét is?
+πnev σgyumolcs='alma' Szeret
+∩
+πnev σgyumolcs='körte' Szeret
+
+-- 5. Kik azok, akik szeretik az almát, de nem szeretik a körtét?
+πnev σgyumolcs='alma' Szeret
+-
+πnev σgyumolcs='körte' Szeret
+
+-- 6.Kik szeretik vagy az almát vagy a körtét, de csak az egyiket?
+(πnev σgyumolcs='alma' Szeret
+-
+πnev σgyumolcs='körte' Szeret)
+∪
+(πnev σgyumolcs='körte' Szeret
+-
+πnev σgyumolcs='alma' Szeret)

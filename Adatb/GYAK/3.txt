@@ -1,0 +1,17 @@
+Dolgozo
+
+sigma Dolgozo.oazon=Osztaly.oazon (Dolgozo x Osztaly)
+
+pi dkod, dnev, Dolgozo.oazon, telephely sigma Dolgozo.oazon=Osztaly.oazon (Dolgozo cross join Osztaly)
+
+pi dkod, dnev, oazon, telephely (Dolgozo natural join Osztaly)
+
+pi D1.dkod, D1.dnev, D1.fizetes sigma D1.fonoke=D2.dkod and D2.dnev='KING'(rho D1 Dolgozo cross join rho D2 Dolgozo)
+
+pi dkod, dnev, Dolgozo.oazon, telephely sigma Dolgozo.oazon=Osztaly.oazon and (telephely='CHICAGO' or telephely='DALLAS')(Dolgozo cross join Osztaly)
+
+pi dkod, dnev, fizetes Dolgozo
+-
+pi D1.dkod, D1.dnev, D1.fizetes
+sigma D1.fizetes < D2.fizetes
+(rho D1 Dolgozo cross join rho D2 Dolgozo)
